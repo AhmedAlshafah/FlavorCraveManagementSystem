@@ -13,12 +13,13 @@ VALUES
 ('Chef'),
 ('Customer');
 GO
+select * from Roles;
 
 
 -- =============================================
 -- 2. Test Users
 -- =============================================
-
+select * from users;
 -- NOTE:
 -- These passwords are plain text only for early development/testing.
 -- Later the C# application should use password hashing.
@@ -68,6 +69,7 @@ VALUES
     '0125555555'
 );
 GO
+
 
 
 -- =============================================
