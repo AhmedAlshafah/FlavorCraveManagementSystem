@@ -1,5 +1,12 @@
+using FlavorCraveManagementSystem.Forms.Admin;
+using FlavorCraveManagementSystem.Forms.Manager;
+using FlavorCraveManagementSystem.Forms.Cashier;
+using FlavorCraveManagementSystem.Forms.Chef;
+using FlavorCraveManagementSystem.Forms.Customer;
 using FlavorCraveManagementSystem.Models;
 using FlavorCraveManagementSystem.Services;
+
+
 
 namespace FlavorCraveManagementSystem
 {
@@ -33,9 +40,35 @@ namespace FlavorCraveManagementSystem
                     return;
                 }
 
-                MessageBox.Show(
-                    $"Welcome, {user.FullName}\nRole: {user.RoleName}"
-                );
+                this.Hide();
+
+                if (user.RoleName == "SystemAdmin")
+                {
+                    AdminDashboardForm dashboard = new AdminDashboardForm(user);
+                    dashboard.ShowDialog();
+                }
+                else if (user.RoleName == "Manager")
+                {
+                    ManagerDashboardForm dashboard = new ManagerDashboardForm(user);
+                    dashboard.ShowDialog();
+                }
+                else if (user.RoleName == "Cashier")
+                {
+                    CashierDashboardForm dashboard = new CashierDashboardForm(user);
+                    dashboard.ShowDialog();
+                }
+                else if (user.RoleName == "Chef")
+                {
+                    ChefDashboardForm dashboard = new ChefDashboardForm(user);
+                    dashboard.ShowDialog();
+                }
+                else if (user.RoleName == "Customer")
+                {
+                    CustomerDashboardForm dashboard = new CustomerDashboardForm(user);
+                    dashboard.ShowDialog();
+                }
+
+                this.Show();
             }
             catch (Exception ex)
             {
