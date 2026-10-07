@@ -12,5 +12,11 @@ namespace FlavorCraveManagementSystem.Forms.Manager
 
             loggedInUser = user;
         }
+
+        private void btnManageInventory_Click(object sender, EventArgs e)
+        {
+            InventoryManagementForm form = new InventoryManagementForm();
+            form.ShowDialog();
+        }
     }
 }

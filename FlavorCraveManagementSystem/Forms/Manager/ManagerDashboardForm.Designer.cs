@@ -29,22 +29,34 @@
         private void InitializeComponent()
         {
             label1 = new Label();
+            btnManageInventory = new Button();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(15, 16);
+            label1.Location = new Point(314, 22);
             label1.Name = "label1";
             label1.Size = new Size(114, 15);
             label1.TabIndex = 0;
             label1.Text = "Manager Dashboard";
+            // 
+            // btnManageInventory
+            // 
+            btnManageInventory.Location = new Point(298, 94);
+            btnManageInventory.Name = "btnManageInventory";
+            btnManageInventory.Size = new Size(143, 23);
+            btnManageInventory.TabIndex = 1;
+            btnManageInventory.Text = "Manage Inventory";
+            btnManageInventory.UseVisualStyleBackColor = true;
+            btnManageInventory.Click += btnManageInventory_Click;
             // 
             // ManagerDashboardForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnManageInventory);
             Controls.Add(label1);
             Name = "ManagerDashboardForm";
             Text = "Manager Dashboard";
@@ -55,5 +67,6 @@
         #endregion
 
         private Label label1;
+        private Button btnManageInventory;
     }
 }
