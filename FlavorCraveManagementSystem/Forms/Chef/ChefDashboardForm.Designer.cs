@@ -29,25 +29,92 @@
         private void InitializeComponent()
         {
             label1 = new Label();
+            dgvOrders = new DataGridView();
+            btnInProgress = new Button();
+            btnComplete = new Button();
+            btnUpdateProfile = new Button();
+            lblChefName = new Label();
+            ((System.ComponentModel.ISupportInitialize)dgvOrders).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(12, 19);
+            label1.Font = new Font("Showcard Gothic", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label1.Location = new Point(313, 9);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(92, 15);
+            label1.Size = new Size(235, 30);
             label1.TabIndex = 0;
             label1.Text = "Chef Dashboard";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
+            label1.Click += label1_Click;
+            // 
+            // dgvOrders
+            // 
+            dgvOrders.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvOrders.Location = new Point(223, 62);
+            dgvOrders.Name = "dgvOrders";
+            dgvOrders.RowHeadersWidth = 62;
+            dgvOrders.Size = new Size(427, 241);
+            dgvOrders.TabIndex = 1;
+            // 
+            // btnInProgress
+            // 
+            btnInProgress.Font = new Font("Segoe UI Black", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnInProgress.Location = new Point(313, 100);
+            btnInProgress.Name = "btnInProgress";
+            btnInProgress.Size = new Size(262, 38);
+            btnInProgress.TabIndex = 2;
+            btnInProgress.Text = "Mark as In Progress";
+            btnInProgress.UseVisualStyleBackColor = true;
+            // 
+            // btnComplete
+            // 
+            btnComplete.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnComplete.Location = new Point(313, 155);
+            btnComplete.Name = "btnComplete";
+            btnComplete.Size = new Size(262, 34);
+            btnComplete.TabIndex = 3;
+            btnComplete.Text = "Complete Order";
+            btnComplete.UseVisualStyleBackColor = true;
+            btnComplete.Click += btnComplete_Click;
+            // 
+            // btnUpdateProfile
+            // 
+            btnUpdateProfile.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnUpdateProfile.Location = new Point(313, 208);
+            btnUpdateProfile.Name = "btnUpdateProfile";
+            btnUpdateProfile.Size = new Size(262, 34);
+            btnUpdateProfile.TabIndex = 4;
+            btnUpdateProfile.Text = "Update Profile";
+            btnUpdateProfile.UseVisualStyleBackColor = true;
+            btnUpdateProfile.Click += btnUpdateProfile_Click;
+            // 
+            // lblChefName
+            // 
+            lblChefName.AutoSize = true;
+            lblChefName.Location = new Point(370, 325);
+            lblChefName.Name = "lblChefName";
+            lblChefName.Size = new Size(130, 25);
+            lblChefName.TabIndex = 5;
+            lblChefName.Text = "Welcome, Chef";
             // 
             // ChefDashboardForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(852, 468);
+            Controls.Add(lblChefName);
+            Controls.Add(btnUpdateProfile);
+            Controls.Add(btnComplete);
+            Controls.Add(btnInProgress);
+            Controls.Add(dgvOrders);
             Controls.Add(label1);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "ChefDashboardForm";
             Text = "Chef Dashboard";
+            ((System.ComponentModel.ISupportInitialize)dgvOrders).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -55,5 +122,10 @@
         #endregion
 
         private Label label1;
+        private DataGridView dgvOrders;
+        private Button btnInProgress;
+        private Button btnComplete;
+        private Button btnUpdateProfile;
+        private Label lblChefName;
     }
 }
