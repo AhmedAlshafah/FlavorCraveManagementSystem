@@ -24,5 +24,11 @@ namespace FlavorCraveManagementSystem.Forms.Manager
             MenuManagementForm form = new MenuManagementForm();
             form.ShowDialog();
         }
+
+        private void btnSalesReport_Click(object sender, EventArgs e)
+        {
+            SalesReportForm form = new SalesReportForm();
+            form.ShowDialog();
+        }
     }
 }

@@ -31,6 +31,7 @@
             label1 = new Label();
             btnManageInventory = new Button();
             btnManageMenu = new Button();
+            btnSalesReport = new Button();
             SuspendLayout();
             // 
             // label1
@@ -62,11 +63,22 @@
             btnManageMenu.UseVisualStyleBackColor = true;
             btnManageMenu.Click += btnManageMenu_Click;
             // 
+            // btnSalesReport
+            // 
+            btnSalesReport.Location = new Point(563, 209);
+            btnSalesReport.Name = "btnSalesReport";
+            btnSalesReport.Size = new Size(108, 23);
+            btnSalesReport.TabIndex = 3;
+            btnSalesReport.Text = "Sales Report";
+            btnSalesReport.UseVisualStyleBackColor = true;
+            btnSalesReport.Click += btnSalesReport_Click;
+            // 
             // ManagerDashboardForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnSalesReport);
             Controls.Add(btnManageMenu);
             Controls.Add(btnManageInventory);
             Controls.Add(label1);
@@ -81,5 +93,6 @@
         private Label label1;
         private Button btnManageInventory;
         private Button btnManageMenu;
+        private Button btnSalesReport;
     }
 }
