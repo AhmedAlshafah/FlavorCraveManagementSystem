@@ -18,5 +18,11 @@ namespace FlavorCraveManagementSystem.Forms.Manager
             InventoryManagementForm form = new InventoryManagementForm();
             form.ShowDialog();
         }
+
+        private void btnManageMenu_Click(object sender, EventArgs e)
+        {
+            MenuManagementForm form = new MenuManagementForm();
+            form.ShowDialog();
+        }
     }
 }

@@ -30,6 +30,7 @@
         {
             label1 = new Label();
             btnManageInventory = new Button();
+            btnManageMenu = new Button();
             SuspendLayout();
             // 
             // label1
@@ -51,11 +52,22 @@
             btnManageInventory.UseVisualStyleBackColor = true;
             btnManageInventory.Click += btnManageInventory_Click;
             // 
+            // btnManageMenu
+            // 
+            btnManageMenu.Location = new Point(330, 181);
+            btnManageMenu.Name = "btnManageMenu";
+            btnManageMenu.Size = new Size(75, 23);
+            btnManageMenu.TabIndex = 2;
+            btnManageMenu.Text = "Manage Menu";
+            btnManageMenu.UseVisualStyleBackColor = true;
+            btnManageMenu.Click += btnManageMenu_Click;
+            // 
             // ManagerDashboardForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnManageMenu);
             Controls.Add(btnManageInventory);
             Controls.Add(label1);
             Name = "ManagerDashboardForm";
@@ -68,5 +80,6 @@
 
         private Label label1;
         private Button btnManageInventory;
+        private Button btnManageMenu;
     }
 }
