@@ -28,14 +28,19 @@ namespace FlavorCraveManagementSystem.Forms.Manager
 
             string sql = @"
         SELECT
-            IngredientId,
-            Name,
-            Unit,
-            QuantityInStock,
-            LowStockLevel,
-            IsActive
-        FROM Ingredients
-        ORDER BY Name";
+        IngredientId,
+        Name,
+        Unit,
+        QuantityInStock,
+        LowStockLevel,
+        IsActive,
+        CASE
+            WHEN QuantityInStock <= LowStockLevel
+                THEN 'LOW STOCK'
+            ELSE 'OK'
+        END AS StockStatus
+    FROM Ingredients
+    ORDER BY Name";
 
             using SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
 
