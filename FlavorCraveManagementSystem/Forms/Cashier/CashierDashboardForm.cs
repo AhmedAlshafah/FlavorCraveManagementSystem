@@ -11,6 +11,14 @@ namespace FlavorCraveManagementSystem.Forms.Cashier
             InitializeComponent();
 
             loggedInUser = user;
+
+            btnProcessPayment.Click += btnProcessPayment_Click;
+        }
+
+        private void btnProcessPayment_Click(object? sender, EventArgs e)
+        {
+            using var paymentForm = new PaymentProcessingForm(loggedInUser.UserId);
+            paymentForm.ShowDialog(this);
         }
     }
 }

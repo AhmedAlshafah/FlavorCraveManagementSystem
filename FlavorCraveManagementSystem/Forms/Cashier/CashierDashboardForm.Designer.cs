@@ -29,22 +29,33 @@
         private void InitializeComponent()
         {
             label1 = new Label();
+            btnProcessPayment = new Button();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(10, 18);
+            label1.Location = new Point(10, 20);
             label1.Name = "label1";
-            label1.Size = new Size(106, 15);
+            label1.Size = new Size(120, 17);
             label1.TabIndex = 0;
             label1.Text = "Cashier Dashboard";
             // 
+            // btnProcessPayment
+            // 
+            btnProcessPayment.Location = new Point(246, 362);
+            btnProcessPayment.Name = "btnProcessPayment";
+            btnProcessPayment.Size = new Size(292, 33);
+            btnProcessPayment.TabIndex = 1;
+            btnProcessPayment.Text = "Process Payment";
+            btnProcessPayment.UseVisualStyleBackColor = true;
+            // 
             // CashierDashboardForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 510);
+            Controls.Add(btnProcessPayment);
             Controls.Add(label1);
             Name = "CashierDashboardForm";
             Text = "Cashier Dashboard";
@@ -55,5 +66,6 @@
         #endregion
 
         private Label label1;
+        private Button btnProcessPayment;
     }
 }
