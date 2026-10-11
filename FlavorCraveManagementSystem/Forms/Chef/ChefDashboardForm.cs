@@ -100,7 +100,9 @@ namespace FlavorCraveManagementSystem.Forms.Chef
 
         private void btnUpdateProfile_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Profile form needs to be created.");
+            // Pass the loggedInUser to the new form and open it as a popup
+            ChefProfileForm profileForm = new ChefProfileForm(loggedInUser);
+            profileForm.ShowDialog();
         }
     }
 }
