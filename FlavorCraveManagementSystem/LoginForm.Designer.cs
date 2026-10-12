@@ -33,6 +33,9 @@
             btnLogin = new Button();
             lblEmail = new Label();
             lblPassword = new Label();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
             SuspendLayout();
             // 
             // txtEmail
@@ -77,13 +80,39 @@
             lblPassword.Size = new Size(60, 15);
             lblPassword.TabIndex = 5;
             lblPassword.Text = "Password:";
-            
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(123, 49);
+            label1.Name = "label1";
+            label1.Size = new Size(0, 15);
+            label1.TabIndex = 6;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(118, 92);
+            label2.Name = "label2";
+            label2.Size = new Size(0, 15);
+            label2.TabIndex = 7;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(111, 131);
+            label3.Name = "label3";
+            label3.Size = new Size(0, 15);
+            label3.TabIndex = 8;
             // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
             Controls.Add(lblPassword);
             Controls.Add(lblEmail);
             Controls.Add(btnLogin);
@@ -101,5 +130,8 @@
         private Label lblEmail;
         private Label lblPassword;
         private TextBox txtPassword;
+        private Label label1;
+        private Label label2;
+        private Label label3;
     }
 }

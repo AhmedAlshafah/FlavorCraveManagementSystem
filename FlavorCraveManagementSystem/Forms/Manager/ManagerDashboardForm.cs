@@ -30,5 +30,13 @@ namespace FlavorCraveManagementSystem.Forms.Manager
             SalesReportForm form = new SalesReportForm();
             form.ShowDialog();
         }
+
+        private void btnProfile_Click(object sender, EventArgs e)
+        {
+            ManagerProfileForm form =
+    new ManagerProfileForm(loggedInUser);
+
+            form.ShowDialog();
+        }
     }
 }
