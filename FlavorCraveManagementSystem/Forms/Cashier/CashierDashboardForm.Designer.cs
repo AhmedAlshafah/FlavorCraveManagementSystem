@@ -30,6 +30,7 @@
         {
             label1 = new Label();
             btnProcessPayment = new Button();
+            btnWalletReport = new Button();
             SuspendLayout();
             // 
             // label1
@@ -50,11 +51,21 @@
             btnProcessPayment.Text = "Process Payment";
             btnProcessPayment.UseVisualStyleBackColor = true;
             // 
+            // btnWalletReport
+            // 
+            btnWalletReport.Location = new Point(246, 304);
+            btnWalletReport.Name = "btnWalletReport";
+            btnWalletReport.Size = new Size(292, 25);
+            btnWalletReport.TabIndex = 2;
+            btnWalletReport.Text = "Wallet Report";
+            btnWalletReport.UseVisualStyleBackColor = true;
+            // 
             // CashierDashboardForm
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 510);
+            Controls.Add(btnWalletReport);
             Controls.Add(btnProcessPayment);
             Controls.Add(label1);
             Name = "CashierDashboardForm";
@@ -67,5 +78,6 @@
 
         private Label label1;
         private Button btnProcessPayment;
+        private Button btnWalletReport;
     }
 }
