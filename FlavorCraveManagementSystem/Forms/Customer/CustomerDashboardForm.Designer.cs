@@ -25,11 +25,11 @@
             btnEWallet = new Button();
             btnMyProfile = new Button();
             pnlMainContent = new Panel();
-            dgvMenuItems = new DataGridView();
-            cboCategory = new ComboBox();
-            lblCategory = new Label();
-            btnViewDetails = new Button();
             btnRefreshMenu = new Button();
+            btnViewDetails = new Button();
+            lblCategory = new Label();
+            cboCategory = new ComboBox();
+            dgvMenuItems = new DataGridView();
             pnlMainContent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvMenuItems).BeginInit();
             SuspendLayout();
@@ -110,6 +110,42 @@
             pnlMainContent.Size = new Size(528, 721);
             pnlMainContent.TabIndex = 7;
             // 
+            // btnRefreshMenu
+            // 
+            btnRefreshMenu.Location = new Point(281, 653);
+            btnRefreshMenu.Name = "btnRefreshMenu";
+            btnRefreshMenu.Size = new Size(199, 46);
+            btnRefreshMenu.TabIndex = 4;
+            btnRefreshMenu.Text = "Refresh Menu";
+            btnRefreshMenu.UseVisualStyleBackColor = true;
+            // 
+            // btnViewDetails
+            // 
+            btnViewDetails.Location = new Point(35, 653);
+            btnViewDetails.Name = "btnViewDetails";
+            btnViewDetails.Size = new Size(182, 46);
+            btnViewDetails.TabIndex = 3;
+            btnViewDetails.Text = "View Details";
+            btnViewDetails.UseVisualStyleBackColor = true;
+            // 
+            // lblCategory
+            // 
+            lblCategory.AutoSize = true;
+            lblCategory.Location = new Point(46, 55);
+            lblCategory.Name = "lblCategory";
+            lblCategory.Size = new Size(124, 31);
+            lblCategory.TabIndex = 2;
+            lblCategory.Text = "Category:";
+            // 
+            // cboCategory
+            // 
+            cboCategory.FormattingEnabled = true;
+            cboCategory.Location = new Point(228, 47);
+            cboCategory.Name = "cboCategory";
+            cboCategory.Size = new Size(242, 39);
+            cboCategory.TabIndex = 1;
+            cboCategory.SelectedIndexChanged += cboCategory_SelectedIndexChanged;
+            // 
             // dgvMenuItems
             // 
             dgvMenuItems.AllowUserToAddRows = false;
@@ -124,47 +160,11 @@
             dgvMenuItems.Size = new Size(528, 512);
             dgvMenuItems.TabIndex = 0;
             // 
-            // cboCategory
-            // 
-            cboCategory.FormattingEnabled = true;
-            cboCategory.Location = new Point(228, 47);
-            cboCategory.Name = "cboCategory";
-            cboCategory.Size = new Size(242, 39);
-            cboCategory.TabIndex = 1;
-            cboCategory.SelectedIndexChanged += cboCategory_SelectedIndexChanged;
-            // 
-            // lblCategory
-            // 
-            lblCategory.AutoSize = true;
-            lblCategory.Location = new Point(46, 55);
-            lblCategory.Name = "lblCategory";
-            lblCategory.Size = new Size(124, 31);
-            lblCategory.TabIndex = 2;
-            lblCategory.Text = "Category:";
-            // 
-            // btnViewDetails
-            // 
-            btnViewDetails.Location = new Point(35, 653);
-            btnViewDetails.Name = "btnViewDetails";
-            btnViewDetails.Size = new Size(182, 46);
-            btnViewDetails.TabIndex = 3;
-            btnViewDetails.Text = "View Details";
-            btnViewDetails.UseVisualStyleBackColor = true;
-            // 
-            // btnRefreshMenu
-            // 
-            btnRefreshMenu.Location = new Point(281, 653);
-            btnRefreshMenu.Name = "btnRefreshMenu";
-            btnRefreshMenu.Size = new Size(199, 46);
-            btnRefreshMenu.TabIndex = 4;
-            btnRefreshMenu.Text = "Refresh Menu";
-            btnRefreshMenu.UseVisualStyleBackColor = true;
-            // 
             // CustomerDashboardForm
             // 
             AutoScaleDimensions = new SizeF(14F, 31F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1150, 973);
+            ClientSize = new Size(1281, 973);
             Controls.Add(pnlMainContent);
             Controls.Add(btnMyProfile);
             Controls.Add(btnEWallet);
