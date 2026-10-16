@@ -27,27 +27,38 @@ namespace FlavorCraveManagementSystem.Forms.Customer
         private void LoadBalance()
         {
             string sql = "SELECT Balance FROM Wallets WHERE UserId = @UserId";
-            object result = DatabaseHelper.ExecuteScalar(sql, new SqlParameter("@UserId", loggedInUser.UserId));
-            if (result != null)
+            using (SqlConnection conn = DatabaseHelper.GetConnection())
             {
-                lblWalletBalance.Text = "Wallet Balance: RM " + Convert.ToDecimal(result).ToString("0.00");
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@UserId", loggedInUser.UserId);
+                conn.Open();
+                object result = cmd.ExecuteScalar();
+                if (result != null && result != DBNull.Value)
+                {
+                    lblWalletBalance.Text = "Wallet Balance: RM " + Convert.ToDecimal(result).ToString("0.00");
+                }
             }
         }
 
         private void LoadCategories()
         {
             string sql = "SELECT CategoryId, CategoryName FROM MenuCategories";
-            DataTable dt = DatabaseHelper.ExecuteQuery(sql);
+            using (SqlConnection conn = DatabaseHelper.GetConnection())
+            {
+                SqlDataAdapter da = new SqlDataAdapter(sql, conn);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
 
-            DataRow row = dt.NewRow();
-            row["CategoryId"] = 0;
-            row["CategoryName"] = "All Categories";
-            dt.Rows.InsertAt(row, 0);
+                DataRow row = dt.NewRow();
+                row["CategoryId"] = 0;
+                row["CategoryName"] = "All Categories";
+                dt.Rows.InsertAt(row, 0);
 
-            cmbCategory.DataSource = dt;
-            cmbCategory.DisplayMember = "CategoryName";
-            cmbCategory.ValueMember = "CategoryId";
-            cmbCategory.SelectedIndex = 0;
+                cboCategory.DataSource = dt;
+                cboCategory.DisplayMember = "CategoryName";
+                cboCategory.ValueMember = "CategoryId";
+                cboCategory.SelectedIndex = 0;
+            }
         }
 
         private void LoadMenuItems(int categoryId)
@@ -63,52 +74,36 @@ namespace FlavorCraveManagementSystem.Forms.Customer
                 JOIN MenuCategories c ON m.CategoryId = c.CategoryId
                 WHERE m.IsAvailable = 1";
 
-            if (categoryId > 0)
+            if (categoryId > 0) sql += " AND m.CategoryId = @CategoryId";
+
+            using (SqlConnection conn = DatabaseHelper.GetConnection())
             {
-                sql += " AND m.CategoryId = @CategoryId";
-                dgvMenuItems.DataSource = DatabaseHelper.ExecuteQuery(sql, new SqlParameter("@CategoryId", categoryId));
-            }
-            else
-            {
-                dgvMenuItems.DataSource = DatabaseHelper.ExecuteQuery(sql);
+                SqlDataAdapter da = new SqlDataAdapter(sql, conn);
+                if (categoryId > 0) da.SelectCommand.Parameters.AddWithValue("@CategoryId", categoryId);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dgvMenuItems.DataSource = dt;
             }
 
-            if (dgvMenuItems.Columns["MenuItemId"] != null) dgvMenuItems.Columns["MenuItemId"].Visible = false;
+            if (dgvMenuItems.Columns["MenuItemId"] != null)
+                dgvMenuItems.Columns["MenuItemId"]!.Visible = false;
         }
 
-        private void cmbCategory_SelectedIndexChanged(object sender, EventArgs e)
+        private void cboCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbCategory.SelectedValue != null && cmbCategory.SelectedValue is int)
-            {
-                LoadMenuItems((int)cmbCategory.SelectedValue);
-            }
+            if (cboCategory.SelectedValue != null && cboCategory.SelectedValue is int)
+                LoadMenuItems((int)cboCategory.SelectedValue);
         }
 
         private void btnRefreshMenu_Click(object sender, EventArgs e)
         {
             LoadBalance();
-            LoadMenuItems(cmbCategory.SelectedValue != null ? (int)cmbCategory.SelectedValue : 0);
+            LoadMenuItems(cboCategory.SelectedValue != null ? (int)cboCategory.SelectedValue : 0);
         }
 
-        private void btnMyOrders_Click(object sender, EventArgs e)
-        {
-            // 暂未创建，创建后取消注释
-            // OrderHistoryForm f = new OrderHistoryForm(loggedInUser);
-            // f.ShowDialog();
-            // LoadBalance();
-        }
-
-        private void btnEWallet_Click(object sender, EventArgs e)
-        {
-            // EWalletForm f = new EWalletForm(loggedInUser);
-            // f.ShowDialog();
-            // LoadBalance();
-        }
-
-        private void btnMyProfile_Click(object sender, EventArgs e)
-        {
-            // ProfileForm f = new ProfileForm(loggedInUser);
-            // f.ShowDialog();
-        }
+        // 占位事件，等建好子窗体再去掉注释
+        private void btnMyOrders_Click(object sender, EventArgs e) { }
+        private void btnEWallet_Click(object sender, EventArgs e) { }
+        private void btnMyProfile_Click(object sender, EventArgs e) { }
     }
 }

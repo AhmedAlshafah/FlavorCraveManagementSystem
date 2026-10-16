@@ -2,15 +2,8 @@
 {
     partial class CustomerDashboardForm
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,10 +15,6 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             lblDashboardTitle = new Label();
@@ -37,7 +26,7 @@
             btnMyProfile = new Button();
             pnlMainContent = new Panel();
             dgvMenuItems = new DataGridView();
-            cmbCategory = new ComboBox();
+            cboCategory = new ComboBox();
             lblCategory = new Label();
             btnViewDetails = new Button();
             btnRefreshMenu = new Button();
@@ -114,7 +103,7 @@
             pnlMainContent.Controls.Add(btnRefreshMenu);
             pnlMainContent.Controls.Add(btnViewDetails);
             pnlMainContent.Controls.Add(lblCategory);
-            pnlMainContent.Controls.Add(cmbCategory);
+            pnlMainContent.Controls.Add(cboCategory);
             pnlMainContent.Controls.Add(dgvMenuItems);
             pnlMainContent.Location = new Point(544, 196);
             pnlMainContent.Name = "pnlMainContent";
@@ -135,14 +124,14 @@
             dgvMenuItems.Size = new Size(528, 512);
             dgvMenuItems.TabIndex = 0;
             // 
-            // cmbCategory
+            // cboCategory
             // 
-            cmbCategory.FormattingEnabled = true;
-            cmbCategory.Location = new Point(228, 47);
-            cmbCategory.Name = "cmbCategory";
-            cmbCategory.Size = new Size(242, 39);
-            cmbCategory.TabIndex = 1;
-            cmbCategory.SelectedIndexChanged += cmbCategory_SelectedIndexChanged;
+            cboCategory.FormattingEnabled = true;
+            cboCategory.Location = new Point(228, 47);
+            cboCategory.Name = "cboCategory";
+            cboCategory.Size = new Size(242, 39);
+            cboCategory.TabIndex = 1;
+            cboCategory.SelectedIndexChanged += cboCategory_SelectedIndexChanged;
             // 
             // lblCategory
             // 
@@ -209,6 +198,6 @@
         private Button btnRefreshMenu;
         private Button btnViewDetails;
         private Label lblCategory;
-        private ComboBox cmbCategory;
+        private ComboBox cboCategory;
     }
 }
