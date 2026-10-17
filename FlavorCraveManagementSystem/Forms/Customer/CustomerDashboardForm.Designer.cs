@@ -30,8 +30,11 @@
             lblCategory = new Label();
             cboCategory = new ComboBox();
             dgvMenuItems = new DataGridView();
+            nudQuantity = new NumericUpDown();
+            btnPlaceOrder = new Button();
             pnlMainContent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvMenuItems).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nudQuantity).BeginInit();
             SuspendLayout();
             // 
             // lblDashboardTitle
@@ -52,6 +55,7 @@
             btnBrowseMenu.TabIndex = 1;
             btnBrowseMenu.Text = "Browse Menu";
             btnBrowseMenu.UseVisualStyleBackColor = true;
+            btnBrowseMenu.Click += btnBrowseMenu_Click;
             // 
             // lblWalletBalance
             // 
@@ -79,6 +83,7 @@
             btnMyOrders.TabIndex = 4;
             btnMyOrders.Text = "My Orders";
             btnMyOrders.UseVisualStyleBackColor = true;
+            btnMyOrders.Click += btnMyOrders_Click;
             // 
             // btnEWallet
             // 
@@ -88,6 +93,7 @@
             btnEWallet.TabIndex = 5;
             btnEWallet.Text = "E-Wallet";
             btnEWallet.UseVisualStyleBackColor = true;
+            btnEWallet.Click += btnEWallet_Click;
             // 
             // btnMyProfile
             // 
@@ -97,36 +103,41 @@
             btnMyProfile.TabIndex = 6;
             btnMyProfile.Text = "My Profile";
             btnMyProfile.UseVisualStyleBackColor = true;
+            btnMyProfile.Click += btnMyProfile_Click;
             // 
             // pnlMainContent
             // 
+            pnlMainContent.Controls.Add(btnPlaceOrder);
+            pnlMainContent.Controls.Add(nudQuantity);
             pnlMainContent.Controls.Add(btnRefreshMenu);
             pnlMainContent.Controls.Add(btnViewDetails);
             pnlMainContent.Controls.Add(lblCategory);
             pnlMainContent.Controls.Add(cboCategory);
             pnlMainContent.Controls.Add(dgvMenuItems);
-            pnlMainContent.Location = new Point(544, 196);
+            pnlMainContent.Location = new Point(544, 230);
             pnlMainContent.Name = "pnlMainContent";
-            pnlMainContent.Size = new Size(528, 721);
+            pnlMainContent.Size = new Size(831, 795);
             pnlMainContent.TabIndex = 7;
             // 
             // btnRefreshMenu
             // 
-            btnRefreshMenu.Location = new Point(281, 653);
+            btnRefreshMenu.Location = new Point(572, 704);
             btnRefreshMenu.Name = "btnRefreshMenu";
             btnRefreshMenu.Size = new Size(199, 46);
             btnRefreshMenu.TabIndex = 4;
             btnRefreshMenu.Text = "Refresh Menu";
             btnRefreshMenu.UseVisualStyleBackColor = true;
+            btnRefreshMenu.Click += btnRefreshMenu_Click;
             // 
             // btnViewDetails
             // 
-            btnViewDetails.Location = new Point(35, 653);
+            btnViewDetails.Location = new Point(72, 704);
             btnViewDetails.Name = "btnViewDetails";
             btnViewDetails.Size = new Size(182, 46);
             btnViewDetails.TabIndex = 3;
             btnViewDetails.Text = "View Details";
             btnViewDetails.UseVisualStyleBackColor = true;
+            btnViewDetails.Click += btnViewDetails_Click;
             // 
             // lblCategory
             // 
@@ -142,7 +153,7 @@
             cboCategory.FormattingEnabled = true;
             cboCategory.Location = new Point(228, 47);
             cboCategory.Name = "cboCategory";
-            cboCategory.Size = new Size(242, 39);
+            cboCategory.Size = new Size(235, 39);
             cboCategory.TabIndex = 1;
             cboCategory.SelectedIndexChanged += cboCategory_SelectedIndexChanged;
             // 
@@ -152,19 +163,38 @@
             dgvMenuItems.AllowUserToDeleteRows = false;
             dgvMenuItems.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvMenuItems.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvMenuItems.Location = new Point(0, 115);
+            dgvMenuItems.Location = new Point(0, 131);
             dgvMenuItems.Name = "dgvMenuItems";
             dgvMenuItems.ReadOnly = true;
             dgvMenuItems.RowHeadersVisible = false;
             dgvMenuItems.RowHeadersWidth = 82;
-            dgvMenuItems.Size = new Size(528, 512);
+            dgvMenuItems.Size = new Size(831, 548);
             dgvMenuItems.TabIndex = 0;
+            // 
+            // nudQuantity
+            // 
+            nudQuantity.Location = new Point(572, 47);
+            nudQuantity.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            nudQuantity.Name = "nudQuantity";
+            nudQuantity.Size = new Size(240, 38);
+            nudQuantity.TabIndex = 5;
+            nudQuantity.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            // 
+            // btnPlaceOrder
+            // 
+            btnPlaceOrder.Location = new Point(323, 704);
+            btnPlaceOrder.Name = "btnPlaceOrder";
+            btnPlaceOrder.Size = new Size(204, 46);
+            btnPlaceOrder.TabIndex = 6;
+            btnPlaceOrder.Text = "Place Order";
+            btnPlaceOrder.UseVisualStyleBackColor = true;
+            btnPlaceOrder.Click += btnPlaceOrder_Click;
             // 
             // CustomerDashboardForm
             // 
             AutoScaleDimensions = new SizeF(14F, 31F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1281, 973);
+            ClientSize = new Size(1534, 1057);
             Controls.Add(pnlMainContent);
             Controls.Add(btnMyProfile);
             Controls.Add(btnEWallet);
@@ -180,6 +210,7 @@
             pnlMainContent.ResumeLayout(false);
             pnlMainContent.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvMenuItems).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nudQuantity).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -199,5 +230,7 @@
         private Button btnViewDetails;
         private Label lblCategory;
         private ComboBox cboCategory;
+        private Button btnPlaceOrder;
+        private NumericUpDown nudQuantity;
     }
 }

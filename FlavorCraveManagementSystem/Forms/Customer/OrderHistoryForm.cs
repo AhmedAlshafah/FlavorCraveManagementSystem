@@ -83,18 +83,49 @@ namespace FlavorCraveManagementSystem.Forms.Customer
                         SqlCommand cmdGet = new SqlCommand(sqlGet, conn, tran);
                         cmdGet.Parameters.AddWithValue("@OrderId", orderId);
                         cmdGet.Parameters.AddWithValue("@CustomerId", loggedInUser.UserId);
-                        decimal total = Convert.ToDecimal(cmdGet.ExecuteScalar());
+                        object totalResult = cmdGet.ExecuteScalar();
 
-                        string sqlUpdateOrder = "UPDATE Orders SET Status = 'Cancelled' WHERE OrderId = @OrderId";
+                        if (totalResult == null || totalResult == DBNull.Value)
+                        {
+                            throw new InvalidOperationException(
+                                "Order not found or does not belong to this customer."
+                            );
+                        }
+
+                        decimal total = Convert.ToDecimal(totalResult);
+
+                        string sqlUpdateOrder = @"
+    UPDATE Orders
+    SET Status = 'Cancelled'
+    WHERE OrderId = @OrderId
+      AND CustomerId = @CustomerId
+      AND Status NOT IN ('Completed', 'Cancelled')";
+
                         SqlCommand cmdUpdate = new SqlCommand(sqlUpdateOrder, conn, tran);
                         cmdUpdate.Parameters.AddWithValue("@OrderId", orderId);
-                        cmdUpdate.ExecuteNonQuery();
+                        cmdUpdate.Parameters.AddWithValue("@CustomerId", loggedInUser.UserId);
+
+                        int updatedRows = cmdUpdate.ExecuteNonQuery();
+
+                        if (updatedRows == 0)
+                        {
+                            throw new InvalidOperationException(
+                                "This order can no longer be cancelled."
+                            );
+                        }
 
                         string sqlRefund = "UPDATE Wallets SET Balance = Balance + @Amount WHERE UserId = @UserId";
                         SqlCommand cmdRefund = new SqlCommand(sqlRefund, conn, tran);
                         cmdRefund.Parameters.AddWithValue("@Amount", total);
                         cmdRefund.Parameters.AddWithValue("@UserId", loggedInUser.UserId);
-                        cmdRefund.ExecuteNonQuery();
+                        int refundedRows = cmdRefund.ExecuteNonQuery();
+
+                        if (refundedRows == 0)
+                        {
+                            throw new InvalidOperationException(
+                                "Wallet account not found. The cancellation was rolled back."
+                            );
+                        }
 
                         string sqlTrans = @"INSERT INTO WalletTransactions (WalletId, OrderId, TransactionType, Amount) SELECT WalletId, @OrderId, 'Refund', @Amount FROM Wallets WHERE UserId = @UserId";
                         SqlCommand cmdTrans = new SqlCommand(sqlTrans, conn, tran);

@@ -23,7 +23,7 @@ namespace FlavorCraveManagementSystem.Forms.Customer
 
             try
             {
-                string sql = "SELECT PhoneNumber FROM Users WHERE UserId = @UserId";
+                string sql = "SELECT Phone FROM Users WHERE UserId = @UserId";
                 using (SqlConnection conn = DatabaseHelper.GetConnection())
                 {
                     SqlCommand cmd = new SqlCommand(sql, conn);
@@ -62,7 +62,9 @@ namespace FlavorCraveManagementSystem.Forms.Customer
             {
                 string sql = @"
                     UPDATE Users
-                    SET FullName = @FullName, Email = @Email, PhoneNumber = @Phone
+                    SET FullName = @FullName,
+                    Email = @Email,
+                    Phone = @Phone
                     WHERE UserId = @UserId";
 
                 using (SqlConnection conn = DatabaseHelper.GetConnection())
