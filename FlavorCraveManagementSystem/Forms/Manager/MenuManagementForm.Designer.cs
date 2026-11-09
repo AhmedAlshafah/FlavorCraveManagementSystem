@@ -41,52 +41,66 @@
             label3 = new Label();
             label4 = new Label();
             btnActivate = new Button();
+            panel1 = new Panel();
+            label6 = new Label();
+            label5 = new Label();
+            label7 = new Label();
+            label8 = new Label();
+            groupBox1 = new GroupBox();
+            lblMenuStatusTitle = new Label();
+            lblMenuStatus = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvMenuItems).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudPrice).BeginInit();
+            panel1.SuspendLayout();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // dgvMenuItems
             // 
             dgvMenuItems.AllowUserToAddRows = false;
+            dgvMenuItems.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvMenuItems.BackgroundColor = Color.White;
+            dgvMenuItems.BorderStyle = BorderStyle.None;
             dgvMenuItems.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvMenuItems.Location = new Point(23, 41);
+            dgvMenuItems.Location = new Point(0, 138);
             dgvMenuItems.MultiSelect = false;
             dgvMenuItems.Name = "dgvMenuItems";
             dgvMenuItems.ReadOnly = true;
+            dgvMenuItems.RowHeadersVisible = false;
             dgvMenuItems.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvMenuItems.Size = new Size(765, 196);
+            dgvMenuItems.Size = new Size(934, 188);
             dgvMenuItems.TabIndex = 0;
             dgvMenuItems.CellClick += dgvMenuItems_CellClick;
             // 
             // txtMenuName
             // 
-            txtMenuName.Location = new Point(12, 268);
+            txtMenuName.Location = new Point(85, 38);
             txtMenuName.Name = "txtMenuName";
             txtMenuName.ReadOnly = true;
-            txtMenuName.Size = new Size(100, 23);
+            txtMenuName.Size = new Size(204, 25);
             txtMenuName.TabIndex = 1;
             // 
             // cmbCategory
             // 
             cmbCategory.FormattingEnabled = true;
-            cmbCategory.Location = new Point(141, 268);
+            cmbCategory.Location = new Point(85, 79);
             cmbCategory.Name = "cmbCategory";
-            cmbCategory.Size = new Size(121, 23);
+            cmbCategory.Size = new Size(204, 25);
             cmbCategory.TabIndex = 2;
             // 
             // nudPrice
             // 
             nudPrice.DecimalPlaces = 2;
-            nudPrice.Location = new Point(302, 267);
+            nudPrice.Location = new Point(410, 52);
             nudPrice.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
             nudPrice.Name = "nudPrice";
-            nudPrice.Size = new Size(120, 23);
+            nudPrice.Size = new Size(120, 25);
             nudPrice.TabIndex = 3;
             // 
             // chkIsAvailable
             // 
             chkIsAvailable.AutoSize = true;
-            chkIsAvailable.Location = new Point(446, 277);
+            chkIsAvailable.Location = new Point(410, 90);
             chkIsAvailable.Name = "chkIsAvailable";
             chkIsAvailable.Size = new Size(15, 14);
             chkIsAvailable.TabIndex = 4;
@@ -94,29 +108,37 @@
             // 
             // btnUpdate
             // 
-            btnUpdate.Location = new Point(23, 347);
+            btnUpdate.BackColor = Color.FromArgb(214, 165, 70);
+            btnUpdate.FlatAppearance.BorderSize = 0;
+            btnUpdate.FlatStyle = FlatStyle.Flat;
+            btnUpdate.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnUpdate.Location = new Point(732, 121);
             btnUpdate.Name = "btnUpdate";
-            btnUpdate.Size = new Size(75, 23);
+            btnUpdate.Size = new Size(137, 26);
             btnUpdate.TabIndex = 5;
-            btnUpdate.Text = "Update";
-            btnUpdate.UseVisualStyleBackColor = true;
+            btnUpdate.Text = "Update Menu";
+            btnUpdate.UseVisualStyleBackColor = false;
             btnUpdate.Click += btnUpdate_Click;
             // 
             // btnDeactivate
             // 
-            btnDeactivate.Location = new Point(23, 393);
+            btnDeactivate.BackColor = Color.Firebrick;
+            btnDeactivate.FlatAppearance.BorderSize = 0;
+            btnDeactivate.FlatStyle = FlatStyle.Flat;
+            btnDeactivate.ForeColor = Color.White;
+            btnDeactivate.Location = new Point(732, 72);
             btnDeactivate.Name = "btnDeactivate";
-            btnDeactivate.Size = new Size(75, 23);
+            btnDeactivate.Size = new Size(137, 26);
             btnDeactivate.TabIndex = 6;
             btnDeactivate.Text = "Deactivate";
-            btnDeactivate.UseVisualStyleBackColor = true;
+            btnDeactivate.UseVisualStyleBackColor = false;
             btnDeactivate.Click += btnDeactivate_Click;
             // 
             // btnRefresh
             // 
-            btnRefresh.Location = new Point(23, 308);
+            btnRefresh.Location = new Point(793, 496);
             btnRefresh.Name = "btnRefresh";
-            btnRefresh.Size = new Size(75, 23);
+            btnRefresh.Size = new Size(75, 26);
             btnRefresh.TabIndex = 7;
             btnRefresh.Text = "Refresh";
             btnRefresh.UseVisualStyleBackColor = true;
@@ -125,71 +147,168 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(12, 250);
+            label1.Location = new Point(6, 38);
             label1.Name = "label1";
-            label1.Size = new Size(65, 15);
+            label1.Size = new Size(52, 19);
             label1.TabIndex = 8;
-            label1.Text = "Menu Item";
+            label1.Text = "Name: ";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(141, 250);
+            label2.Location = new Point(6, 79);
             label2.Name = "label2";
-            label2.Size = new Size(55, 15);
+            label2.Size = new Size(68, 19);
             label2.TabIndex = 9;
-            label2.Text = "Category";
+            label2.Text = "Category:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(302, 250);
+            label3.Location = new Point(326, 52);
             label3.Name = "label3";
-            label3.Size = new Size(33, 15);
+            label3.Size = new Size(41, 19);
             label3.TabIndex = 10;
-            label3.Text = "Price";
+            label3.Text = "Price:";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(446, 250);
+            label4.Location = new Point(326, 85);
             label4.Name = "label4";
-            label4.Size = new Size(55, 15);
+            label4.Size = new Size(66, 19);
             label4.TabIndex = 11;
-            label4.Text = "Available";
+            label4.Text = "Available:";
             // 
             // btnActivate
             // 
-            btnActivate.Location = new Point(141, 393);
+            btnActivate.BackColor = Color.FromArgb(30, 70, 55);
+            btnActivate.FlatAppearance.BorderSize = 0;
+            btnActivate.FlatStyle = FlatStyle.Flat;
+            btnActivate.ForeColor = Color.White;
+            btnActivate.Location = new Point(732, 24);
             btnActivate.Name = "btnActivate";
-            btnActivate.Size = new Size(75, 23);
+            btnActivate.Size = new Size(137, 26);
             btnActivate.TabIndex = 12;
-            btnActivate.Text = "Active";
-            btnActivate.UseVisualStyleBackColor = true;
+            btnActivate.Text = "Activate";
+            btnActivate.UseVisualStyleBackColor = false;
             btnActivate.Click += btnActivate_Click;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(30, 70, 55);
+            panel1.Controls.Add(label6);
+            panel1.Controls.Add(label5);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(934, 65);
+            panel1.TabIndex = 13;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(667, 19);
+            label6.Name = "label6";
+            label6.Size = new Size(183, 21);
+            label6.TabIndex = 15;
+            label6.Text = "MENU MANAGEMENT ";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.White;
+            label5.Location = new Point(32, 19);
+            label5.Name = "label5";
+            label5.Size = new Size(188, 32);
+            label5.TabIndex = 14;
+            label5.Text = "FLAVOR CRAVE";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.Location = new Point(6, 68);
+            label7.Name = "label7";
+            label7.Size = new Size(289, 37);
+            label7.TabIndex = 14;
+            label7.Text = "Menu Management   ";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.ForeColor = Color.Gray;
+            label8.Location = new Point(6, 105);
+            label8.Name = "label8";
+            label8.Size = new Size(305, 19);
+            label8.TabIndex = 15;
+            label8.Text = "Manage menu pricing, category and availability  ";
+            label8.Click += label8_Click;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(lblMenuStatus);
+            groupBox1.Controls.Add(lblMenuStatusTitle);
+            groupBox1.Controls.Add(txtMenuName);
+            groupBox1.Controls.Add(label1);
+            groupBox1.Controls.Add(label2);
+            groupBox1.Controls.Add(cmbCategory);
+            groupBox1.Controls.Add(btnActivate);
+            groupBox1.Controls.Add(btnUpdate);
+            groupBox1.Controls.Add(label3);
+            groupBox1.Controls.Add(label4);
+            groupBox1.Controls.Add(btnDeactivate);
+            groupBox1.Controls.Add(nudPrice);
+            groupBox1.Controls.Add(chkIsAvailable);
+            groupBox1.Location = new Point(24, 332);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(910, 164);
+            groupBox1.TabIndex = 16;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Selected Menu Item  ";
+            // 
+            // lblMenuStatusTitle
+            // 
+            lblMenuStatusTitle.AutoSize = true;
+            lblMenuStatusTitle.Location = new Point(326, 126);
+            lblMenuStatusTitle.Name = "lblMenuStatusTitle";
+            lblMenuStatusTitle.Size = new Size(50, 19);
+            lblMenuStatusTitle.TabIndex = 13;
+            lblMenuStatusTitle.Text = "Status:";
+            // 
+            // lblMenuStatus
+            // 
+            lblMenuStatus.AutoSize = true;
+            lblMenuStatus.Location = new Point(410, 128);
+            lblMenuStatus.Name = "lblMenuStatus";
+            lblMenuStatus.Size = new Size(0, 19);
+            lblMenuStatus.TabIndex = 14;
             // 
             // MenuManagementForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(btnActivate);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            BackColor = Color.FromArgb(245, 245, 242);
+            ClientSize = new Size(934, 534);
+            Controls.Add(groupBox1);
+            Controls.Add(label8);
+            Controls.Add(label7);
+            Controls.Add(panel1);
             Controls.Add(btnRefresh);
-            Controls.Add(btnDeactivate);
-            Controls.Add(btnUpdate);
-            Controls.Add(chkIsAvailable);
-            Controls.Add(nudPrice);
-            Controls.Add(cmbCategory);
-            Controls.Add(txtMenuName);
             Controls.Add(dgvMenuItems);
+            Font = new Font("Segoe UI", 10F);
             Name = "MenuManagementForm";
-            Text = "MenuManagementForm";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Flavor Crave - Menu Management";
             ((System.ComponentModel.ISupportInitialize)dgvMenuItems).EndInit();
             ((System.ComponentModel.ISupportInitialize)nudPrice).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -209,5 +328,13 @@
         private Label label3;
         private Label label4;
         private Button btnActivate;
+        private Panel panel1;
+        private Label label6;
+        private Label label5;
+        private Label label7;
+        private Label label8;
+        private GroupBox groupBox1;
+        private Label lblMenuStatusTitle;
+        private Label lblMenuStatus;
     }
 }

@@ -86,6 +86,28 @@ namespace FlavorCraveManagementSystem.Forms.Manager
 
             chkIsAvailable.Checked =
                 Convert.ToBoolean(row.Cells["IsAvailable"].Value);
+
+            bool isActive =
+                Convert.ToBoolean(
+                    row.Cells["IsActive"].Value
+                );
+
+            if (isActive)
+            {
+                lblMenuStatus.Text = "ACTIVE";
+                lblMenuStatus.ForeColor = Color.DarkGreen;
+            }
+            else
+            {
+                lblMenuStatus.Text = "INACTIVE";
+                lblMenuStatus.ForeColor = Color.Firebrick;
+            }
+
+            lblMenuStatus.Font =
+                new Font(
+                    lblMenuStatus.Font,
+                    FontStyle.Bold
+                );
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -138,6 +160,8 @@ namespace FlavorCraveManagementSystem.Forms.Manager
                     "Failed to update menu item:\n\n" +
                     ex.Message
                 );
+
+
             }
         }
 
@@ -237,6 +261,11 @@ namespace FlavorCraveManagementSystem.Forms.Manager
                     ex.Message
                 );
             }
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

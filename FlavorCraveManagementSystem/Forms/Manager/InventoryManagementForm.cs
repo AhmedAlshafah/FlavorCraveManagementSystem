@@ -48,22 +48,49 @@ namespace FlavorCraveManagementSystem.Forms.Manager
                 return;
             }
 
-            DataGridViewRow row = dgvIngredients.Rows[e.RowIndex];
+            DataGridViewRow row =
+                dgvIngredients.Rows[e.RowIndex];
 
             selectedIngredientId =
-                Convert.ToInt32(row.Cells["IngredientId"].Value);
+                Convert.ToInt32(
+                    row.Cells["IngredientId"].Value
+                );
 
-            txtName.Text = row.Cells["Name"].Value.ToString();
-            txtUnit.Text = row.Cells["Unit"].Value.ToString();
+            txtName.Text =
+                row.Cells["Name"].Value.ToString();
+
+            txtUnit.Text =
+                row.Cells["Unit"].Value.ToString();
 
             nudQuantityInStock.Value =
-                Convert.ToDecimal(row.Cells["QuantityInStock"].Value);
+                Convert.ToDecimal(
+                    row.Cells["QuantityInStock"].Value
+                );
 
-            nudLowStockLevel.Value =
-                Convert.ToDecimal(row.Cells["LowStockLevel"].Value);
+            lblStockStatus.Text =
+                row.Cells["StockStatus"].Value.ToString();
 
-            chkIsActive.Checked =
-                Convert.ToBoolean(row.Cells["IsActive"].Value);
+            if (lblStockStatus.Text == "LOW STOCK")
+            {
+                lblStockStatus.ForeColor = Color.Firebrick;
+
+                lblStockStatus.Font =
+                    new Font(
+                        lblStockStatus.Font,
+                        FontStyle.Bold
+                    );
+            }
+            else
+            {
+                lblStockStatus.ForeColor = Color.DarkGreen;
+
+                lblStockStatus.Font =
+                    new Font(
+                        lblStockStatus.Font,
+                        FontStyle.Bold
+                    );
+            }
+
 
         }
 
@@ -99,6 +126,11 @@ namespace FlavorCraveManagementSystem.Forms.Manager
                     ex.Message
                 );
             }
+        }
+
+        private void Fill(object sender, DataGridViewAutoSizeColumnModeEventArgs e)
+        {
+
         }
     }
 }

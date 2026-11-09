@@ -164,8 +164,17 @@ private void btnGenerateReport_Click(object sender, EventArgs e)
         dgvSalesReport.DataSource = null;
         dgvSalesReport.DataSource = reportItems;
 
+        dgvSalesReport.Columns["OrderId"].HeaderText = "Order ID";
+        dgvSalesReport.Columns["OrderDate"].HeaderText = "Order Date";
+        dgvSalesReport.Columns["MenuItem"].HeaderText = "Menu Item";
+        dgvSalesReport.Columns["UnitPrice"].HeaderText = "Unit Price";
+        dgvSalesReport.Columns["SaleAmount"].HeaderText = "Sale Amount";
 
-        decimal totalSales = 0;
+        dgvSalesReport.Columns["UnitPrice"].DefaultCellStyle.Format = "N2";
+        dgvSalesReport.Columns["SaleAmount"].DefaultCellStyle.Format = "N2";
+
+
+                decimal totalSales = 0;
 
         int totalOrders = 0;
 
