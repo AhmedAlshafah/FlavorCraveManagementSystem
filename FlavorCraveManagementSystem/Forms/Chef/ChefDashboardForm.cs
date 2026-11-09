@@ -104,6 +104,16 @@ namespace FlavorCraveManagementSystem.Forms.Chef
             ChefProfileForm profileForm = new ChefProfileForm(loggedInUser);
             profileForm.ShowDialog();/
         }
+
+        private void dgvOrders_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void lblChefName_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

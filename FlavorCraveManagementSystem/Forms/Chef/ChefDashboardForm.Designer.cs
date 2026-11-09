@@ -34,19 +34,23 @@
             btnComplete = new Button();
             btnUpdateProfile = new Button();
             lblChefName = new Label();
+            panel1 = new Panel();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvOrders).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Century Schoolbook", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(334, 29);
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.WhiteSmoke;
+            label1.Location = new Point(787, 22);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(215, 30);
+            label1.Size = new Size(72, 32);
             label1.TabIndex = 0;
-            label1.Text = "Chef Dashboard";
+            label1.Text = "CHEF";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             label1.Click += label1_Click;
             // 
@@ -54,19 +58,20 @@
             // 
             dgvOrders.BackgroundColor = SystemColors.ButtonHighlight;
             dgvOrders.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvOrders.Location = new Point(229, 62);
+            dgvOrders.Location = new Point(220, 95);
             dgvOrders.Name = "dgvOrders";
             dgvOrders.RowHeadersWidth = 62;
             dgvOrders.Size = new Size(427, 241);
             dgvOrders.TabIndex = 1;
+            dgvOrders.CellContentClick += dgvOrders_CellContentClick;
             // 
             // btnInProgress
             // 
-            btnInProgress.BackColor = Color.IndianRed;
+            btnInProgress.BackColor = Color.FromArgb(30, 70, 55);
             btnInProgress.FlatStyle = FlatStyle.Popup;
             btnInProgress.Font = new Font("Segoe UI Black", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnInProgress.ForeColor = Color.Black;
-            btnInProgress.Location = new Point(313, 100);
+            btnInProgress.ForeColor = Color.WhiteSmoke;
+            btnInProgress.Location = new Point(306, 133);
             btnInProgress.Name = "btnInProgress";
             btnInProgress.Size = new Size(262, 38);
             btnInProgress.TabIndex = 2;
@@ -75,10 +80,11 @@
             // 
             // btnComplete
             // 
-            btnComplete.BackColor = Color.IndianRed;
+            btnComplete.BackColor = Color.FromArgb(30, 70, 55);
             btnComplete.FlatStyle = FlatStyle.Popup;
             btnComplete.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnComplete.Location = new Point(313, 159);
+            btnComplete.ForeColor = Color.WhiteSmoke;
+            btnComplete.Location = new Point(306, 198);
             btnComplete.Name = "btnComplete";
             btnComplete.Size = new Size(262, 34);
             btnComplete.TabIndex = 3;
@@ -88,10 +94,11 @@
             // 
             // btnUpdateProfile
             // 
-            btnUpdateProfile.BackColor = Color.IndianRed;
+            btnUpdateProfile.BackColor = Color.FromArgb(30, 70, 55);
             btnUpdateProfile.FlatStyle = FlatStyle.Popup;
             btnUpdateProfile.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnUpdateProfile.Location = new Point(313, 219);
+            btnUpdateProfile.ForeColor = Color.WhiteSmoke;
+            btnUpdateProfile.Location = new Point(306, 261);
             btnUpdateProfile.Name = "btnUpdateProfile";
             btnUpdateProfile.Size = new Size(262, 34);
             btnUpdateProfile.TabIndex = 4;
@@ -102,29 +109,54 @@
             // lblChefName
             // 
             lblChefName.AutoSize = true;
-            lblChefName.Location = new Point(367, 324);
+            lblChefName.Location = new Point(367, 372);
             lblChefName.Name = "lblChefName";
             lblChefName.Size = new Size(130, 25);
             lblChefName.TabIndex = 5;
             lblChefName.Text = "Welcome, Chef";
+            lblChefName.Click += lblChefName_Click;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(30, 70, 55);
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(label1);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(877, 70);
+            panel1.TabIndex = 6;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.WhiteSmoke;
+            label2.Location = new Point(12, 9);
+            label2.Name = "label2";
+            label2.Size = new Size(278, 48);
+            label2.TabIndex = 1;
+            label2.Text = "FLAVOR CRAVE";
             // 
             // ChefDashboardForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLightLight;
-            ClientSize = new Size(892, 454);
+            ClientSize = new Size(877, 499);
+            Controls.Add(panel1);
             Controls.Add(lblChefName);
             Controls.Add(btnUpdateProfile);
             Controls.Add(btnComplete);
             Controls.Add(btnInProgress);
             Controls.Add(dgvOrders);
-            Controls.Add(label1);
             Cursor = Cursors.Hand;
             Margin = new Padding(4, 5, 4, 5);
             Name = "ChefDashboardForm";
             Text = "Chef Dashboard";
             ((System.ComponentModel.ISupportInitialize)dgvOrders).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -137,5 +169,7 @@
         private Button btnComplete;
         private Button btnUpdateProfile;
         private Label lblChefName;
+        private Panel panel1;
+        private Label label2;
     }
 }
