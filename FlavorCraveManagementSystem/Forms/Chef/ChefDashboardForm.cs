@@ -102,7 +102,7 @@ namespace FlavorCraveManagementSystem.Forms.Chef
         {
             // Pass the loggedInUser to the new form and open it as a popup
             ChefProfileForm profileForm = new ChefProfileForm(loggedInUser);
-            profileForm.ShowDialog();/
+            profileForm.ShowDialog();
         }
 
         private void dgvOrders_CellContentClick(object sender, DataGridViewCellEventArgs e)
