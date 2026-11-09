@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using Microsoft.Data.SqlClient;
 using FlavorCraveManagementSystem.Data;
 using System.Data;
+using FlavorCraveManagementSystem.Services;
 
 namespace FlavorCraveManagementSystem.Forms.Manager
 {
@@ -15,6 +16,9 @@ namespace FlavorCraveManagementSystem.Forms.Manager
     {
 
         private int selectedMenuItemId = 0;
+
+        private readonly MenuService menuService =
+    new MenuService();
         public MenuManagementForm()
         {
             InitializeComponent();
@@ -25,58 +29,41 @@ namespace FlavorCraveManagementSystem.Forms.Manager
 
         private void LoadCategories()
         {
-            using SqlConnection connection = DatabaseHelper.GetConnection();
+            try
+            {
+                cmbCategory.DataSource = null;
 
-            connection.Open();
+                cmbCategory.DataSource =
+                    menuService.GetCategories();
 
-            string sql = @"
-        SELECT
-            CategoryId,
-            CategoryName
-        FROM MenuCategories
-        ORDER BY CategoryName";
-
-            using SqlDataAdapter adapter =
-                new SqlDataAdapter(sql, connection);
-
-            DataTable table = new DataTable();
-
-            adapter.Fill(table);
-
-            cmbCategory.DataSource = table;
-
-            cmbCategory.DisplayMember = "CategoryName";
-            cmbCategory.ValueMember = "CategoryId";
+                cmbCategory.DisplayMember = "CategoryName";
+                cmbCategory.ValueMember = "CategoryId";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Failed to load categories:\n\n" +
+                    ex.Message
+                );
+            }
         }
 
         private void LoadMenuItems()
         {
-            using SqlConnection connection = DatabaseHelper.GetConnection();
+            try
+            {
+                dgvMenuItems.DataSource = null;
 
-            connection.Open();
-
-            string sql = @"
-        SELECT
-            m.MenuItemId,
-            m.Name,
-            m.CategoryId,
-            c.CategoryName,
-            m.Price,
-            m.IsAvailable,
-            m.IsActive
-        FROM MenuItems m
-        INNER JOIN MenuCategories c
-            ON m.CategoryId = c.CategoryId
-        ORDER BY m.Name";
-
-            using SqlDataAdapter adapter =
-                new SqlDataAdapter(sql, connection);
-
-            DataTable table = new DataTable();
-
-            adapter.Fill(table);
-
-            dgvMenuItems.DataSource = table;
+                dgvMenuItems.DataSource =
+                    menuService.GetMenuItems();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Failed to load menu items:\n\n" +
+                    ex.Message
+                );
+            }
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
@@ -114,68 +101,51 @@ namespace FlavorCraveManagementSystem.Forms.Manager
         {
             if (selectedMenuItemId == 0)
             {
-                MessageBox.Show("Please select a menu item first.");
+                MessageBox.Show(
+                    "Please select a menu item first."
+                );
+
                 return;
             }
 
             if (cmbCategory.SelectedValue == null)
             {
-                MessageBox.Show("Please select a category.");
+                MessageBox.Show(
+                    "Please select a category."
+                );
+
                 return;
             }
 
             if (nudPrice.Value <= 0)
             {
-                MessageBox.Show("Price must be greater than 0.");
+                MessageBox.Show(
+                    "Price must be greater than 0."
+                );
+
                 return;
             }
 
             try
             {
-                using SqlConnection connection = DatabaseHelper.GetConnection();
-
-                connection.Open();
-
-                string sql = @"
-            UPDATE MenuItems
-            SET
-                CategoryId = @CategoryId,
-                Price = @Price,
-                IsAvailable = @IsAvailable
-            WHERE MenuItemId = @MenuItemId";
-
-                using SqlCommand command = new SqlCommand(sql, connection);
-
-                command.Parameters.AddWithValue(
-                    "@CategoryId",
-                    Convert.ToInt32(cmbCategory.SelectedValue)
-                );
-
-                command.Parameters.AddWithValue(
-                    "@Price",
-                    nudPrice.Value
-                );
-
-                command.Parameters.AddWithValue(
-                    "@IsAvailable",
+                menuService.UpdateMenuItem(
+                    selectedMenuItemId,
+                    Convert.ToInt32(cmbCategory.SelectedValue),
+                    nudPrice.Value,
                     chkIsAvailable.Checked
                 );
 
-                command.Parameters.AddWithValue(
-                    "@MenuItemId",
-                    selectedMenuItemId
+                MessageBox.Show(
+                    "Menu item updated successfully."
                 );
-
-                command.ExecuteNonQuery();
-
-                MessageBox.Show("Menu item updated successfully.");
 
                 LoadMenuItems();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(
-                    "Failed to update menu item:\n\n" + ex.Message
+                    "Failed to update menu item:\n\n" +
+                    ex.Message
                 );
             }
         }
@@ -184,7 +154,10 @@ namespace FlavorCraveManagementSystem.Forms.Manager
         {
             if (selectedMenuItemId == 0)
             {
-                MessageBox.Show("Please select a menu item first.");
+                MessageBox.Show(
+                    "Please select a menu item first."
+                );
+
                 return;
             }
 
@@ -202,27 +175,13 @@ namespace FlavorCraveManagementSystem.Forms.Manager
 
             try
             {
-                using SqlConnection connection = DatabaseHelper.GetConnection();
-
-                connection.Open();
-
-                string sql = @"
-            UPDATE MenuItems
-            SET
-                IsActive = 0,
-                IsAvailable = 0
-            WHERE MenuItemId = @MenuItemId";
-
-                using SqlCommand command = new SqlCommand(sql, connection);
-
-                command.Parameters.AddWithValue(
-                    "@MenuItemId",
+                menuService.DeactivateMenuItem(
                     selectedMenuItemId
                 );
 
-                command.ExecuteNonQuery();
-
-                MessageBox.Show("Menu item deactivated successfully.");
+                MessageBox.Show(
+                    "Menu item deactivated successfully."
+                );
 
                 selectedMenuItemId = 0;
 
@@ -231,7 +190,8 @@ namespace FlavorCraveManagementSystem.Forms.Manager
             catch (Exception ex)
             {
                 MessageBox.Show(
-                    "Failed to deactivate menu item:\n\n" + ex.Message
+                    "Failed to deactivate menu item:\n\n" +
+                    ex.Message
                 );
             }
         }
@@ -240,58 +200,50 @@ namespace FlavorCraveManagementSystem.Forms.Manager
         {
             if (selectedMenuItemId == 0)
             {
-                MessageBox.Show("Please select a menu item first.");
+                MessageBox.Show(
+                    "Please select a menu item first."
+                );
+
+                return;
+            }
+
+            if (cmbCategory.SelectedValue == null)
+            {
+                MessageBox.Show(
+                    "Please select a category."
+                );
+
                 return;
             }
 
             if (nudPrice.Value <= 0)
             {
-                MessageBox.Show("Price must be greater than 0.");
+                MessageBox.Show(
+                    "Price must be greater than 0."
+                );
+
                 return;
             }
 
             try
             {
-                using SqlConnection connection = DatabaseHelper.GetConnection();
-
-                connection.Open();
-
-                string sql = @"
-            UPDATE MenuItems
-            SET
-                IsActive = 1,
-                IsAvailable = 1,
-                CategoryId = @CategoryId,
-                Price = @Price
-            WHERE MenuItemId = @MenuItemId";
-
-                using SqlCommand command = new SqlCommand(sql, connection);
-
-                command.Parameters.AddWithValue(
-                    "@CategoryId",
-                    Convert.ToInt32(cmbCategory.SelectedValue)
-                );
-
-                command.Parameters.AddWithValue(
-                    "@Price",
+                menuService.ActivateMenuItem(
+                    selectedMenuItemId,
+                    Convert.ToInt32(cmbCategory.SelectedValue),
                     nudPrice.Value
                 );
 
-                command.Parameters.AddWithValue(
-                    "@MenuItemId",
-                    selectedMenuItemId
+                MessageBox.Show(
+                    "Menu item activated successfully."
                 );
-
-                command.ExecuteNonQuery();
-
-                MessageBox.Show("Menu item activated successfully.");
 
                 LoadMenuItems();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(
-                    "Failed to activate menu item:\n\n" + ex.Message
+                    "Failed to activate menu item:\n\n" +
+                    ex.Message
                 );
             }
         }
