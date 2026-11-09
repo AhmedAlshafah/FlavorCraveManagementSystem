@@ -2,12 +2,16 @@
 using System.Data;
 using Microsoft.Data.SqlClient;
 using FlavorCraveManagementSystem.Data;
+using FlavorCraveManagementSystem.Services;
 
 namespace FlavorCraveManagementSystem.Forms.Manager
 {
     public partial class InventoryManagementForm : Form
     {
         private int selectedIngredientId = 0;
+
+        private readonly InventoryService inventoryService =
+    new InventoryService();
         public InventoryManagementForm()
         {
             InitializeComponent();
@@ -16,33 +20,20 @@ namespace FlavorCraveManagementSystem.Forms.Manager
 
         private void LoadIngredients()
         {
-            using SqlConnection connection = DatabaseHelper.GetConnection();
+            try
+            {
+                dgvIngredients.DataSource = null;
 
-            connection.Open();
-
-            string sql = @"
-        SELECT
-        IngredientId,
-        Name,
-        Unit,
-        QuantityInStock,
-        LowStockLevel,
-        IsActive,
-        CASE
-            WHEN QuantityInStock <= LowStockLevel
-                THEN 'LOW STOCK'
-            ELSE 'OK'
-        END AS StockStatus
-    FROM Ingredients
-    ORDER BY Name";
-
-            using SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
-
-            DataTable table = new DataTable();
-
-            adapter.Fill(table);
-
-            dgvIngredients.DataSource = table;
+                dgvIngredients.DataSource =
+                    inventoryService.GetIngredients();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Failed to load ingredients:\n\n" +
+                    ex.Message
+                );
+            }
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
@@ -80,50 +71,32 @@ namespace FlavorCraveManagementSystem.Forms.Manager
         {
             if (selectedIngredientId == 0)
             {
-                MessageBox.Show("Please select an ingredient first.");
+                MessageBox.Show(
+                    "Please select an ingredient first."
+                );
+
                 return;
             }
 
             try
             {
-                using SqlConnection connection = DatabaseHelper.GetConnection();
-
-                connection.Open();
-
-                string sql = @"
-            UPDATE Ingredients
-            SET
-                QuantityInStock = @QuantityInStock,
-                LowStockLevel = @LowStockLevel
-            WHERE IngredientId = @IngredientId";
-
-                using SqlCommand command = new SqlCommand(sql, connection);
-
-                command.Parameters.AddWithValue(
-                    "@QuantityInStock",
-                    nudQuantityInStock.Value
-                );
-
-                command.Parameters.AddWithValue(
-                    "@LowStockLevel",
+                inventoryService.UpdateInventory(
+                    selectedIngredientId,
+                    nudQuantityInStock.Value,
                     nudLowStockLevel.Value
                 );
 
-                command.Parameters.AddWithValue(
-                    "@IngredientId",
-                    selectedIngredientId
+                MessageBox.Show(
+                    "Ingredient inventory updated successfully."
                 );
-
-                command.ExecuteNonQuery();
-
-                MessageBox.Show("Ingredient inventory updated successfully.");
 
                 LoadIngredients();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(
-                    "Failed to update ingredient:\n\n" + ex.Message
+                    "Failed to update ingredient:\n\n" +
+                    ex.Message
                 );
             }
         }
