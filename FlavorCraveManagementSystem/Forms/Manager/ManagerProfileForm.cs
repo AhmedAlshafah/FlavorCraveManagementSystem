@@ -1,20 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
+﻿
+using FlavorCraveManagementSystem.Services;
 
 using FlavorCraveManagementSystem.Models;
-using FlavorCraveManagementSystem.Data;
-using Microsoft.Data.SqlClient;
+
 
 namespace FlavorCraveManagementSystem.Forms.Manager
 {
     public partial class ManagerProfileForm : Form
     {
         private User loggedInUser;
+        private readonly ProfileService profileService =
+          new ProfileService();
         public ManagerProfileForm(User user)
         {
             InitializeComponent();
@@ -28,37 +24,16 @@ namespace FlavorCraveManagementSystem.Forms.Manager
         {
             try
             {
-                using SqlConnection connection = DatabaseHelper.GetConnection();
+                User? user =
+                    profileService.GetUserById(
+                        loggedInUser.UserId
+                    );
 
-                connection.Open();
-
-                string sql = @"
-            SELECT
-                FullName,
-                Email,
-                Phone
-            FROM Users
-            WHERE UserId = @UserId";
-
-                using SqlCommand command = new SqlCommand(sql, connection);
-
-                command.Parameters.AddWithValue(
-                    "@UserId",
-                    loggedInUser.UserId
-                );
-
-                using SqlDataReader reader = command.ExecuteReader();
-
-                if (reader.Read())
+                if (user != null)
                 {
-                    txtFullName.Text =
-                        reader["FullName"].ToString();
-
-                    txtEmail.Text =
-                        reader["Email"].ToString();
-
-                    txtPhone.Text =
-                        reader["Phone"].ToString();
+                    txtFullName.Text = user.FullName;
+                    txtEmail.Text = user.Email;
+                    txtPhone.Text = user.Phone;
                 }
             }
             catch (Exception ex)
@@ -78,53 +53,49 @@ namespace FlavorCraveManagementSystem.Forms.Manager
             form.ShowDialog();
         }
 
-        private void btnUpdateProfile_Click(object sender, EventArgs e)
+        private void btnUpdateProfile_Click(
+            object sender,
+            EventArgs e)
         {
-            string fullName = txtFullName.Text.Trim();
-            string email = txtEmail.Text.Trim();
-            string phone = txtPhone.Text.Trim();
+            string fullName =
+                txtFullName.Text.Trim();
+
+            string email =
+                txtEmail.Text.Trim();
+
+            string phone =
+                txtPhone.Text.Trim();
+
 
             if (fullName == "")
             {
-                MessageBox.Show("Please enter your full name.");
+                MessageBox.Show(
+                    "Please enter your full name."
+                );
+
                 return;
             }
+
 
             if (email == "")
             {
-                MessageBox.Show("Please enter your email.");
+                MessageBox.Show(
+                    "Please enter your email."
+                );
+
                 return;
             }
 
+
             try
             {
-                using SqlConnection connection = DatabaseHelper.GetConnection();
-                connection.Open();
+                bool emailUsed =
+                    profileService.IsEmailUsedByAnotherUser(
+                        email,
+                        loggedInUser.UserId
+                    );
 
-                // Check whether another user already uses this email
-                string checkEmailSql = @"
-            SELECT COUNT(*)
-            FROM Users
-            WHERE Email = @Email
-              AND UserId <> @UserId";
-
-                using SqlCommand checkCommand =
-                    new SqlCommand(checkEmailSql, connection);
-
-                checkCommand.Parameters.AddWithValue(
-                    "@Email",
-                    email
-                );
-
-                checkCommand.Parameters.AddWithValue(
-                    "@UserId",
-                    loggedInUser.UserId
-                );
-
-                int emailCount =
-                    Convert.ToInt32(checkCommand.ExecuteScalar());
-
-                if (emailCount > 0)
+                if (emailUsed)
                 {
                     MessageBox.Show(
                         "This email is already being used by another user."
@@ -134,40 +105,13 @@ namespace FlavorCraveManagementSystem.Forms.Manager
                 }
 
 
-                string updateSql = @"
-            UPDATE Users
-            SET
-                FullName = @FullName,
-                Email = @Email,
-                Phone = @Phone
-            WHERE UserId = @UserId";
-
-                using SqlCommand updateCommand =
-                    new SqlCommand(updateSql, connection);
-
-                updateCommand.Parameters.AddWithValue(
-                    "@FullName",
-                    fullName
+                profileService.UpdateProfile(
+                    loggedInUser.UserId,
+                    fullName,
+                    email,
+                    phone
                 );
 
-                updateCommand.Parameters.AddWithValue(
-                    "@Email",
-                    email
-                );
-
-                updateCommand.Parameters.AddWithValue(
-                    "@Phone",
-                    string.IsNullOrWhiteSpace(phone)
-                        ? DBNull.Value
-                        : phone
-                );
-
-                updateCommand.Parameters.AddWithValue(
-                    "@UserId",
-                    loggedInUser.UserId
-                );
-
-                updateCommand.ExecuteNonQuery();
 
                 MessageBox.Show(
                     "Profile updated successfully."
