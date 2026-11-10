@@ -17,87 +17,125 @@
 
         private void InitializeComponent()
         {
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.dgvOrders = new System.Windows.Forms.DataGridView();
-            this.btnCancelOrder = new System.Windows.Forms.Button();
-            this.btnRefresh = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).BeginInit();
-            this.SuspendLayout();
+            lblTitle = new Label();
+            dgvOrders = new DataGridView();
+            btnCancelOrder = new Button();
+            btnRefresh = new Button();
+            btnClose = new Button();
+            panel1 = new Panel();
+            label1 = new Label();
+            ((System.ComponentModel.ISupportInitialize)dgvOrders).BeginInit();
+            panel1.SuspendLayout();
+            SuspendLayout();
             // 
             // lblTitle
             // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.lblTitle.Location = new System.Drawing.Point(20, 20);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(220, 32);
-            this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "My Order History";
+            lblTitle.AutoSize = true;
+            lblTitle.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTitle.ForeColor = Color.White;
+            lblTitle.Location = new Point(1340, 73);
+            lblTitle.Margin = new Padding(5, 0, 5, 0);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(265, 45);
+            lblTitle.TabIndex = 0;
+            lblTitle.Text = "My Order History";
             // 
             // dgvOrders
             // 
-            this.dgvOrders.AllowUserToAddRows = false;
-            this.dgvOrders.AllowUserToDeleteRows = false;
-            this.dgvOrders.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOrders.Location = new System.Drawing.Point(20, 70);
-            this.dgvOrders.Name = "dgvOrders";
-            this.dgvOrders.ReadOnly = true;
-            this.dgvOrders.RowHeadersVisible = false;
-            this.dgvOrders.RowHeadersWidth = 51;
-            this.dgvOrders.Size = new System.Drawing.Size(800, 450);
-            this.dgvOrders.TabIndex = 1;
+            dgvOrders.AllowUserToAddRows = false;
+            dgvOrders.AllowUserToDeleteRows = false;
+            dgvOrders.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvOrders.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvOrders.Location = new Point(180, 203);
+            dgvOrders.Margin = new Padding(5, 6, 5, 6);
+            dgvOrders.Name = "dgvOrders";
+            dgvOrders.ReadOnly = true;
+            dgvOrders.RowHeadersVisible = false;
+            dgvOrders.RowHeadersWidth = 51;
+            dgvOrders.Size = new Size(1400, 822);
+            dgvOrders.TabIndex = 1;
             // 
             // btnCancelOrder
             // 
-            this.btnCancelOrder.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.btnCancelOrder.Location = new System.Drawing.Point(20, 540);
-            this.btnCancelOrder.Name = "btnCancelOrder";
-            this.btnCancelOrder.Size = new System.Drawing.Size(200, 45);
-            this.btnCancelOrder.TabIndex = 2;
-            this.btnCancelOrder.Text = "Cancel Selected Order";
-            this.btnCancelOrder.UseVisualStyleBackColor = true;
-            this.btnCancelOrder.Click += new System.EventHandler(this.btnCancelOrder_Click);
+            btnCancelOrder.BackColor = Color.FromArgb(255, 192, 128);
+            btnCancelOrder.Font = new Font("Segoe UI", 10.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCancelOrder.Location = new Point(148, 1064);
+            btnCancelOrder.Margin = new Padding(5, 6, 5, 6);
+            btnCancelOrder.Name = "btnCancelOrder";
+            btnCancelOrder.Size = new Size(350, 87);
+            btnCancelOrder.TabIndex = 2;
+            btnCancelOrder.Text = "Cancel Selected Order";
+            btnCancelOrder.UseVisualStyleBackColor = false;
+            btnCancelOrder.Click += btnCancelOrder_Click;
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.btnRefresh.Location = new System.Drawing.Point(240, 540);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(150, 45);
-            this.btnRefresh.TabIndex = 3;
-            this.btnRefresh.Text = "Refresh";
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            btnRefresh.BackColor = Color.FromArgb(255, 192, 128);
+            btnRefresh.Font = new Font("Segoe UI", 10.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRefresh.Location = new Point(746, 1064);
+            btnRefresh.Margin = new Padding(5, 6, 5, 6);
+            btnRefresh.Name = "btnRefresh";
+            btnRefresh.Size = new Size(262, 87);
+            btnRefresh.TabIndex = 3;
+            btnRefresh.Text = "Refresh";
+            btnRefresh.UseVisualStyleBackColor = false;
+            btnRefresh.Click += btnRefresh_Click;
             // 
             // btnClose
             // 
-            this.btnClose.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.btnClose.Location = new System.Drawing.Point(670, 540);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(150, 45);
-            this.btnClose.TabIndex = 4;
-            this.btnClose.Text = "Close";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            btnClose.BackColor = Color.FromArgb(255, 192, 128);
+            btnClose.Font = new Font("Segoe UI", 10.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnClose.Location = new Point(1292, 1064);
+            btnClose.Margin = new Padding(5, 6, 5, 6);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(262, 87);
+            btnClose.TabIndex = 4;
+            btnClose.Text = "Close";
+            btnClose.UseVisualStyleBackColor = false;
+            btnClose.Click += btnClose_Click;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(30, 70, 55);
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(lblTitle);
+            panel1.Dock = DockStyle.Top;
+            panel1.ForeColor = SystemColors.ControlDarkDark;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1779, 194);
+            panel1.TabIndex = 5;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(123, 73);
+            label1.Name = "label1";
+            label1.Size = new Size(310, 54);
+            label1.TabIndex = 1;
+            label1.Text = "FLAVOR CRAVE";
+            label1.Click += label1_Click;
             // 
             // OrderHistoryForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(850, 610);
-            this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.btnRefresh);
-            this.Controls.Add(this.btnCancelOrder);
-            this.Controls.Add(this.dgvOrders);
-            this.Controls.Add(this.lblTitle);
-            this.Name = "OrderHistoryForm";
-            this.Text = "My Orders";
-            this.Load += new System.EventHandler(this.OrderHistoryForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new SizeF(14F, 31F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1779, 1182);
+            Controls.Add(panel1);
+            Controls.Add(btnClose);
+            Controls.Add(btnRefresh);
+            Controls.Add(btnCancelOrder);
+            Controls.Add(dgvOrders);
+            Margin = new Padding(5, 6, 5, 6);
+            Name = "OrderHistoryForm";
+            Text = "My Orders";
+            Load += OrderHistoryForm_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvOrders).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion
@@ -107,5 +145,7 @@
         private System.Windows.Forms.Button btnCancelOrder;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnClose;
+        private Panel panel1;
+        private Label label1;
     }
 }

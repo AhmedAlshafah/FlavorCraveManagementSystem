@@ -17,7 +17,7 @@ namespace FlavorCraveManagementSystem.Forms.Customer
 
         private void ProfileForm_Load(object sender, EventArgs e)
         {
-            
+
             txtFullName.Text = loggedInUser.FullName;
             txtEmail.Text = loggedInUser.Email;
 
@@ -78,7 +78,7 @@ namespace FlavorCraveManagementSystem.Forms.Customer
                     int rows = cmd.ExecuteNonQuery();
                     if (rows > 0)
                     {
-                        
+
                         loggedInUser.FullName = txtFullName.Text.Trim();
                         loggedInUser.Email = txtEmail.Text.Trim();
                         MessageBox.Show("Profile updated successfully!");
@@ -98,6 +98,11 @@ namespace FlavorCraveManagementSystem.Forms.Customer
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

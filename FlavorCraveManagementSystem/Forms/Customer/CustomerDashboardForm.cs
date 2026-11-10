@@ -152,7 +152,7 @@ namespace FlavorCraveManagementSystem.Forms.Customer
         private void btnPlaceOrder_Click(object sender, EventArgs e)
         {
 
-        
+
             if (dgvMenuItems.CurrentRow == null ||
                 dgvMenuItems.CurrentRow.IsNewRow)
             {
@@ -397,5 +397,24 @@ namespace FlavorCraveManagementSystem.Forms.Customer
             }
         }
 
+        private void lblWelcomeMessage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labe_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblWalletBalance_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvMenuItems_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

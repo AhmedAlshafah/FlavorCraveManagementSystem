@@ -17,90 +17,128 @@
 
         private void InitializeComponent()
         {
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.lblCurrentBalance = new System.Windows.Forms.Label();
-            this.lblAmount = new System.Windows.Forms.Label();
-            this.txtAmount = new System.Windows.Forms.TextBox();
-            this.btnTopUp = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            lblTitle = new Label();
+            lblCurrentBalance = new Label();
+            lblAmount = new Label();
+            txtAmount = new TextBox();
+            btnTopUp = new Button();
+            btnClose = new Button();
+            panel1 = new Panel();
+            label1 = new Label();
+            panel1.SuspendLayout();
+            SuspendLayout();
             // 
             // lblTitle
             // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.lblTitle.Location = new System.Drawing.Point(30, 25);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(250, 32);
-            this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "E-Wallet Top Up";
+            lblTitle.AutoSize = true;
+            lblTitle.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTitle.ForeColor = Color.White;
+            lblTitle.Location = new Point(728, 45);
+            lblTitle.Margin = new Padding(5, 0, 5, 0);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(249, 45);
+            lblTitle.TabIndex = 0;
+            lblTitle.Text = "E-Wallet Top Up";
+            lblTitle.Click += lblTitle_Click;
             // 
             // lblCurrentBalance
             // 
-            this.lblCurrentBalance.AutoSize = true;
-            this.lblCurrentBalance.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.lblCurrentBalance.Location = new System.Drawing.Point(30, 80);
-            this.lblCurrentBalance.Name = "lblCurrentBalance";
-            this.lblCurrentBalance.Size = new System.Drawing.Size(250, 25);
-            this.lblCurrentBalance.TabIndex = 1;
-            this.lblCurrentBalance.Text = "Current Balance: RM 0.00";
+            lblCurrentBalance.AutoSize = true;
+            lblCurrentBalance.Font = new Font("Segoe UI", 11F);
+            lblCurrentBalance.Location = new Point(295, 360);
+            lblCurrentBalance.Margin = new Padding(5, 0, 5, 0);
+            lblCurrentBalance.Name = "lblCurrentBalance";
+            lblCurrentBalance.Size = new Size(349, 41);
+            lblCurrentBalance.TabIndex = 1;
+            lblCurrentBalance.Text = "Current Balance: RM 0.00";
             // 
             // lblAmount
             // 
-            this.lblAmount.AutoSize = true;
-            this.lblAmount.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.lblAmount.Location = new System.Drawing.Point(30, 140);
-            this.lblAmount.Name = "lblAmount";
-            this.lblAmount.Size = new System.Drawing.Size(150, 25);
-            this.lblAmount.TabIndex = 2;
-            this.lblAmount.Text = "Top Up Amount:";
+            lblAmount.AutoSize = true;
+            lblAmount.Font = new Font("Segoe UI", 11F);
+            lblAmount.Location = new Point(161, 228);
+            lblAmount.Margin = new Padding(5, 0, 5, 0);
+            lblAmount.Name = "lblAmount";
+            lblAmount.Size = new Size(236, 41);
+            lblAmount.TabIndex = 2;
+            lblAmount.Text = "Top Up Amount:";
             // 
             // txtAmount
             // 
-            this.txtAmount.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.txtAmount.Location = new System.Drawing.Point(200, 137);
-            this.txtAmount.Name = "txtAmount";
-            this.txtAmount.Size = new System.Drawing.Size(200, 32);
-            this.txtAmount.TabIndex = 3;
+            txtAmount.Font = new Font("Segoe UI", 11F);
+            txtAmount.Location = new Point(530, 222);
+            txtAmount.Margin = new Padding(5, 6, 5, 6);
+            txtAmount.Name = "txtAmount";
+            txtAmount.Size = new Size(347, 47);
+            txtAmount.TabIndex = 3;
             // 
             // btnTopUp
             // 
-            this.btnTopUp.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.btnTopUp.Location = new System.Drawing.Point(30, 210);
-            this.btnTopUp.Name = "btnTopUp";
-            this.btnTopUp.Size = new System.Drawing.Size(160, 45);
-            this.btnTopUp.TabIndex = 4;
-            this.btnTopUp.Text = "Confirm Top Up";
-            this.btnTopUp.UseVisualStyleBackColor = true;
-            this.btnTopUp.Click += new System.EventHandler(this.btnTopUp_Click);
+            btnTopUp.BackColor = Color.FromArgb(255, 192, 128);
+            btnTopUp.Font = new Font("Segoe UI", 10.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnTopUp.Location = new Point(161, 477);
+            btnTopUp.Margin = new Padding(5, 6, 5, 6);
+            btnTopUp.Name = "btnTopUp";
+            btnTopUp.Size = new Size(280, 87);
+            btnTopUp.TabIndex = 4;
+            btnTopUp.Text = "Confirm Top Up";
+            btnTopUp.UseVisualStyleBackColor = false;
+            btnTopUp.Click += btnTopUp_Click;
             // 
             // btnClose
             // 
-            this.btnClose.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.btnClose.Location = new System.Drawing.Point(240, 210);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(160, 45);
-            this.btnClose.TabIndex = 5;
-            this.btnClose.Text = "Close";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            btnClose.BackColor = Color.FromArgb(255, 192, 128);
+            btnClose.Font = new Font("Segoe UI", 10.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnClose.Location = new Point(549, 477);
+            btnClose.Margin = new Padding(5, 6, 5, 6);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(280, 87);
+            btnClose.TabIndex = 5;
+            btnClose.Text = "Close";
+            btnClose.UseVisualStyleBackColor = false;
+            btnClose.Click += btnClose_Click;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(30, 70, 55);
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(lblTitle);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1074, 132);
+            panel1.TabIndex = 6;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 16.125F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(43, 34);
+            label1.Name = "label1";
+            label1.Size = new Size(335, 59);
+            label1.TabIndex = 1;
+            label1.Text = "FLAVOR CRAVE";
             // 
             // EWalletForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(450, 300);
-            this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.btnTopUp);
-            this.Controls.Add(this.txtAmount);
-            this.Controls.Add(this.lblAmount);
-            this.Controls.Add(this.lblCurrentBalance);
-            this.Controls.Add(this.lblTitle);
-            this.Name = "EWalletForm";
-            this.Text = "E-Wallet";
-            this.Load += new System.EventHandler(this.EWalletForm_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new SizeF(14F, 31F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1074, 679);
+            Controls.Add(panel1);
+            Controls.Add(btnClose);
+            Controls.Add(btnTopUp);
+            Controls.Add(txtAmount);
+            Controls.Add(lblAmount);
+            Controls.Add(lblCurrentBalance);
+            Margin = new Padding(5, 6, 5, 6);
+            Name = "EWalletForm";
+            Text = "E-Wallet";
+            Load += EWalletForm_Load;
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -111,5 +149,7 @@
         private System.Windows.Forms.TextBox txtAmount;
         private System.Windows.Forms.Button btnTopUp;
         private System.Windows.Forms.Button btnClose;
+        private Panel panel1;
+        private Label label1;
     }
 }

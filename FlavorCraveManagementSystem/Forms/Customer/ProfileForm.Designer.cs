@@ -17,122 +17,164 @@
 
         private void InitializeComponent()
         {
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.lblFullName = new System.Windows.Forms.Label();
-            this.txtFullName = new System.Windows.Forms.TextBox();
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.lblPhone = new System.Windows.Forms.Label();
-            this.txtPhone = new System.Windows.Forms.TextBox();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            lblTitle = new Label();
+            lblFullName = new Label();
+            txtFullName = new TextBox();
+            lblEmail = new Label();
+            txtEmail = new TextBox();
+            lblPhone = new Label();
+            txtPhone = new TextBox();
+            btnSave = new Button();
+            btnClose = new Button();
+            panel1 = new Panel();
+            label1 = new Label();
+            panel1.SuspendLayout();
+            SuspendLayout();
             // 
             // lblTitle
             // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.lblTitle.Location = new System.Drawing.Point(30, 25);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(200, 32);
-            this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "My Profile";
+            lblTitle.AutoSize = true;
+            lblTitle.Font = new Font("Segoe UI", 10.125F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTitle.ForeColor = Color.White;
+            lblTitle.Location = new Point(617, 42);
+            lblTitle.Margin = new Padding(5, 0, 5, 0);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(137, 37);
+            lblTitle.TabIndex = 0;
+            lblTitle.Text = "My Profile";
             // 
             // lblFullName
             // 
-            this.lblFullName.AutoSize = true;
-            this.lblFullName.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.lblFullName.Location = new System.Drawing.Point(30, 90);
-            this.lblFullName.Name = "lblFullName";
-            this.lblFullName.Size = new System.Drawing.Size(100, 25);
-            this.lblFullName.TabIndex = 1;
-            this.lblFullName.Text = "Full Name:";
+            lblFullName.AutoSize = true;
+            lblFullName.Font = new Font("Segoe UI", 11F);
+            lblFullName.Location = new Point(52, 174);
+            lblFullName.Margin = new Padding(5, 0, 5, 0);
+            lblFullName.Name = "lblFullName";
+            lblFullName.Size = new Size(158, 41);
+            lblFullName.TabIndex = 1;
+            lblFullName.Text = "Full Name:";
             // 
             // txtFullName
             // 
-            this.txtFullName.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.txtFullName.Location = new System.Drawing.Point(180, 87);
-            this.txtFullName.Name = "txtFullName";
-            this.txtFullName.Size = new System.Drawing.Size(280, 32);
-            this.txtFullName.TabIndex = 2;
+            txtFullName.Font = new Font("Segoe UI", 11F);
+            txtFullName.Location = new Point(315, 169);
+            txtFullName.Margin = new Padding(5, 6, 5, 6);
+            txtFullName.Name = "txtFullName";
+            txtFullName.Size = new Size(487, 47);
+            txtFullName.TabIndex = 2;
             // 
             // lblEmail
             // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.lblEmail.Location = new System.Drawing.Point(30, 150);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(60, 25);
-            this.lblEmail.TabIndex = 3;
-            this.lblEmail.Text = "Email:";
+            lblEmail.AutoSize = true;
+            lblEmail.Font = new Font("Segoe UI", 11F);
+            lblEmail.Location = new Point(52, 291);
+            lblEmail.Margin = new Padding(5, 0, 5, 0);
+            lblEmail.Name = "lblEmail";
+            lblEmail.Size = new Size(95, 41);
+            lblEmail.TabIndex = 3;
+            lblEmail.Text = "Email:";
             // 
             // txtEmail
             // 
-            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.txtEmail.Location = new System.Drawing.Point(180, 147);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(280, 32);
-            this.txtEmail.TabIndex = 4;
+            txtEmail.Font = new Font("Segoe UI", 11F);
+            txtEmail.Location = new Point(315, 285);
+            txtEmail.Margin = new Padding(5, 6, 5, 6);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(487, 47);
+            txtEmail.TabIndex = 4;
             // 
             // lblPhone
             // 
-            this.lblPhone.AutoSize = true;
-            this.lblPhone.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.lblPhone.Location = new System.Drawing.Point(30, 210);
-            this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(90, 25);
-            this.lblPhone.TabIndex = 5;
-            this.lblPhone.Text = "Phone No:";
+            lblPhone.AutoSize = true;
+            lblPhone.Font = new Font("Segoe UI", 11F);
+            lblPhone.Location = new Point(52, 407);
+            lblPhone.Margin = new Padding(5, 0, 5, 0);
+            lblPhone.Name = "lblPhone";
+            lblPhone.Size = new Size(158, 41);
+            lblPhone.TabIndex = 5;
+            lblPhone.Text = "Phone No:";
             // 
             // txtPhone
             // 
-            this.txtPhone.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.txtPhone.Location = new System.Drawing.Point(180, 207);
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(280, 32);
-            this.txtPhone.TabIndex = 6;
+            txtPhone.Font = new Font("Segoe UI", 11F);
+            txtPhone.Location = new Point(315, 401);
+            txtPhone.Margin = new Padding(5, 6, 5, 6);
+            txtPhone.Name = "txtPhone";
+            txtPhone.Size = new Size(487, 47);
+            txtPhone.TabIndex = 6;
             // 
             // btnSave
             // 
-            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.btnSave.Location = new System.Drawing.Point(30, 290);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(180, 45);
-            this.btnSave.TabIndex = 7;
-            this.btnSave.Text = "Save Changes";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            btnSave.BackColor = Color.FromArgb(255, 192, 128);
+            btnSave.Font = new Font("Segoe UI", 11F);
+            btnSave.Location = new Point(52, 562);
+            btnSave.Margin = new Padding(5, 6, 5, 6);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(315, 87);
+            btnSave.TabIndex = 7;
+            btnSave.Text = "Save Changes";
+            btnSave.UseVisualStyleBackColor = false;
+            btnSave.Click += btnSave_Click;
             // 
             // btnClose
             // 
-            this.btnClose.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.btnClose.Location = new System.Drawing.Point(280, 290);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(180, 45);
-            this.btnClose.TabIndex = 8;
-            this.btnClose.Text = "Close";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            btnClose.BackColor = Color.FromArgb(255, 192, 128);
+            btnClose.Font = new Font("Segoe UI", 11F);
+            btnClose.ForeColor = Color.Black;
+            btnClose.Location = new Point(490, 562);
+            btnClose.Margin = new Padding(5, 6, 5, 6);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(315, 87);
+            btnClose.TabIndex = 8;
+            btnClose.Text = "Close";
+            btnClose.UseVisualStyleBackColor = false;
+            btnClose.Click += btnClose_Click;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(30, 70, 55);
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(lblTitle);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(910, 125);
+            panel1.TabIndex = 9;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(33, 42);
+            label1.Name = "label1";
+            label1.Size = new Size(310, 54);
+            label1.TabIndex = 1;
+            label1.Text = "FLAVOR CRAVE";
+            label1.Click += label1_Click;
             // 
             // ProfileForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(520, 380);
-            this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.txtPhone);
-            this.Controls.Add(this.lblPhone);
-            this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.lblEmail);
-            this.Controls.Add(this.txtFullName);
-            this.Controls.Add(this.lblFullName);
-            this.Controls.Add(this.lblTitle);
-            this.Name = "ProfileForm";
-            this.Text = "My Profile";
-            this.Load += new System.EventHandler(this.ProfileForm_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new SizeF(14F, 31F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(910, 736);
+            Controls.Add(panel1);
+            Controls.Add(btnClose);
+            Controls.Add(btnSave);
+            Controls.Add(txtPhone);
+            Controls.Add(lblPhone);
+            Controls.Add(txtEmail);
+            Controls.Add(lblEmail);
+            Controls.Add(txtFullName);
+            Controls.Add(lblFullName);
+            Margin = new Padding(5, 6, 5, 6);
+            Name = "ProfileForm";
+            Text = "My Profile";
+            Load += ProfileForm_Load;
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -146,5 +188,7 @@
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnClose;
+        private Panel panel1;
+        private Label label1;
     }
 }
