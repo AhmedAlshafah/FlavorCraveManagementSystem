@@ -57,5 +57,10 @@ namespace FlavorCraveManagementSystem.Forms.Chef
             MessageBox.Show("Profile updated successfully!");
             this.Close(); // Closes the profile form and returns to the dashboard
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
