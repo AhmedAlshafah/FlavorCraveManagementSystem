@@ -15,6 +15,7 @@ namespace FlavorCraveManagementSystem.Forms.Cashier
             btnProcessPayment.Click += btnProcessPayment_Click;
             btnWalletReport.Click += btnWalletReport_Click;
             btnProfile.Click += btnProfile_Click;
+            btnReceipts.Click += btnReceipts_Click;
         }
 
         private void btnProcessPayment_Click(object? sender, EventArgs e)
@@ -33,6 +34,12 @@ namespace FlavorCraveManagementSystem.Forms.Cashier
         {
             using var profileForm = new CashierProfileForm(loggedInUser);
             profileForm.ShowDialog(this);
+        }
+
+        private void btnReceipts_Click(object? sender, EventArgs e)
+        {
+            using var receiptForm = new ReceiptForm();
+            receiptForm.ShowDialog(this);
         }
     }
 }
