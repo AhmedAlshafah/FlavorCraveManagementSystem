@@ -43,14 +43,16 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.BorderStyle = BorderStyle.FixedSingle;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.WhiteSmoke;
-            label1.Location = new Point(787, 22);
+            label1.Location = new Point(774, 22);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(72, 32);
+            label1.Size = new Size(115, 34);
             label1.TabIndex = 0;
-            label1.Text = "CHEF";
+            label1.Text = "👩‍🍳 CHEF";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             label1.Click += label1_Click;
             // 
@@ -109,7 +111,7 @@
             // lblChefName
             // 
             lblChefName.AutoSize = true;
-            lblChefName.Location = new Point(367, 372);
+            lblChefName.Location = new Point(373, 358);
             lblChefName.Name = "lblChefName";
             lblChefName.Size = new Size(130, 25);
             lblChefName.TabIndex = 5;
@@ -124,7 +126,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(877, 70);
+            panel1.Size = new Size(902, 70);
             panel1.TabIndex = 6;
             // 
             // label2
@@ -143,7 +145,7 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLightLight;
-            ClientSize = new Size(877, 499);
+            ClientSize = new Size(902, 499);
             Controls.Add(panel1);
             Controls.Add(lblChefName);
             Controls.Add(btnUpdateProfile);
