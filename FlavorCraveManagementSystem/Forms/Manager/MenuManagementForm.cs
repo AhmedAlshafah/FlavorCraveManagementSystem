@@ -267,5 +267,11 @@ namespace FlavorCraveManagementSystem.Forms.Manager
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+        }
     }
 }

@@ -131,84 +131,84 @@ namespace FlavorCraveManagementSystem.Forms.Manager
             }
         }
 
-private void btnGenerateReport_Click(object sender, EventArgs e)
-{
-    try
-    {
-        int month = cmbMonth.SelectedIndex;
-
-        int year = 0;
-
-        if (cmbYear.SelectedItem != null &&
-            cmbYear.SelectedItem.ToString() != "All")
+        private void btnGenerateReport_Click(object sender, EventArgs e)
         {
-            year = Convert.ToInt32(cmbYear.SelectedItem);
-        }
+            try
+            {
+                int month = cmbMonth.SelectedIndex;
 
-        int categoryId =
-            Convert.ToInt32(cmbCategory.SelectedValue);
+                int year = 0;
 
-        int chefId =
-            Convert.ToInt32(cmbChef.SelectedValue);
+                if (cmbYear.SelectedItem != null &&
+                    cmbYear.SelectedItem.ToString() != "All")
+                {
+                    year = Convert.ToInt32(cmbYear.SelectedItem);
+                }
+
+                int categoryId =
+                    Convert.ToInt32(cmbCategory.SelectedValue);
+
+                int chefId =
+                    Convert.ToInt32(cmbChef.SelectedValue);
 
 
-        List<SalesReportItem> reportItems =
-            salesReportService.GetSalesReport(
-                month,
-                year,
-                categoryId,
-                chefId
-            );
+                List<SalesReportItem> reportItems =
+                    salesReportService.GetSalesReport(
+                        month,
+                        year,
+                        categoryId,
+                        chefId
+                    );
 
 
-        dgvSalesReport.DataSource = null;
-        dgvSalesReport.DataSource = reportItems;
+                dgvSalesReport.DataSource = null;
+                dgvSalesReport.DataSource = reportItems;
 
-        dgvSalesReport.Columns["OrderId"].HeaderText = "Order ID";
-        dgvSalesReport.Columns["OrderDate"].HeaderText = "Order Date";
-        dgvSalesReport.Columns["MenuItem"].HeaderText = "Menu Item";
-        dgvSalesReport.Columns["UnitPrice"].HeaderText = "Unit Price";
-        dgvSalesReport.Columns["SaleAmount"].HeaderText = "Sale Amount";
+                dgvSalesReport.Columns["OrderId"].HeaderText = "Order ID";
+                dgvSalesReport.Columns["OrderDate"].HeaderText = "Order Date";
+                dgvSalesReport.Columns["MenuItem"].HeaderText = "Menu Item";
+                dgvSalesReport.Columns["UnitPrice"].HeaderText = "Unit Price";
+                dgvSalesReport.Columns["SaleAmount"].HeaderText = "Sale Amount";
 
-        dgvSalesReport.Columns["UnitPrice"].DefaultCellStyle.Format = "N2";
-        dgvSalesReport.Columns["SaleAmount"].DefaultCellStyle.Format = "N2";
+                dgvSalesReport.Columns["UnitPrice"].DefaultCellStyle.Format = "N2";
+                dgvSalesReport.Columns["SaleAmount"].DefaultCellStyle.Format = "N2";
 
 
                 decimal totalSales = 0;
 
-        int totalOrders = 0;
+                int totalOrders = 0;
 
-        List<int> countedOrders =
-            new List<int>();
+                List<int> countedOrders =
+                    new List<int>();
 
 
-        foreach (SalesReportItem item in reportItems)
-        {
-            totalSales += item.SaleAmount;
+                foreach (SalesReportItem item in reportItems)
+                {
+                    totalSales += item.SaleAmount;
 
-            if (!countedOrders.Contains(item.OrderId))
+                    if (!countedOrders.Contains(item.OrderId))
+                    {
+                        countedOrders.Add(item.OrderId);
+
+                        totalOrders++;
+                    }
+                }
+
+
+                lblTotalSales.Text =
+                    $"Total Sales: RM {totalSales:N2}";
+
+                lblTotalOrders.Text =
+                    $"Total Orders: {totalOrders}";
+            }
+            catch (Exception ex)
             {
-                countedOrders.Add(item.OrderId);
-
-                totalOrders++;
+                MessageBox.Show(
+                    "Failed to generate sales report:\n\n" +
+                    ex.Message
+                );
             }
         }
-
-
-        lblTotalSales.Text =
-            $"Total Sales: RM {totalSales:N2}";
-
-        lblTotalOrders.Text =
-            $"Total Orders: {totalOrders}";
-    }
-    catch (Exception ex)
-    {
-        MessageBox.Show(
-            "Failed to generate sales report:\n\n" +
-            ex.Message
-        );
-    }
-}
 
         private void btnClearFilters_Click(object sender, EventArgs e)
         {
@@ -221,6 +221,12 @@ private void btnGenerateReport_Click(object sender, EventArgs e)
 
             lblTotalSales.Text = "Total Sales: RM 0.00";
             lblTotalOrders.Text = "Total Orders: 0";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
         }
     }
 }

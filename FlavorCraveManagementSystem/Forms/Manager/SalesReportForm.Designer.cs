@@ -47,6 +47,7 @@
             label7 = new Label();
             label8 = new Label();
             groupBox1 = new GroupBox();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvSalesReport).BeginInit();
             panel1.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -252,11 +253,22 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Report Filters";
             // 
+            // button1
+            // 
+            button1.Location = new Point(577, 327);
+            button1.Name = "button1";
+            button1.Size = new Size(137, 23);
+            button1.TabIndex = 17;
+            button1.Text = "Back to Dashbord";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // SalesReportForm
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(934, 605);
+            Controls.Add(button1);
             Controls.Add(groupBox1);
             Controls.Add(label8);
             Controls.Add(label7);
@@ -297,5 +309,6 @@
         private Label label7;
         private Label label8;
         private GroupBox groupBox1;
+        private Button button1;
     }
 }

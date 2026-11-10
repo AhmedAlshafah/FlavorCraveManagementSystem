@@ -47,6 +47,7 @@
             groupBox1 = new GroupBox();
             lblStockStatus = new Label();
             lblStockStatusTitle = new Label();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvIngredients).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudQuantityInStock).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudLowStockLevel).BeginInit();
@@ -113,7 +114,7 @@
             btnUpdate.FlatAppearance.BorderSize = 0;
             btnUpdate.FlatStyle = FlatStyle.Flat;
             btnUpdate.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnUpdate.Location = new Point(728, 123);
+            btnUpdate.Location = new Point(606, 123);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(128, 26);
             btnUpdate.TabIndex = 6;
@@ -124,7 +125,7 @@
             // btnRefresh
             // 
             btnRefresh.ForeColor = SystemColors.Desktop;
-            btnRefresh.Location = new Point(775, 496);
+            btnRefresh.Location = new Point(618, 496);
             btnRefresh.Name = "btnRefresh";
             btnRefresh.Size = new Size(75, 26);
             btnRefresh.TabIndex = 7;
@@ -258,12 +259,23 @@
             lblStockStatusTitle.TabIndex = 12;
             lblStockStatusTitle.Text = "Stock Status: ";
             // 
+            // button1
+            // 
+            button1.Location = new Point(766, 499);
+            button1.Name = "button1";
+            button1.Size = new Size(137, 23);
+            button1.TabIndex = 17;
+            button1.Text = "Back to Dashbord";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // InventoryManagementForm
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(245, 245, 242);
             ClientSize = new Size(934, 534);
+            Controls.Add(button1);
             Controls.Add(groupBox1);
             Controls.Add(label9);
             Controls.Add(label8);
@@ -306,5 +318,6 @@
         private GroupBox groupBox1;
         private Label lblStockStatusTitle;
         private Label lblStockStatus;
+        private Button button1;
     }
 }

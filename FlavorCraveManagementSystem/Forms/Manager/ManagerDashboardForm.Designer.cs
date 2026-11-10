@@ -34,6 +34,7 @@
             btnSalesReport = new Button();
             btnProfile = new Button();
             pnlHeader = new Panel();
+            lblWelcome = new Label();
             lblRole = new Label();
             lblAppName = new Label();
             pnlSidebar = new Panel();
@@ -137,6 +138,7 @@
             // pnlHeader
             // 
             pnlHeader.BackColor = Color.FromArgb(30, 70, 55);
+            pnlHeader.Controls.Add(lblWelcome);
             pnlHeader.Controls.Add(lblRole);
             pnlHeader.Controls.Add(lblAppName);
             pnlHeader.Dock = DockStyle.Top;
@@ -146,12 +148,23 @@
             pnlHeader.Size = new Size(1084, 70);
             pnlHeader.TabIndex = 5;
             // 
+            // lblWelcome
+            // 
+            lblWelcome.AutoSize = true;
+            lblWelcome.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblWelcome.ForeColor = Color.White;
+            lblWelcome.Location = new Point(779, 50);
+            lblWelcome.Name = "lblWelcome";
+            lblWelcome.Size = new Size(0, 17);
+            lblWelcome.TabIndex = 2;
+            lblWelcome.Click += lblWelcome_Click;
+            // 
             // lblRole
             // 
             lblRole.AutoSize = true;
             lblRole.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblRole.ForeColor = Color.White;
-            lblRole.Location = new Point(806, 19);
+            lblRole.Location = new Point(761, 19);
             lblRole.Name = "lblRole";
             lblRole.Size = new Size(86, 20);
             lblRole.TabIndex = 1;
@@ -196,6 +209,7 @@
             btnLogout.Text = "Logout";
             btnLogout.TextAlign = ContentAlignment.MiddleLeft;
             btnLogout.UseVisualStyleBackColor = true;
+            btnLogout.Click += btnLogout_Click;
             // 
             // label2
             // 
@@ -232,6 +246,7 @@
             panel4.Name = "panel4";
             panel4.Size = new Size(300, 130);
             panel4.TabIndex = 5;
+            panel4.Paint += panel4_Paint;
             // 
             // label11
             // 
@@ -421,5 +436,6 @@
         private Label label5;
         private Label label4;
         private Button btnLogout;
+        private Label lblWelcome;
     }
 }

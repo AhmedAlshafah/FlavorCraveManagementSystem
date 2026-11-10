@@ -47,8 +47,9 @@
             label7 = new Label();
             label8 = new Label();
             groupBox1 = new GroupBox();
-            lblMenuStatusTitle = new Label();
             lblMenuStatus = new Label();
+            lblMenuStatusTitle = new Label();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvMenuItems).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudPrice).BeginInit();
             panel1.SuspendLayout();
@@ -112,7 +113,7 @@
             btnUpdate.FlatAppearance.BorderSize = 0;
             btnUpdate.FlatStyle = FlatStyle.Flat;
             btnUpdate.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnUpdate.Location = new Point(732, 121);
+            btnUpdate.Location = new Point(623, 119);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(137, 26);
             btnUpdate.TabIndex = 5;
@@ -126,7 +127,7 @@
             btnDeactivate.FlatAppearance.BorderSize = 0;
             btnDeactivate.FlatStyle = FlatStyle.Flat;
             btnDeactivate.ForeColor = Color.White;
-            btnDeactivate.Location = new Point(732, 72);
+            btnDeactivate.Location = new Point(623, 72);
             btnDeactivate.Name = "btnDeactivate";
             btnDeactivate.Size = new Size(137, 26);
             btnDeactivate.TabIndex = 6;
@@ -136,7 +137,7 @@
             // 
             // btnRefresh
             // 
-            btnRefresh.Location = new Point(793, 496);
+            btnRefresh.Location = new Point(647, 500);
             btnRefresh.Name = "btnRefresh";
             btnRefresh.Size = new Size(75, 26);
             btnRefresh.TabIndex = 7;
@@ -186,7 +187,7 @@
             btnActivate.FlatAppearance.BorderSize = 0;
             btnActivate.FlatStyle = FlatStyle.Flat;
             btnActivate.ForeColor = Color.White;
-            btnActivate.Location = new Point(732, 24);
+            btnActivate.Location = new Point(623, 24);
             btnActivate.Name = "btnActivate";
             btnActivate.Size = new Size(137, 26);
             btnActivate.TabIndex = 12;
@@ -270,6 +271,14 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Selected Menu Item  ";
             // 
+            // lblMenuStatus
+            // 
+            lblMenuStatus.AutoSize = true;
+            lblMenuStatus.Location = new Point(410, 128);
+            lblMenuStatus.Name = "lblMenuStatus";
+            lblMenuStatus.Size = new Size(0, 19);
+            lblMenuStatus.TabIndex = 14;
+            // 
             // lblMenuStatusTitle
             // 
             lblMenuStatusTitle.AutoSize = true;
@@ -279,13 +288,15 @@
             lblMenuStatusTitle.TabIndex = 13;
             lblMenuStatusTitle.Text = "Status:";
             // 
-            // lblMenuStatus
+            // button1
             // 
-            lblMenuStatus.AutoSize = true;
-            lblMenuStatus.Location = new Point(410, 128);
-            lblMenuStatus.Name = "lblMenuStatus";
-            lblMenuStatus.Size = new Size(0, 19);
-            lblMenuStatus.TabIndex = 14;
+            button1.Location = new Point(785, 502);
+            button1.Name = "button1";
+            button1.Size = new Size(137, 23);
+            button1.TabIndex = 17;
+            button1.Text = "Back to Dashbord";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // MenuManagementForm
             // 
@@ -293,6 +304,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(245, 245, 242);
             ClientSize = new Size(934, 534);
+            Controls.Add(button1);
             Controls.Add(groupBox1);
             Controls.Add(label8);
             Controls.Add(label7);
@@ -336,5 +348,6 @@
         private GroupBox groupBox1;
         private Label lblMenuStatusTitle;
         private Label lblMenuStatus;
+        private Button button1;
     }
 }

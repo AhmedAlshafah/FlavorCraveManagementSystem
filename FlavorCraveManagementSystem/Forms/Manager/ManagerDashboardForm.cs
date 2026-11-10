@@ -53,5 +53,31 @@ namespace FlavorCraveManagementSystem.Forms.Manager
         {
 
         }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+               "Are you sure you want to log out?",
+               "Confirm Logout",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                                            );
+
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
+
+        private void lblWelcome_Click(object sender, EventArgs e)
+        {
+            lblWelcome.Text =
+    $"Welcome, {loggedInUser.FullName}";
+        }
     }
 }

@@ -36,12 +36,13 @@
             txtPhone = new TextBox();
             btnUpdateProfile = new Button();
             panel1 = new Panel();
+            label7 = new Label();
+            label6 = new Label();
             label1 = new Label();
             label4 = new Label();
             groupBox1 = new GroupBox();
             label5 = new Label();
-            label6 = new Label();
-            label7 = new Label();
+            button1 = new Button();
             panel1.SuspendLayout();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -100,7 +101,7 @@
             btnUpdateProfile.FlatAppearance.BorderSize = 0;
             btnUpdateProfile.FlatStyle = FlatStyle.Flat;
             btnUpdateProfile.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnUpdateProfile.Location = new Point(377, 295);
+            btnUpdateProfile.Location = new Point(126, 305);
             btnUpdateProfile.Name = "btnUpdateProfile";
             btnUpdateProfile.Size = new Size(128, 26);
             btnUpdateProfile.TabIndex = 6;
@@ -118,6 +119,28 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(884, 74);
             panel1.TabIndex = 7;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.ForeColor = Color.White;
+            label7.Location = new Point(667, 22);
+            label7.Name = "label7";
+            label7.Size = new Size(101, 21);
+            label7.TabIndex = 1;
+            label7.Text = "MY PROFILE";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(32, 22);
+            label6.Name = "label6";
+            label6.Size = new Size(188, 32);
+            label6.TabIndex = 0;
+            label6.Text = "FLAVOR CRAVE";
             // 
             // label1
             // 
@@ -142,6 +165,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(button1);
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(lblFullName);
             groupBox1.Controls.Add(txtFullName);
@@ -167,27 +191,15 @@
             label5.TabIndex = 7;
             label5.Text = "You can update your personal details below.";
             // 
-            // label6
+            // button1
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.White;
-            label6.Location = new Point(32, 22);
-            label6.Name = "label6";
-            label6.Size = new Size(188, 32);
-            label6.TabIndex = 0;
-            label6.Text = "FLAVOR CRAVE";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.ForeColor = Color.White;
-            label7.Location = new Point(667, 22);
-            label7.Name = "label7";
-            label7.Size = new Size(101, 21);
-            label7.TabIndex = 1;
-            label7.Text = "MY PROFILE";
+            button1.Location = new Point(383, 305);
+            button1.Name = "button1";
+            button1.Size = new Size(128, 26);
+            button1.TabIndex = 8;
+            button1.Text = "Back to Dashboard";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // ManagerProfileForm
             // 
@@ -226,5 +238,6 @@
         private Label label5;
         private Label label7;
         private Label label6;
+        private Button button1;
     }
 }
