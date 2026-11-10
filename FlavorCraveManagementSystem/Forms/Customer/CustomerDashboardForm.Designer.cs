@@ -24,20 +24,26 @@
             btnEWallet = new Button();
             btnMyProfile = new Button();
             pnlMainContent = new Panel();
+            groupBox1 = new GroupBox();
+            lblSelectedFoodPrice = new Label();
+            lblSelectedFoodName = new Label();
+            picFood = new PictureBox();
             label3 = new Label();
             btnPlaceOrder = new Button();
             nudQuantity = new NumericUpDown();
             btnRefreshMenu = new Button();
             btnViewDetails = new Button();
+            dgvMenuItems = new DataGridView();
             lblCategory = new Label();
             cboCategory = new ComboBox();
-            dgvMenuItems = new DataGridView();
             panel1 = new Panel();
             label2 = new Label();
             labe = new Label();
             panel2 = new Panel();
             label1 = new Label();
             pnlMainContent.SuspendLayout();
+            groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picFood).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudQuantity).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvMenuItems).BeginInit();
             panel1.SuspendLayout();
@@ -131,19 +137,58 @@
             // 
             // pnlMainContent
             // 
+            pnlMainContent.Controls.Add(groupBox1);
             pnlMainContent.Controls.Add(label3);
             pnlMainContent.Controls.Add(btnPlaceOrder);
             pnlMainContent.Controls.Add(nudQuantity);
             pnlMainContent.Controls.Add(btnRefreshMenu);
             pnlMainContent.Controls.Add(btnViewDetails);
+            pnlMainContent.Controls.Add(dgvMenuItems);
             pnlMainContent.Controls.Add(lblCategory);
             pnlMainContent.Controls.Add(cboCategory);
-            pnlMainContent.Controls.Add(dgvMenuItems);
-            pnlMainContent.Location = new Point(563, 360);
+            pnlMainContent.Location = new Point(418, 360);
             pnlMainContent.Margin = new Padding(3, 4, 3, 4);
             pnlMainContent.Name = "pnlMainContent";
-            pnlMainContent.Size = new Size(1014, 911);
+            pnlMainContent.Size = new Size(1289, 911);
             pnlMainContent.TabIndex = 7;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(lblSelectedFoodPrice);
+            groupBox1.Controls.Add(lblSelectedFoodName);
+            groupBox1.Controls.Add(picFood);
+            groupBox1.Location = new Point(893, 155);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(400, 563);
+            groupBox1.TabIndex = 12;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Selected Item Preview";
+            // 
+            // lblSelectedFoodPrice
+            // 
+            lblSelectedFoodPrice.AutoSize = true;
+            lblSelectedFoodPrice.Location = new Point(6, 523);
+            lblSelectedFoodPrice.Name = "lblSelectedFoodPrice";
+            lblSelectedFoodPrice.Size = new Size(0, 37);
+            lblSelectedFoodPrice.TabIndex = 13;
+            // 
+            // lblSelectedFoodName
+            // 
+            lblSelectedFoodName.AutoSize = true;
+            lblSelectedFoodName.Location = new Point(6, 472);
+            lblSelectedFoodName.Name = "lblSelectedFoodName";
+            lblSelectedFoodName.Size = new Size(0, 37);
+            lblSelectedFoodName.TabIndex = 12;
+            // 
+            // picFood
+            // 
+            picFood.BorderStyle = BorderStyle.FixedSingle;
+            picFood.Location = new Point(0, 98);
+            picFood.Name = "picFood";
+            picFood.Size = new Size(393, 351);
+            picFood.SizeMode = PictureBoxSizeMode.Zoom;
+            picFood.TabIndex = 11;
+            picFood.TabStop = false;
             // 
             // label3
             // 
@@ -203,6 +248,27 @@
             btnViewDetails.UseVisualStyleBackColor = false;
             btnViewDetails.Click += btnViewDetails_Click;
             // 
+            // dgvMenuItems
+            // 
+            dgvMenuItems.AllowUserToAddRows = false;
+            dgvMenuItems.AllowUserToDeleteRows = false;
+            dgvMenuItems.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvMenuItems.BackgroundColor = Color.White;
+            dgvMenuItems.BorderStyle = BorderStyle.None;
+            dgvMenuItems.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvMenuItems.Location = new Point(0, 139);
+            dgvMenuItems.Margin = new Padding(3, 4, 3, 4);
+            dgvMenuItems.MultiSelect = false;
+            dgvMenuItems.Name = "dgvMenuItems";
+            dgvMenuItems.ReadOnly = true;
+            dgvMenuItems.RowHeadersVisible = false;
+            dgvMenuItems.RowHeadersWidth = 82;
+            dgvMenuItems.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvMenuItems.Size = new Size(887, 676);
+            dgvMenuItems.TabIndex = 0;
+            dgvMenuItems.CellClick += dgvMenuItems_CellClick;
+            dgvMenuItems.CellContentClick += dgvMenuItems_CellContentClick;
+            // 
             // lblCategory
             // 
             lblCategory.AutoSize = true;
@@ -221,26 +287,6 @@
             cboCategory.Size = new Size(252, 45);
             cboCategory.TabIndex = 1;
             cboCategory.SelectedIndexChanged += cboCategory_SelectedIndexChanged;
-            // 
-            // dgvMenuItems
-            // 
-            dgvMenuItems.AllowUserToAddRows = false;
-            dgvMenuItems.AllowUserToDeleteRows = false;
-            dgvMenuItems.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvMenuItems.BackgroundColor = Color.White;
-            dgvMenuItems.BorderStyle = BorderStyle.None;
-            dgvMenuItems.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvMenuItems.Location = new Point(0, 162);
-            dgvMenuItems.Margin = new Padding(3, 4, 3, 4);
-            dgvMenuItems.MultiSelect = false;
-            dgvMenuItems.Name = "dgvMenuItems";
-            dgvMenuItems.ReadOnly = true;
-            dgvMenuItems.RowHeadersVisible = false;
-            dgvMenuItems.RowHeadersWidth = 82;
-            dgvMenuItems.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvMenuItems.Size = new Size(1025, 587);
-            dgvMenuItems.TabIndex = 0;
-            dgvMenuItems.CellContentClick += dgvMenuItems_CellContentClick;
             // 
             // panel1
             // 
@@ -320,6 +366,9 @@
             Load += CustomerDashboardForm_Load;
             pnlMainContent.ResumeLayout(false);
             pnlMainContent.PerformLayout();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)picFood).EndInit();
             ((System.ComponentModel.ISupportInitialize)nudQuantity).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvMenuItems).EndInit();
             panel1.ResumeLayout(false);
@@ -350,5 +399,9 @@
         private Panel panel2;
         private Label label1;
         private Label label3;
+        private PictureBox picFood;
+        private GroupBox groupBox1;
+        private Label lblSelectedFoodPrice;
+        private Label lblSelectedFoodName;
     }
 }

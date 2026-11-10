@@ -104,5 +104,10 @@ namespace FlavorCraveManagementSystem.Forms.Customer
         {
 
         }
+
+        private void txtFullName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
