@@ -40,6 +40,7 @@
             label2 = new Label();
             labe = new Label();
             panel2 = new Panel();
+            btnLogout = new Button();
             label1 = new Label();
             pnlMainContent.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -91,7 +92,7 @@
             // 
             btnMyOrders.FlatAppearance.BorderSize = 0;
             btnMyOrders.FlatStyle = FlatStyle.Flat;
-            btnMyOrders.Font = new Font("Segoe UI", 10.125F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnMyOrders.Font = new Font("Segoe UI", 10.125F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnMyOrders.ForeColor = Color.White;
             btnMyOrders.Location = new Point(30, 301);
             btnMyOrders.Margin = new Padding(3, 4, 3, 4);
@@ -107,7 +108,7 @@
             // 
             btnEWallet.FlatAppearance.BorderSize = 0;
             btnEWallet.FlatStyle = FlatStyle.Flat;
-            btnEWallet.Font = new Font("Segoe UI", 10.125F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnEWallet.Font = new Font("Segoe UI", 10.125F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnEWallet.ForeColor = Color.White;
             btnEWallet.Location = new Point(30, 391);
             btnEWallet.Margin = new Padding(3, 4, 3, 4);
@@ -123,7 +124,7 @@
             // 
             btnMyProfile.FlatAppearance.BorderSize = 0;
             btnMyProfile.FlatStyle = FlatStyle.Flat;
-            btnMyProfile.Font = new Font("Segoe UI", 10.125F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnMyProfile.Font = new Font("Segoe UI", 10.125F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnMyProfile.ForeColor = Color.White;
             btnMyProfile.Location = new Point(30, 504);
             btnMyProfile.Margin = new Padding(3, 4, 3, 4);
@@ -326,6 +327,7 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(38, 48, 45);
+            panel2.Controls.Add(btnLogout);
             panel2.Controls.Add(btnBrowseMenu);
             panel2.Controls.Add(btnMyOrders);
             panel2.Controls.Add(btnEWallet);
@@ -336,6 +338,20 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(400, 1141);
             panel2.TabIndex = 9;
+            // 
+            // btnLogout
+            // 
+            btnLogout.FlatAppearance.BorderSize = 0;
+            btnLogout.FlatStyle = FlatStyle.Flat;
+            btnLogout.Font = new Font("Segoe UI", 10.125F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnLogout.ForeColor = Color.White;
+            btnLogout.Location = new Point(30, 696);
+            btnLogout.Name = "btnLogout";
+            btnLogout.Size = new Size(150, 46);
+            btnLogout.TabIndex = 7;
+            btnLogout.Text = "Logout";
+            btnLogout.UseVisualStyleBackColor = true;
+            btnLogout.Click += btnLogout_Click;
             // 
             // label1
             // 
@@ -403,5 +419,6 @@
         private GroupBox groupBox1;
         private Label lblSelectedFoodPrice;
         private Label lblSelectedFoodName;
+        private Button btnLogout;
     }
 }

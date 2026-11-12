@@ -33,12 +33,12 @@
             // lblTitle
             // 
             lblTitle.AutoSize = true;
-            lblTitle.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTitle.Font = new Font("Segoe UI", 10.125F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTitle.ForeColor = Color.White;
             lblTitle.Location = new Point(780, 54);
             lblTitle.Margin = new Padding(5, 0, 5, 0);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(278, 45);
+            lblTitle.Size = new Size(248, 37);
             lblTitle.TabIndex = 0;
             lblTitle.Text = "E-WALLET TOP UP";
             lblTitle.Click += lblTitle_Click;

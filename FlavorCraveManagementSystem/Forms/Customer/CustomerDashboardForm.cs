@@ -480,5 +480,21 @@ namespace FlavorCraveManagementSystem.Forms.Customer
                 picFood.Image = null;
             }
         }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            DialogResult = MessageBox.Show(
+                "Are you sure you want to logot?",
+                "Confirm Logout",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+                );
+            if (DialogResult==DialogResult.Yes)
+            {
+                this.Close();
+            }
+
+
+        }
     }
 }
