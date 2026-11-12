@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            btnManageUser = new Button();
             brnManageMenu = new Button();
             label2 = new Label();
             btnLogout = new Button();
@@ -48,18 +47,17 @@
             button1 = new Button();
             btnIngredients = new Button();
             label6 = new Label();
-            panel3 = new Panel();
-            label9 = new Label();
-            label8 = new Label();
-            label7 = new Label();
-            panel4 = new Panel();
             label10 = new Label();
-            panel5 = new Panel();
-            label11 = new Label();
-            panel6 = new Panel();
             label12 = new Label();
-            panel7 = new Panel();
             label13 = new Label();
+            btnManageUser = new Button();
+            label8 = new Label();
+            label11 = new Label();
+            panel3 = new Panel();
+            panel4 = new Panel();
+            panel5 = new Panel();
+            panel6 = new Panel();
+            panel7 = new Panel();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
@@ -80,22 +78,14 @@
             label1.TextAlign = ContentAlignment.MiddleLeft;
             label1.Click += label1_Click;
             // 
-            // btnManageUser
-            // 
-            btnManageUser.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnManageUser.Location = new Point(9, 4);
-            btnManageUser.Name = "btnManageUser";
-            btnManageUser.Size = new Size(150, 80);
-            btnManageUser.TabIndex = 1;
-            btnManageUser.Text = "Manage User's";
-            btnManageUser.UseVisualStyleBackColor = true;
-            btnManageUser.Click += btnManageUser_Click;
-            // 
             // brnManageMenu
             // 
-            brnManageMenu.Location = new Point(9, 3);
+            brnManageMenu.FlatAppearance.BorderSize = 0;
+            brnManageMenu.FlatStyle = FlatStyle.Flat;
+            brnManageMenu.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            brnManageMenu.Location = new Point(62, 14);
             brnManageMenu.Name = "brnManageMenu";
-            brnManageMenu.Size = new Size(150, 80);
+            brnManageMenu.Size = new Size(150, 31);
             brnManageMenu.TabIndex = 2;
             brnManageMenu.Text = "Manage Menu";
             brnManageMenu.UseVisualStyleBackColor = true;
@@ -105,7 +95,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(216, 94);
+            label2.Location = new Point(445, 86);
             label2.Name = "label2";
             label2.Size = new Size(357, 38);
             label2.TabIndex = 7;
@@ -129,10 +119,12 @@
             // 
             // btnProfile
             // 
+            btnProfile.FlatAppearance.BorderSize = 0;
+            btnProfile.FlatStyle = FlatStyle.Flat;
             btnProfile.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold);
-            btnProfile.Location = new Point(9, 3);
+            btnProfile.Location = new Point(62, 3);
             btnProfile.Name = "btnProfile";
-            btnProfile.Size = new Size(150, 80);
+            btnProfile.Size = new Size(150, 42);
             btnProfile.TabIndex = 9;
             btnProfile.Text = "Manage Profile";
             btnProfile.UseVisualStyleBackColor = true;
@@ -140,10 +132,12 @@
             // 
             // btnMapping
             // 
+            btnMapping.FlatAppearance.BorderSize = 0;
+            btnMapping.FlatStyle = FlatStyle.Flat;
             btnMapping.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold);
-            btnMapping.Location = new Point(9, 3);
+            btnMapping.Location = new Point(62, 3);
             btnMapping.Name = "btnMapping";
-            btnMapping.Size = new Size(150, 80);
+            btnMapping.Size = new Size(150, 51);
             btnMapping.TabIndex = 8;
             btnMapping.Text = "Map Ingredients";
             btnMapping.UseVisualStyleBackColor = true;
@@ -296,10 +290,12 @@
             // 
             // btnIngredients
             // 
+            btnIngredients.FlatAppearance.BorderSize = 0;
+            btnIngredients.FlatStyle = FlatStyle.Flat;
             btnIngredients.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold);
-            btnIngredients.Location = new Point(9, 3);
+            btnIngredients.Location = new Point(61, 3);
             btnIngredients.Name = "btnIngredients";
-            btnIngredients.Size = new Size(150, 80);
+            btnIngredients.Size = new Size(150, 47);
             btnIngredients.TabIndex = 3;
             btnIngredients.Text = "Manage Ingredients";
             btnIngredients.UseVisualStyleBackColor = true;
@@ -314,132 +310,130 @@
             label6.Size = new Size(0, 17);
             label6.TabIndex = 14;
             // 
-            // panel3
-            // 
-            panel3.BackColor = Color.FromArgb(30, 70, 50);
-            panel3.Controls.Add(label9);
-            panel3.Controls.Add(label8);
-            panel3.Controls.Add(label7);
-            panel3.Controls.Add(btnManageUser);
-            panel3.Font = new Font("Segoe UI", 7.8F, FontStyle.Bold);
-            panel3.Location = new Point(216, 143);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(752, 93);
-            panel3.TabIndex = 15;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new Point(171, 103);
-            label9.Name = "label9";
-            label9.Size = new Size(45, 17);
-            label9.TabIndex = 2;
-            label9.Text = "label9";
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.ForeColor = SystemColors.Control;
-            label8.Location = new Point(171, 24);
-            label8.Name = "label8";
-            label8.Size = new Size(415, 34);
-            label8.TabIndex = 1;
-            label8.Text = "Create new account, Update account details, and Remove Account\r\nfrom the system";
-            label8.Click += label8_Click;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(165, 13);
-            label7.Name = "label7";
-            label7.Size = new Size(0, 17);
-            label7.TabIndex = 0;
-            // 
-            // panel4
-            // 
-            panel4.BackColor = Color.FromArgb(30, 70, 55);
-            panel4.Controls.Add(label10);
-            panel4.Controls.Add(brnManageMenu);
-            panel4.Font = new Font("Segoe UI", 7.8F, FontStyle.Bold);
-            panel4.Location = new Point(216, 246);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(752, 93);
-            panel4.TabIndex = 16;
-            panel4.Paint += panel4_Paint;
-            // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.ForeColor = SystemColors.ButtonHighlight;
-            label10.Location = new Point(171, 16);
+            label10.BackColor = Color.FromArgb(245, 245, 242);
+            label10.ForeColor = SystemColors.ActiveCaptionText;
+            label10.Location = new Point(41, 59);
             label10.Name = "label10";
-            label10.Size = new Size(300, 17);
+            label10.Size = new Size(181, 40);
             label10.TabIndex = 3;
-            label10.Text = "Add, update, and remove items from the menu";
-            // 
-            // panel5
-            // 
-            panel5.BackColor = Color.FromArgb(30, 70, 55);
-            panel5.Controls.Add(label11);
-            panel5.Controls.Add(btnIngredients);
-            panel5.Font = new Font("Segoe UI", 7.8F, FontStyle.Bold);
-            panel5.Location = new Point(216, 345);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(752, 93);
-            panel5.TabIndex = 17;
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.ForeColor = SystemColors.ButtonHighlight;
-            label11.Location = new Point(171, 18);
-            label11.Name = "label11";
-            label11.Size = new Size(352, 17);
-            label11.TabIndex = 4;
-            label11.Text = "Add, update, and remove items from the Ingredient list";
-            // 
-            // panel6
-            // 
-            panel6.BackColor = Color.FromArgb(30, 70, 55);
-            panel6.Controls.Add(label12);
-            panel6.Controls.Add(btnMapping);
-            panel6.Font = new Font("Segoe UI", 7.8F, FontStyle.Bold);
-            panel6.Location = new Point(216, 444);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(752, 93);
-            panel6.TabIndex = 18;
+            label10.Text = "Add, update, and remove \r\nitems from the menu";
+            label10.Click += label10_Click;
             // 
             // label12
             // 
             label12.AutoSize = true;
-            label12.ForeColor = SystemColors.ButtonHighlight;
-            label12.Location = new Point(171, 17);
+            label12.ForeColor = Color.Black;
+            label12.Location = new Point(18, 58);
             label12.Name = "label12";
-            label12.Size = new Size(249, 17);
+            label12.Size = new Size(263, 20);
             label12.TabIndex = 9;
             label12.Text = "Assign ingredient items to menu items";
-            // 
-            // panel7
-            // 
-            panel7.BackColor = Color.FromArgb(30, 70, 55);
-            panel7.Controls.Add(label13);
-            panel7.Controls.Add(btnProfile);
-            panel7.Font = new Font("Segoe UI", 7.8F, FontStyle.Bold);
-            panel7.ForeColor = SystemColors.ActiveCaptionText;
-            panel7.Location = new Point(216, 547);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(752, 93);
-            panel7.TabIndex = 19;
+            label12.TextAlign = ContentAlignment.TopCenter;
+            label12.Click += label12_Click;
             // 
             // label13
             // 
             label13.AutoSize = true;
-            label13.ForeColor = SystemColors.ButtonHighlight;
-            label13.Location = new Point(171, 15);
+            label13.ForeColor = SystemColors.ActiveCaptionText;
+            label13.Location = new Point(43, 58);
             label13.Name = "label13";
-            label13.Size = new Size(492, 17);
+            label13.Size = new Size(201, 60);
             label13.TabIndex = 10;
-            label13.Text = "Update personal information (Email, Phone Number, Username, and Password";
+            label13.Text = "Update personal information\r\n(Email, Phone Number, \r\nUsername, and Password";
+            label13.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // btnManageUser
+            // 
+            btnManageUser.BackColor = Color.FromArgb(245, 245, 242);
+            btnManageUser.FlatAppearance.BorderSize = 0;
+            btnManageUser.FlatStyle = FlatStyle.Flat;
+            btnManageUser.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnManageUser.Location = new Point(61, 3);
+            btnManageUser.Name = "btnManageUser";
+            btnManageUser.Size = new Size(150, 53);
+            btnManageUser.TabIndex = 1;
+            btnManageUser.Text = "Manage User's";
+            btnManageUser.UseVisualStyleBackColor = false;
+            btnManageUser.Click += btnManageUser_Click;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.BackColor = Color.FromArgb(245, 245, 242);
+            label8.ForeColor = SystemColors.ActiveCaptionText;
+            label8.Location = new Point(40, 59);
+            label8.Name = "label8";
+            label8.Size = new Size(203, 80);
+            label8.TabIndex = 1;
+            label8.Text = "Create new account, Update \r\naccount details, and Remove \r\nAccount from the system\r\n\r\n";
+            label8.TextAlign = ContentAlignment.TopCenter;
+            label8.Click += label8_Click;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.ForeColor = SystemColors.ActiveCaptionText;
+            label11.Location = new Point(40, 58);
+            label11.Name = "label11";
+            label11.Size = new Size(201, 40);
+            label11.TabIndex = 4;
+            label11.Text = "Add, update, and remove \r\nitems from the Ingredient list";
+            label11.TextAlign = ContentAlignment.TopCenter;
+            label11.Click += label11_Click;
+            // 
+            // panel3
+            // 
+            panel3.BorderStyle = BorderStyle.FixedSingle;
+            panel3.Controls.Add(btnManageUser);
+            panel3.Controls.Add(label8);
+            panel3.Location = new Point(319, 143);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(284, 143);
+            panel3.TabIndex = 15;
+            // 
+            // panel4
+            // 
+            panel4.BackgroundImageLayout = ImageLayout.None;
+            panel4.BorderStyle = BorderStyle.FixedSingle;
+            panel4.Controls.Add(brnManageMenu);
+            panel4.Controls.Add(label10);
+            panel4.Location = new Point(682, 143);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(284, 143);
+            panel4.TabIndex = 16;
+            // 
+            // panel5
+            // 
+            panel5.BorderStyle = BorderStyle.FixedSingle;
+            panel5.Controls.Add(btnMapping);
+            panel5.Controls.Add(label12);
+            panel5.Location = new Point(682, 328);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(284, 143);
+            panel5.TabIndex = 17;
+            // 
+            // panel6
+            // 
+            panel6.BorderStyle = BorderStyle.FixedSingle;
+            panel6.Controls.Add(btnIngredients);
+            panel6.Controls.Add(label11);
+            panel6.Location = new Point(319, 328);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(284, 143);
+            panel6.TabIndex = 17;
+            // 
+            // panel7
+            // 
+            panel7.BorderStyle = BorderStyle.FixedSingle;
+            panel7.Controls.Add(label13);
+            panel7.Controls.Add(btnProfile);
+            panel7.Location = new Point(499, 498);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(284, 143);
+            panel7.TabIndex = 17;
             // 
             // AdminDashboardForm
             // 
@@ -455,9 +449,10 @@
             Controls.Add(label1);
             Controls.Add(panel3);
             Controls.Add(panel4);
-            Controls.Add(panel5);
             Controls.Add(panel6);
+            Controls.Add(panel5);
             Controls.Add(panel7);
+            FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(3, 4, 3, 4);
             Name = "AdminDashboardForm";
             StartPosition = FormStartPosition.CenterScreen;
@@ -484,7 +479,6 @@
         #endregion
 
         private Label label1;
-        private Button btnManageUser;
         private Button brnManageMenu;
         private Button button4;
         private Button button5;
@@ -503,17 +497,16 @@
         private Label label5;
         private Button btnIngredients;
         private Label label6;
-        private Panel panel3;
-        private Label label7;
-        private Label label8;
-        private Label label9;
-        private Panel panel4;
         private Label label10;
+        private Label label12;
+        private Label label13;
+        private Button btnManageUser;
+        private Label label8;
+        private Label label11;
+        private Panel panel3;
+        private Panel panel4;
         private Panel panel5;
         private Panel panel6;
         private Panel panel7;
-        private Label label11;
-        private Label label12;
-        private Label label13;
     }
 }

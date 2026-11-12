@@ -139,5 +139,20 @@ namespace FlavorCraveManagementSystem.Forms.Admin
             AdminProfileForm form = new AdminProfileForm(loggedInUser);
             form.ShowDialog();
         }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
