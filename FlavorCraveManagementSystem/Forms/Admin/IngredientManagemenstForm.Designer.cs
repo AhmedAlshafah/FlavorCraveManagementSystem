@@ -44,6 +44,7 @@
             label2 = new Label();
             dgvIngredients = new DataGridView();
             txtUnit = new TextBox();
+            button1 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvIngredients).BeginInit();
             SuspendLayout();
@@ -56,18 +57,20 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(800, 74);
+            panel1.Size = new Size(1082, 74);
             panel1.TabIndex = 0;
             // 
             // label4
             // 
             label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = SystemColors.Control;
-            label4.Location = new Point(603, 36);
+            label4.Location = new Point(855, 36);
             label4.Name = "label4";
-            label4.Size = new Size(175, 20);
+            label4.Size = new Size(189, 20);
             label4.TabIndex = 14;
             label4.Text = "INGREDIENT INVENTORY";
+            label4.Click += label4_Click;
             // 
             // label3
             // 
@@ -104,11 +107,13 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(35, 118);
+            label1.Location = new Point(22, 118);
             label1.Name = "label1";
-            label1.Size = new Size(250, 20);
+            label1.Size = new Size(254, 20);
             label1.TabIndex = 3;
-            label1.Text = "Manage Restaurant's Ingredients List";
+            label1.Text = " Manage Restaurant's Ingredients List";
+            label1.TextAlign = ContentAlignment.MiddleLeft;
+            label1.Click += label1_Click;
             // 
             // lblUnit
             // 
@@ -129,12 +134,16 @@
             // 
             // btnAddIng
             // 
+            btnAddIng.BackColor = Color.Gold;
+            btnAddIng.FlatStyle = FlatStyle.Flat;
+            btnAddIng.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAddIng.ForeColor = Color.FromArgb(30, 70, 55);
             btnAddIng.Location = new Point(22, 221);
             btnAddIng.Name = "btnAddIng";
             btnAddIng.Size = new Size(119, 29);
             btnAddIng.TabIndex = 7;
             btnAddIng.Text = "Add Ingredient";
-            btnAddIng.UseVisualStyleBackColor = true;
+            btnAddIng.UseVisualStyleBackColor = false;
             btnAddIng.Click += btnAddIng_Click;
             // 
             // btnUpdateIng
@@ -197,7 +206,7 @@
             dgvIngredients.ReadOnly = true;
             dgvIngredients.RowHeadersWidth = 51;
             dgvIngredients.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvIngredients.Size = new Size(756, 188);
+            dgvIngredients.Size = new Size(1008, 379);
             dgvIngredients.TabIndex = 15;
             dgvIngredients.CellClick += dgvIngredients_CellClick;
             // 
@@ -208,11 +217,26 @@
             txtUnit.Size = new Size(336, 27);
             txtUnit.TabIndex = 16;
             // 
+            // button1
+            // 
+            button1.BackColor = Color.Firebrick;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = SystemColors.ButtonHighlight;
+            button1.Location = new Point(591, 221);
+            button1.Name = "button1";
+            button1.Size = new Size(94, 29);
+            button1.TabIndex = 17;
+            button1.Text = "cancel";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
             // IngredientManagementForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1082, 653);
+            Controls.Add(button1);
             Controls.Add(txtUnit);
             Controls.Add(dgvIngredients);
             Controls.Add(label2);
@@ -254,5 +278,6 @@
         private Label label2;
         private DataGridView dgvIngredients;
         private TextBox txtUnit;
+        private Button button1;
     }
 }

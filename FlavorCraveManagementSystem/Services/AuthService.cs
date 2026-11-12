@@ -24,7 +24,7 @@ namespace FlavorCraveManagementSystem.Services
         }
 
         // Check whether the entered password is correct
-        private bool VerifyPassword(string password, string stored)
+        public static bool VerifyPassword(string password, string stored)
         {
             string[] parts = stored.Split('$');
 

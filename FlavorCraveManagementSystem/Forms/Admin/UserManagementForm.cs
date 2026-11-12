@@ -8,7 +8,6 @@ using System.Windows.Forms;
 using System.Security.Cryptography;
 using FlavorCraveManagementSystem.Data;
 using Microsoft.Data.SqlClient;
-using System.Data;
 using FlavorCraveManagementSystem.Services;
 namespace FlavorCraveManagementSystem.Forms.Admin
 {
@@ -80,8 +79,8 @@ namespace FlavorCraveManagementSystem.Forms.Admin
         }
 
         private Panel panel1;
-        private Label label4;
         private Label label2;
+        private Button btnCancel;
         private int? selectedUserId = null;
         private void LoadUsers()
         {
@@ -89,34 +88,35 @@ namespace FlavorCraveManagementSystem.Forms.Admin
             {
                 using (SqlConnection conn = DatabaseHelper.GetConnection())
                 {
-                    string query = @"
+                    string sql = @"
                 SELECT
                     u.UserId,
                     u.FullName,
                     u.Email,
                     u.Phone,
+                    u.RoleId,
                     r.RoleName
                 FROM Users u
-                INNER JOIN Roles r
-                    ON u.RoleId = r.RoleId
+                INNER JOIN Roles r ON u.RoleId = r.RoleId
                 ORDER BY u.UserId";
 
-                    using (SqlDataAdapter adapter =
-                        new SqlDataAdapter(query, conn))
-                    {
-                        DataTable table = new DataTable();
+                    SqlDataAdapter adapter = new SqlDataAdapter(sql, conn);
+                    DataTable table = new DataTable();
 
-                        adapter.Fill(table);
+                    adapter.Fill(table);
 
-                        dgvUsers.AutoGenerateColumns = true;
-                        dgvUsers.DataSource = table;
-                    }
+                    dgvUsers.DataSource = null;
+                    dgvUsers.Columns.Clear();
+                    dgvUsers.AutoGenerateColumns = true;
+                    dgvUsers.DataSource = table;
+
+                    // Hide RoleId but keep it available in the data
+                    dgvUsers.Columns["RoleId"].Visible = false;
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(
-                    "Error loading users: " + ex.Message);
+                MessageBox.Show("Error loading users: " + ex.Message);
             }
         }
 
@@ -175,8 +175,8 @@ namespace FlavorCraveManagementSystem.Forms.Admin
             label3 = new Label();
             dgvUsers = new DataGridView();
             panel1 = new Panel();
-            label4 = new Label();
             label2 = new Label();
+            btnCancel = new Button();
             ((ISupportInitialize)dgvUsers).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -184,47 +184,51 @@ namespace FlavorCraveManagementSystem.Forms.Admin
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.Control;
-            label1.Location = new Point(629, 32);
+            label1.Location = new Point(893, 19);
             label1.Name = "label1";
-            label1.Size = new Size(185, 28);
+            label1.Size = new Size(138, 20);
             label1.TabIndex = 0;
             label1.Text = "User Management";
             // 
             // lblName
             // 
             lblName.AutoSize = true;
+            lblName.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblName.Location = new Point(22, 98);
             lblName.Name = "lblName";
-            lblName.Size = new Size(76, 20);
+            lblName.Size = new Size(80, 20);
             lblName.TabIndex = 2;
             lblName.Text = "Full Name";
             // 
             // lblPassword
             // 
             lblPassword.AutoSize = true;
+            lblPassword.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblPassword.Location = new Point(320, 98);
             lblPassword.Name = "lblPassword";
-            lblPassword.Size = new Size(70, 20);
+            lblPassword.Size = new Size(76, 20);
             lblPassword.TabIndex = 3;
             lblPassword.Text = "Password";
             // 
             // lblEmail
             // 
             lblEmail.AutoSize = true;
+            lblEmail.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblEmail.Location = new Point(22, 166);
             lblEmail.Name = "lblEmail";
-            lblEmail.Size = new Size(103, 20);
+            lblEmail.Size = new Size(108, 20);
             lblEmail.TabIndex = 4;
             lblEmail.Text = "Email Address";
             // 
             // lblRole
             // 
             lblRole.AutoSize = true;
+            lblRole.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblRole.Location = new Point(320, 166);
             lblRole.Name = "lblRole";
-            lblRole.Size = new Size(72, 20);
+            lblRole.Size = new Size(76, 20);
             lblRole.TabIndex = 5;
             lblRole.Text = "User Role";
             // 
@@ -232,21 +236,21 @@ namespace FlavorCraveManagementSystem.Forms.Admin
             // 
             txtName.Location = new Point(22, 121);
             txtName.Name = "txtName";
-            txtName.Size = new Size(125, 27);
+            txtName.Size = new Size(268, 27);
             txtName.TabIndex = 6;
             // 
             // txtEmail
             // 
             txtEmail.Location = new Point(22, 201);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(125, 27);
+            txtEmail.Size = new Size(268, 27);
             txtEmail.TabIndex = 7;
             // 
             // txtPassword
             // 
             txtPassword.Location = new Point(320, 121);
             txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(125, 27);
+            txtPassword.Size = new Size(185, 27);
             txtPassword.TabIndex = 8;
             // 
             // cmbRole
@@ -254,22 +258,26 @@ namespace FlavorCraveManagementSystem.Forms.Admin
             cmbRole.FormattingEnabled = true;
             cmbRole.Location = new Point(320, 201);
             cmbRole.Name = "cmbRole";
-            cmbRole.Size = new Size(151, 28);
+            cmbRole.Size = new Size(185, 28);
             cmbRole.TabIndex = 9;
             // 
             // btnAddUser
             // 
+            btnAddUser.BackColor = Color.Gold;
+            btnAddUser.FlatStyle = FlatStyle.Flat;
+            btnAddUser.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAddUser.ForeColor = Color.FromArgb(30, 70, 55);
             btnAddUser.Location = new Point(22, 281);
             btnAddUser.Name = "btnAddUser";
             btnAddUser.Size = new Size(94, 29);
             btnAddUser.TabIndex = 10;
             btnAddUser.Text = "Add User";
-            btnAddUser.UseVisualStyleBackColor = true;
+            btnAddUser.UseVisualStyleBackColor = false;
             btnAddUser.Click += btnAddUser_Click;
             // 
             // btnUpdateUser
             // 
-            btnUpdateUser.Location = new Point(136, 281);
+            btnUpdateUser.Location = new Point(122, 281);
             btnUpdateUser.Name = "btnUpdateUser";
             btnUpdateUser.Size = new Size(110, 29);
             btnUpdateUser.TabIndex = 11;
@@ -279,7 +287,7 @@ namespace FlavorCraveManagementSystem.Forms.Admin
             // 
             // btnRemoveUser
             // 
-            btnRemoveUser.Location = new Point(262, 281);
+            btnRemoveUser.Location = new Point(238, 281);
             btnRemoveUser.Name = "btnRemoveUser";
             btnRemoveUser.Size = new Size(110, 29);
             btnRemoveUser.TabIndex = 12;
@@ -289,7 +297,7 @@ namespace FlavorCraveManagementSystem.Forms.Admin
             // 
             // btnClear
             // 
-            btnClear.Location = new Point(393, 281);
+            btnClear.Location = new Point(354, 281);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(94, 29);
             btnClear.TabIndex = 13;
@@ -299,7 +307,7 @@ namespace FlavorCraveManagementSystem.Forms.Admin
             // 
             // btnRefresh
             // 
-            btnRefresh.Location = new Point(507, 281);
+            btnRefresh.Location = new Point(454, 281);
             btnRefresh.Name = "btnRefresh";
             btnRefresh.Size = new Size(94, 29);
             btnRefresh.TabIndex = 14;
@@ -327,31 +335,20 @@ namespace FlavorCraveManagementSystem.Forms.Admin
             dgvUsers.ReadOnly = true;
             dgvUsers.RowHeadersWidth = 51;
             dgvUsers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvUsers.Size = new Size(792, 188);
+            dgvUsers.Size = new Size(1009, 311);
             dgvUsers.TabIndex = 16;
             dgvUsers.CellContentClick += dgvUsers_CellContentClick;
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(30, 70, 55);
-            panel1.Controls.Add(label4);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(854, 74);
+            panel1.Size = new Size(1082, 74);
             panel1.TabIndex = 17;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.ForeColor = SystemColors.Control;
-            label4.Location = new Point(848, 40);
-            label4.Name = "label4";
-            label4.Size = new Size(88, 20);
-            label4.TabIndex = 14;
-            label4.Text = "MENU ITEM";
             // 
             // label2
             // 
@@ -364,9 +361,25 @@ namespace FlavorCraveManagementSystem.Forms.Admin
             label2.TabIndex = 13;
             label2.Text = "FLAVOR CRAVE";
             // 
+            // btnCancel
+            // 
+            btnCancel.BackColor = Color.Firebrick;
+            btnCancel.BackgroundImageLayout = ImageLayout.Center;
+            btnCancel.FlatStyle = FlatStyle.Flat;
+            btnCancel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCancel.ForeColor = Color.White;
+            btnCancel.Location = new Point(554, 281);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(94, 29);
+            btnCancel.TabIndex = 18;
+            btnCancel.Text = "cancel";
+            btnCancel.UseVisualStyleBackColor = false;
+            btnCancel.Click += btnCancel_Click;
+            // 
             // UserManagementForm
             // 
-            ClientSize = new Size(854, 512);
+            ClientSize = new Size(1082, 653);
+            Controls.Add(btnCancel);
             Controls.Add(panel1);
             Controls.Add(dgvUsers);
             Controls.Add(label3);
@@ -617,14 +630,20 @@ namespace FlavorCraveManagementSystem.Forms.Admin
 
             DataGridViewRow row = dgvUsers.Rows[e.RowIndex];
 
-            selectedUserId = Convert.ToInt32(
-                row.Cells["UserId"].Value);
+            if (row.IsNewRow)
+                return;
 
-            txtName.Text = row.Cells["FullName"].Value.ToString();
-            txtEmail.Text = row.Cells["Email"].Value.ToString();
+            // Read directly from the SQL data
+            if (row.DataBoundItem is not DataRowView data)
+                return;
+
+            selectedUserId = Convert.ToInt32(data["UserId"]);
+
+            txtName.Text = data["FullName"].ToString();
+            txtEmail.Text = data["Email"].ToString();
 
             cmbRole.SelectedValue =
-                Convert.ToInt32(row.Cells["RoleId"].Value);
+                Convert.ToInt32(data["RoleId"]);
 
             txtPassword.Clear();
         }
@@ -632,6 +651,11 @@ namespace FlavorCraveManagementSystem.Forms.Admin
         private void UserManagementForm_Load_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

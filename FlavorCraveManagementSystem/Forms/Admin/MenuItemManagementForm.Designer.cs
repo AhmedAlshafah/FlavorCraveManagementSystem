@@ -44,6 +44,7 @@
             btnRefresh = new Button();
             dgvMenuItems = new DataGridView();
             label5 = new Label();
+            button1 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvMenuItems).BeginInit();
             SuspendLayout();
@@ -62,10 +63,11 @@
             // label4
             // 
             label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = SystemColors.Control;
-            label4.Location = new Point(848, 40);
+            label4.Location = new Point(936, 36);
             label4.Name = "label4";
-            label4.Size = new Size(88, 20);
+            label4.Size = new Size(94, 20);
             label4.TabIndex = 14;
             label4.Text = "MENU ITEM";
             label4.Click += label4_Click;
@@ -138,12 +140,16 @@
             // 
             // btnAddMenu
             // 
+            btnAddMenu.BackColor = Color.Gold;
+            btnAddMenu.FlatStyle = FlatStyle.Flat;
+            btnAddMenu.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAddMenu.ForeColor = Color.FromArgb(30, 70, 55);
             btnAddMenu.Location = new Point(22, 198);
             btnAddMenu.Name = "btnAddMenu";
             btnAddMenu.Size = new Size(94, 29);
             btnAddMenu.TabIndex = 9;
             btnAddMenu.Text = "Add Menu";
-            btnAddMenu.UseVisualStyleBackColor = true;
+            btnAddMenu.UseVisualStyleBackColor = false;
             btnAddMenu.Click += btnAddMenu_Click;
             // 
             // btnUpdateMenu
@@ -196,7 +202,7 @@
             dgvMenuItems.ReadOnly = true;
             dgvMenuItems.RowHeadersWidth = 51;
             dgvMenuItems.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvMenuItems.Size = new Size(914, 305);
+            dgvMenuItems.Size = new Size(1008, 409);
             dgvMenuItems.TabIndex = 14;
             dgvMenuItems.CellClick += dgvMenuItems_CellClick;
             // 
@@ -210,11 +216,26 @@
             label5.TabIndex = 15;
             label5.Text = "Register Menu Items";
             // 
+            // button1
+            // 
+            button1.BackColor = Color.Firebrick;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = SystemColors.ButtonHighlight;
+            button1.Location = new Point(538, 198);
+            button1.Name = "button1";
+            button1.Size = new Size(94, 29);
+            button1.TabIndex = 16;
+            button1.Text = "cancel";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
             // MenuItemManagementForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1082, 653);
+            Controls.Add(button1);
             Controls.Add(label5);
             Controls.Add(dgvMenuItems);
             Controls.Add(btnRefresh);
@@ -257,5 +278,6 @@
         private Button btnRefresh;
         private DataGridView dgvMenuItems;
         private Label label5;
+        private Button button1;
     }
 }

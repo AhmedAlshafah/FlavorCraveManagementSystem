@@ -45,6 +45,7 @@
             btnRefresh = new Button();
             dgvMappings = new DataGridView();
             label5 = new Label();
+            btncancel = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nudQuantity).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvMappings).BeginInit();
@@ -64,10 +65,11 @@
             // label4
             // 
             label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = SystemColors.Control;
-            label4.Location = new Point(771, 36);
+            label4.Location = new Point(882, 36);
             label4.Name = "label4";
-            label4.Size = new Size(161, 20);
+            label4.Size = new Size(175, 20);
             label4.TabIndex = 14;
             label4.Text = "INGREDIENT MAPPING";
             // 
@@ -162,12 +164,16 @@
             // 
             // btnMap
             // 
+            btnMap.BackColor = Color.Gold;
+            btnMap.FlatStyle = FlatStyle.Flat;
+            btnMap.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnMap.ForeColor = Color.FromArgb(30, 70, 55);
             btnMap.Location = new Point(12, 298);
             btnMap.Name = "btnMap";
             btnMap.Size = new Size(131, 29);
             btnMap.TabIndex = 10;
             btnMap.Text = "Map Ingredients";
-            btnMap.UseVisualStyleBackColor = true;
+            btnMap.UseVisualStyleBackColor = false;
             btnMap.Click += btnMap_Click;
             // 
             // btnRemoveMapping
@@ -208,7 +214,7 @@
             dgvMappings.ReadOnly = true;
             dgvMappings.RowHeadersWidth = 51;
             dgvMappings.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvMappings.Size = new Size(920, 325);
+            dgvMappings.Size = new Size(1045, 325);
             dgvMappings.TabIndex = 14;
             dgvMappings.CellClick += dgvMappings_CellClick;
             // 
@@ -222,11 +228,26 @@
             label5.TabIndex = 15;
             label5.Text = "Mapped Ingredients";
             // 
+            // btncancel
+            // 
+            btncancel.BackColor = Color.Firebrick;
+            btncancel.FlatStyle = FlatStyle.Flat;
+            btncancel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btncancel.ForeColor = SystemColors.ButtonHighlight;
+            btncancel.Location = new Point(449, 298);
+            btncancel.Name = "btncancel";
+            btncancel.Size = new Size(94, 29);
+            btncancel.TabIndex = 16;
+            btncancel.Text = "cancel";
+            btncancel.UseVisualStyleBackColor = false;
+            btncancel.Click += btncancel_Click;
+            // 
             // MenuIngredientMappingForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1082, 653);
+            Controls.Add(btncancel);
             Controls.Add(label5);
             Controls.Add(dgvMappings);
             Controls.Add(btnRefresh);
@@ -271,5 +292,6 @@
         private Button btnRefresh;
         private DataGridView dgvMappings;
         private Label label5;
+        private Button btncancel;
     }
 }
