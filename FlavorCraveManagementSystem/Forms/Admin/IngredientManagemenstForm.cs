@@ -243,20 +243,5 @@ namespace FlavorCraveManagementSystem.Forms.Admin
                 MessageBox.Show("Cannot remove ingredient: " + ex.Message);
             }
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

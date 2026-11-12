@@ -267,10 +267,5 @@ namespace FlavorCraveManagementSystem.Forms.Admin
             nudQuantity.Value = Convert.ToDecimal(
                 row.Cells["QuantityRequired"].Value);
         }
-
-        private void btncancel_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
     }
 }

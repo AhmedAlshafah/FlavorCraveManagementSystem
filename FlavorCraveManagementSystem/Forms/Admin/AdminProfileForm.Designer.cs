@@ -30,18 +30,11 @@
         {
             panel1 = new Panel();
             label1 = new Label();
+            label4 = new Label();
             label3 = new Label();
             label2 = new Label();
             label5 = new Label();
             groupBox1 = new GroupBox();
-            button1 = new Button();
-            lblStatus = new Label();
-            txtNewPassword = new TextBox();
-            txtConfirmPassword = new TextBox();
-            txtCurrentPassword = new TextBox();
-            label9 = new Label();
-            label10 = new Label();
-            label11 = new Label();
             btnSave = new Button();
             txtEmail = new TextBox();
             txtPhone = new TextBox();
@@ -57,23 +50,33 @@
             // 
             panel1.BackColor = Color.FromArgb(30, 70, 55);
             panel1.Controls.Add(label1);
+            panel1.Controls.Add(label4);
             panel1.Controls.Add(label3);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1082, 74);
+            panel1.Size = new Size(800, 74);
             panel1.TabIndex = 3;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.Control;
-            label1.Location = new Point(962, 36);
+            label1.Location = new Point(669, 36);
             label1.Name = "label1";
-            label1.Size = new Size(68, 20);
+            label1.Size = new Size(63, 20);
             label1.TabIndex = 15;
             label1.Text = "PROFILE";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.ForeColor = SystemColors.Control;
+            label4.Location = new Point(848, 40);
+            label4.Name = "label4";
+            label4.Size = new Size(88, 20);
+            label4.TabIndex = 14;
+            label4.Text = "MENU ITEM";
             // 
             // label3
             // 
@@ -107,14 +110,6 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(button1);
-            groupBox1.Controls.Add(lblStatus);
-            groupBox1.Controls.Add(txtNewPassword);
-            groupBox1.Controls.Add(txtConfirmPassword);
-            groupBox1.Controls.Add(txtCurrentPassword);
-            groupBox1.Controls.Add(label9);
-            groupBox1.Controls.Add(label10);
-            groupBox1.Controls.Add(label11);
             groupBox1.Controls.Add(btnSave);
             groupBox1.Controls.Add(txtEmail);
             groupBox1.Controls.Add(txtPhone);
@@ -127,116 +122,36 @@
             groupBox1.Size = new Size(766, 310);
             groupBox1.TabIndex = 6;
             groupBox1.TabStop = false;
-            groupBox1.Enter += groupBox1_Enter;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.Firebrick;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(647, 269);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 14;
-            button1.Text = "cancel";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
-            // 
-            // lblStatus
-            // 
-            lblStatus.AutoSize = true;
-            lblStatus.Location = new Point(369, 198);
-            lblStatus.Name = "lblStatus";
-            lblStatus.Size = new Size(0, 20);
-            lblStatus.TabIndex = 13;
-            lblStatus.Click += label12_Click;
-            // 
-            // txtNewPassword
-            // 
-            txtNewPassword.Location = new Point(369, 104);
-            txtNewPassword.Name = "txtNewPassword";
-            txtNewPassword.Size = new Size(294, 27);
-            txtNewPassword.TabIndex = 12;
-            // 
-            // txtConfirmPassword
-            // 
-            txtConfirmPassword.Location = new Point(369, 158);
-            txtConfirmPassword.Name = "txtConfirmPassword";
-            txtConfirmPassword.Size = new Size(294, 27);
-            txtConfirmPassword.TabIndex = 11;
-            // 
-            // txtCurrentPassword
-            // 
-            txtCurrentPassword.Location = new Point(369, 46);
-            txtCurrentPassword.Name = "txtCurrentPassword";
-            txtCurrentPassword.Size = new Size(294, 27);
-            txtCurrentPassword.TabIndex = 10;
-            txtCurrentPassword.TextChanged += textBox3_TextChanged;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.Location = new Point(369, 135);
-            label9.Name = "label9";
-            label9.Size = new Size(173, 20);
-            label9.TabIndex = 9;
-            label9.Text = "Confirm New Password";
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label10.Location = new Point(369, 81);
-            label10.Name = "label10";
-            label10.Size = new Size(112, 20);
-            label10.TabIndex = 8;
-            label10.Text = "New Password";
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label11.Location = new Point(369, 23);
-            label11.Name = "label11";
-            label11.Size = new Size(76, 20);
-            label11.TabIndex = 7;
-            label11.Text = "Password";
             // 
             // btnSave
             // 
-            btnSave.BackColor = Color.Gold;
-            btnSave.FlatStyle = FlatStyle.Flat;
-            btnSave.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnSave.ForeColor = Color.FromArgb(30, 70, 55);
-            btnSave.Location = new Point(528, 269);
+            btnSave.Location = new Point(628, 266);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(113, 29);
             btnSave.TabIndex = 6;
             btnSave.Text = "Save Changes";
-            btnSave.UseVisualStyleBackColor = false;
+            btnSave.UseVisualStyleBackColor = true;
             btnSave.Click += btnSave_Click;
             // 
             // txtEmail
             // 
             txtEmail.Location = new Point(6, 104);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(294, 27);
+            txtEmail.Size = new Size(493, 27);
             txtEmail.TabIndex = 5;
             // 
             // txtPhone
             // 
             txtPhone.Location = new Point(6, 158);
             txtPhone.Name = "txtPhone";
-            txtPhone.Size = new Size(294, 27);
+            txtPhone.Size = new Size(493, 27);
             txtPhone.TabIndex = 4;
             // 
             // txtName
             // 
-            txtName.Location = new Point(6, 46);
+            txtName.Location = new Point(6, 51);
             txtName.Name = "txtName";
-            txtName.Size = new Size(294, 27);
+            txtName.Size = new Size(493, 27);
             txtName.TabIndex = 3;
             // 
             // label8
@@ -273,7 +188,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1082, 653);
+            ClientSize = new Size(800, 450);
             Controls.Add(groupBox1);
             Controls.Add(label5);
             Controls.Add(label2);
@@ -291,6 +206,7 @@
         #endregion
 
         private Panel panel1;
+        private Label label4;
         private Label label3;
         private Label label1;
         private Label label2;
@@ -303,13 +219,5 @@
         private TextBox txtPhone;
         private TextBox txtName;
         private Label label8;
-        private TextBox txtNewPassword;
-        private TextBox txtConfirmPassword;
-        private TextBox txtCurrentPassword;
-        private Label label9;
-        private Label label10;
-        private Label label11;
-        private Label lblStatus;
-        private Button button1;
     }
 }

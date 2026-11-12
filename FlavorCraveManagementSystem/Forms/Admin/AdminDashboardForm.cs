@@ -105,39 +105,5 @@ namespace FlavorCraveManagementSystem.Forms.Admin
         {
 
         }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button3_Click_1(object sender, EventArgs e)
-        {
-            MenuItemManagementForm form = new MenuItemManagementForm();
-            form.ShowDialog();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            IngredientManagementForm form = new IngredientManagementForm();
-            form.ShowDialog();
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            MenuIngredientMappingForm form = new MenuIngredientMappingForm();
-            form.ShowDialog();
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            AdminProfileForm form = new AdminProfileForm(loggedInUser);
-            form.ShowDialog();
-        }
     }
 }
