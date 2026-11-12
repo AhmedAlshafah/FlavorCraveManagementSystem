@@ -298,5 +298,10 @@ namespace FlavorCraveManagementSystem.Forms.Admin
             cmbCategory.SelectedValue =
                 Convert.ToInt32(row.Cells["CategoryId"].Value);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
