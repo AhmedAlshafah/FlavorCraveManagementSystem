@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿
 
 namespace FlavorCraveManagementSystem.Models
 {
@@ -11,6 +9,8 @@ namespace FlavorCraveManagementSystem.Models
 
         public string FullName { get; set; } = "";
         public string Email { get; set; } = "";
+
+        public string Phone { get; set; } = "";
         public string RoleName { get; set; } = "";
 
 
