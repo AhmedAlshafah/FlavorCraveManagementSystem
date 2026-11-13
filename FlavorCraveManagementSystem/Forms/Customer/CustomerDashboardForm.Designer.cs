@@ -72,7 +72,7 @@
             lblWalletBalance.AutoSize = true;
             lblWalletBalance.Location = new Point(1300, 298);
             lblWalletBalance.Name = "lblWalletBalance";
-            lblWalletBalance.Size = new Size(301, 37);
+            lblWalletBalance.Size = new Size(191, 23);
             lblWalletBalance.TabIndex = 2;
             lblWalletBalance.Text = "Wallet Balance: RM 0.00";
             lblWalletBalance.Click += lblWalletBalance_Click;
@@ -83,7 +83,7 @@
             lblWelcomeMessage.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblWelcomeMessage.Location = new Point(609, 186);
             lblWelcomeMessage.Name = "lblWelcomeMessage";
-            lblWelcomeMessage.Size = new Size(404, 45);
+            lblWelcomeMessage.Size = new Size(255, 28);
             lblWelcomeMessage.TabIndex = 3;
             lblWelcomeMessage.Text = "Welcome to Flavor Crave!";
             lblWelcomeMessage.Click += lblWelcomeMessage_Click;
@@ -170,7 +170,7 @@
             lblSelectedFoodPrice.AutoSize = true;
             lblSelectedFoodPrice.Location = new Point(6, 523);
             lblSelectedFoodPrice.Name = "lblSelectedFoodPrice";
-            lblSelectedFoodPrice.Size = new Size(0, 37);
+            lblSelectedFoodPrice.Size = new Size(0, 23);
             lblSelectedFoodPrice.TabIndex = 13;
             // 
             // lblSelectedFoodName
@@ -178,7 +178,7 @@
             lblSelectedFoodName.AutoSize = true;
             lblSelectedFoodName.Location = new Point(6, 472);
             lblSelectedFoodName.Name = "lblSelectedFoodName";
-            lblSelectedFoodName.Size = new Size(0, 37);
+            lblSelectedFoodName.Size = new Size(0, 23);
             lblSelectedFoodName.TabIndex = 12;
             // 
             // picFood
@@ -196,7 +196,7 @@
             label3.AutoSize = true;
             label3.Location = new Point(501, 56);
             label3.Name = "label3";
-            label3.Size = new Size(125, 37);
+            label3.Size = new Size(80, 23);
             label3.TabIndex = 7;
             label3.Text = "Quantity:";
             // 
@@ -221,7 +221,7 @@
             nudQuantity.Margin = new Padding(3, 4, 3, 4);
             nudQuantity.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             nudQuantity.Name = "nudQuantity";
-            nudQuantity.Size = new Size(257, 43);
+            nudQuantity.Size = new Size(257, 30);
             nudQuantity.TabIndex = 5;
             nudQuantity.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
@@ -275,7 +275,7 @@
             lblCategory.AutoSize = true;
             lblCategory.Location = new Point(48, 56);
             lblCategory.Name = "lblCategory";
-            lblCategory.Size = new Size(131, 37);
+            lblCategory.Size = new Size(83, 23);
             lblCategory.TabIndex = 2;
             lblCategory.Text = "Category:";
             // 
@@ -285,7 +285,7 @@
             cboCategory.Location = new Point(198, 48);
             cboCategory.Margin = new Padding(3, 4, 3, 4);
             cboCategory.Name = "cboCategory";
-            cboCategory.Size = new Size(252, 45);
+            cboCategory.Size = new Size(252, 31);
             cboCategory.TabIndex = 1;
             cboCategory.SelectedIndexChanged += cboCategory_SelectedIndexChanged;
             // 
@@ -308,7 +308,7 @@
             label2.ForeColor = Color.White;
             label2.Location = new Point(1460, 77);
             label2.Name = "label2";
-            label2.Size = new Size(163, 37);
+            label2.Size = new Size(102, 23);
             label2.TabIndex = 1;
             label2.Text = "CUSTMOER";
             // 
@@ -319,7 +319,7 @@
             labe.ForeColor = Color.White;
             labe.Location = new Point(83, 66);
             labe.Name = "labe";
-            labe.Size = new Size(372, 65);
+            labe.Size = new Size(234, 41);
             labe.TabIndex = 0;
             labe.Text = "FLAVOR CRAVE";
             labe.Click += labe_Click;
@@ -336,7 +336,7 @@
             panel2.Location = new Point(0, 171);
             panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(400, 1141);
+            panel2.Size = new Size(400, 1004);
             panel2.TabIndex = 9;
             // 
             // btnLogout
@@ -359,15 +359,15 @@
             label1.ForeColor = Color.Gray;
             label1.Location = new Point(563, 249);
             label1.Name = "label1";
-            label1.Size = new Size(691, 37);
+            label1.Size = new Size(447, 23);
             label1.TabIndex = 10;
             label1.Text = "Browse our menu, place your order, and enjoy your meal.";
             // 
             // CustomerDashboardForm
             // 
-            AutoScaleDimensions = new SizeF(15F, 37F);
+            AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1719, 1312);
+            ClientSize = new Size(1719, 1175);
             Controls.Add(label1);
             Controls.Add(panel2);
             Controls.Add(lblWelcomeMessage);
