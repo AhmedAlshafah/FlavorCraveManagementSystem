@@ -195,45 +195,46 @@ namespace FlavorCraveManagementSystem.Forms.Admin
             // lblName
             // 
             lblName.AutoSize = true;
-            lblName.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblName.Font = new Font("Microsoft Sans Serif", 10.2F);
             lblName.Location = new Point(22, 98);
             lblName.Name = "lblName";
-            lblName.Size = new Size(80, 20);
+            lblName.Size = new Size(85, 20);
             lblName.TabIndex = 2;
             lblName.Text = "Full Name";
             // 
             // lblPassword
             // 
             lblPassword.AutoSize = true;
-            lblPassword.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblPassword.Font = new Font("Microsoft Sans Serif", 10.2F);
             lblPassword.Location = new Point(320, 98);
             lblPassword.Name = "lblPassword";
-            lblPassword.Size = new Size(76, 20);
+            lblPassword.Size = new Size(83, 20);
             lblPassword.TabIndex = 3;
             lblPassword.Text = "Password";
             // 
             // lblEmail
             // 
             lblEmail.AutoSize = true;
-            lblEmail.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblEmail.Font = new Font("Microsoft Sans Serif", 10.2F);
             lblEmail.Location = new Point(22, 166);
             lblEmail.Name = "lblEmail";
-            lblEmail.Size = new Size(108, 20);
+            lblEmail.Size = new Size(118, 20);
             lblEmail.TabIndex = 4;
             lblEmail.Text = "Email Address";
             // 
             // lblRole
             // 
             lblRole.AutoSize = true;
-            lblRole.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblRole.Font = new Font("Microsoft Sans Serif", 10.2F);
             lblRole.Location = new Point(320, 166);
             lblRole.Name = "lblRole";
-            lblRole.Size = new Size(76, 20);
+            lblRole.Size = new Size(84, 20);
             lblRole.TabIndex = 5;
             lblRole.Text = "User Role";
             // 
             // txtName
             // 
+            txtName.Font = new Font("Microsoft Sans Serif", 10.2F);
             txtName.Location = new Point(22, 121);
             txtName.Name = "txtName";
             txtName.Size = new Size(268, 27);
@@ -248,6 +249,7 @@ namespace FlavorCraveManagementSystem.Forms.Admin
             // 
             // txtPassword
             // 
+            txtPassword.Font = new Font("Microsoft Sans Serif", 10.2F);
             txtPassword.Location = new Point(320, 121);
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(185, 27);
@@ -328,6 +330,7 @@ namespace FlavorCraveManagementSystem.Forms.Admin
             // dgvUsers
             // 
             dgvUsers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvUsers.BackgroundColor = Color.White;
             dgvUsers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvUsers.Location = new Point(22, 373);
             dgvUsers.MultiSelect = false;
@@ -363,16 +366,15 @@ namespace FlavorCraveManagementSystem.Forms.Admin
             // 
             // btnCancel
             // 
-            btnCancel.BackColor = Color.Firebrick;
+            btnCancel.BackColor = Color.White;
             btnCancel.BackgroundImageLayout = ImageLayout.Center;
-            btnCancel.FlatStyle = FlatStyle.Flat;
-            btnCancel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCancel.ForeColor = Color.White;
-            btnCancel.Location = new Point(554, 281);
+            btnCancel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnCancel.ForeColor = Color.Black;
+            btnCancel.Location = new Point(870, 281);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(94, 29);
+            btnCancel.Size = new Size(161, 29);
             btnCancel.TabIndex = 18;
-            btnCancel.Text = "cancel";
+            btnCancel.Text = "Back to Dashboard";
             btnCancel.UseVisualStyleBackColor = false;
             btnCancel.Click += btnCancel_Click;
             // 

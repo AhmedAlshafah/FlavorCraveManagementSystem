@@ -86,45 +86,47 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(22, 77);
             label1.Name = "label1";
-            label1.Size = new Size(246, 28);
+            label1.Size = new Size(291, 29);
             label1.TabIndex = 3;
             label1.Text = "Menu Item Management";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Microsoft Sans Serif", 7.8F);
+            label2.ForeColor = Color.Gray;
             label2.Location = new Point(22, 105);
             label2.Name = "label2";
-            label2.Size = new Size(282, 17);
+            label2.Size = new Size(283, 16);
             label2.TabIndex = 4;
             label2.Text = "Manage the restaurant's approved menu items";
             // 
             // lblName
             // 
             lblName.AutoSize = true;
-            lblName.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblName.Font = new Font("Microsoft Sans Serif", 10.2F);
             lblName.Location = new Point(22, 131);
             lblName.Name = "lblName";
-            lblName.Size = new Size(132, 20);
+            lblName.Size = new Size(136, 20);
             lblName.TabIndex = 5;
             lblName.Text = "Menu Item Name";
             // 
             // lblCategory
             // 
             lblCategory.AutoSize = true;
-            lblCategory.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblCategory.Font = new Font("Microsoft Sans Serif", 10.2F);
             lblCategory.Location = new Point(527, 131);
             lblCategory.Name = "lblCategory";
-            lblCategory.Size = new Size(73, 20);
+            lblCategory.Size = new Size(76, 20);
             lblCategory.TabIndex = 6;
             lblCategory.Text = "Category";
             // 
             // txtMenuName
             // 
+            txtMenuName.Font = new Font("Microsoft Sans Serif", 10.2F);
             txtMenuName.Location = new Point(22, 154);
             txtMenuName.Name = "txtMenuName";
             txtMenuName.Size = new Size(499, 27);
@@ -132,10 +134,11 @@
             // 
             // cmbCategory
             // 
+            cmbCategory.Font = new Font("Microsoft Sans Serif", 10.2F);
             cmbCategory.FormattingEnabled = true;
             cmbCategory.Location = new Point(527, 154);
             cmbCategory.Name = "cmbCategory";
-            cmbCategory.Size = new Size(409, 28);
+            cmbCategory.Size = new Size(503, 28);
             cmbCategory.TabIndex = 8;
             // 
             // btnAddMenu
@@ -196,6 +199,7 @@
             // 
             dgvMenuItems.AllowUserToAddRows = false;
             dgvMenuItems.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvMenuItems.BackgroundColor = Color.White;
             dgvMenuItems.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvMenuItems.Location = new Point(22, 280);
             dgvMenuItems.Name = "dgvMenuItems";
@@ -218,15 +222,14 @@
             // 
             // button1
             // 
-            button1.BackColor = Color.Firebrick;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(538, 198);
+            button1.BackColor = SystemColors.ButtonHighlight;
+            button1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.ForeColor = SystemColors.ActiveCaptionText;
+            button1.Location = new Point(883, 198);
             button1.Name = "button1";
-            button1.Size = new Size(94, 29);
+            button1.Size = new Size(147, 29);
             button1.TabIndex = 16;
-            button1.Text = "cancel";
+            button1.Text = "Back to Dashboard";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 

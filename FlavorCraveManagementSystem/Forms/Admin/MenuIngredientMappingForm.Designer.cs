@@ -107,59 +107,62 @@
             // lblMenuItem
             // 
             lblMenuItem.AutoSize = true;
-            lblMenuItem.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblMenuItem.Font = new Font("Microsoft Sans Serif", 9F);
             lblMenuItem.Location = new Point(12, 132);
             lblMenuItem.Name = "lblMenuItem";
-            lblMenuItem.Size = new Size(131, 20);
+            lblMenuItem.Size = new Size(122, 18);
             lblMenuItem.TabIndex = 4;
             lblMenuItem.Text = "Select Menu Item";
             // 
             // lblIngredient
             // 
             lblIngredient.AutoSize = true;
-            lblIngredient.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblIngredient.Font = new Font("Microsoft Sans Serif", 9F);
             lblIngredient.Location = new Point(12, 187);
             lblIngredient.Name = "lblIngredient";
-            lblIngredient.Size = new Size(127, 20);
+            lblIngredient.Size = new Size(116, 18);
             lblIngredient.TabIndex = 5;
             lblIngredient.Text = "Select Ingredient";
             // 
             // lblQuantity
             // 
             lblQuantity.AutoSize = true;
-            lblQuantity.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblQuantity.Font = new Font("Microsoft Sans Serif", 9F);
             lblQuantity.Location = new Point(12, 242);
             lblQuantity.Name = "lblQuantity";
-            lblQuantity.Size = new Size(137, 20);
+            lblQuantity.Size = new Size(125, 18);
             lblQuantity.TabIndex = 6;
             lblQuantity.Text = "Quantity Required";
             // 
             // cmbMenuItem
             // 
             cmbMenuItem.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbMenuItem.Font = new Font("Microsoft Sans Serif", 9F);
             cmbMenuItem.FormattingEnabled = true;
             cmbMenuItem.Location = new Point(12, 155);
             cmbMenuItem.Name = "cmbMenuItem";
-            cmbMenuItem.Size = new Size(445, 28);
+            cmbMenuItem.Size = new Size(445, 26);
             cmbMenuItem.TabIndex = 7;
             cmbMenuItem.SelectedIndexChanged += cmbMenuItem_SelectedIndexChanged;
             // 
             // cmbIngredient
             // 
             cmbIngredient.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbIngredient.Font = new Font("Microsoft Sans Serif", 9F);
             cmbIngredient.FormattingEnabled = true;
             cmbIngredient.Location = new Point(12, 210);
             cmbIngredient.Name = "cmbIngredient";
-            cmbIngredient.Size = new Size(445, 28);
+            cmbIngredient.Size = new Size(445, 26);
             cmbIngredient.TabIndex = 8;
             // 
             // nudQuantity
             // 
             nudQuantity.DecimalPlaces = 2;
+            nudQuantity.Font = new Font("Microsoft Sans Serif", 9F);
             nudQuantity.Location = new Point(12, 265);
             nudQuantity.Maximum = new decimal(new int[] { 100000, 0, 0, 0 });
             nudQuantity.Name = "nudQuantity";
-            nudQuantity.Size = new Size(137, 27);
+            nudQuantity.Size = new Size(137, 24);
             nudQuantity.TabIndex = 9;
             // 
             // btnMap
@@ -208,6 +211,7 @@
             // 
             // dgvMappings
             // 
+            dgvMappings.BackgroundColor = SystemColors.ControlLightLight;
             dgvMappings.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvMappings.Location = new Point(12, 365);
             dgvMappings.Name = "dgvMappings";
@@ -230,15 +234,14 @@
             // 
             // btncancel
             // 
-            btncancel.BackColor = Color.Firebrick;
-            btncancel.FlatStyle = FlatStyle.Flat;
-            btncancel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btncancel.ForeColor = SystemColors.ButtonHighlight;
-            btncancel.Location = new Point(449, 298);
+            btncancel.BackColor = SystemColors.ButtonHighlight;
+            btncancel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btncancel.ForeColor = SystemColors.ActiveCaptionText;
+            btncancel.Location = new Point(907, 298);
             btncancel.Name = "btncancel";
-            btncancel.Size = new Size(94, 29);
+            btncancel.Size = new Size(150, 29);
             btncancel.TabIndex = 16;
-            btncancel.Text = "cancel";
+            btncancel.Text = "Back to Dashboard";
             btncancel.UseVisualStyleBackColor = false;
             btncancel.Click += btncancel_Click;
             // 

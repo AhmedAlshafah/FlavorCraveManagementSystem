@@ -97,19 +97,21 @@
             // lblingname
             // 
             lblingname.AutoSize = true;
-            lblingname.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblingname.Font = new Font("Microsoft Sans Serif", 10.2F);
             lblingname.Location = new Point(22, 147);
             lblingname.Name = "lblingname";
-            lblingname.Size = new Size(172, 28);
+            lblingname.Size = new Size(131, 20);
             lblingname.TabIndex = 2;
             lblingname.Text = "Ingredient Name";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(22, 118);
+            label1.Font = new Font("Microsoft Sans Serif", 7.8F);
+            label1.ForeColor = Color.Gray;
+            label1.Location = new Point(26, 118);
             label1.Name = "label1";
-            label1.Size = new Size(254, 20);
+            label1.Size = new Size(230, 16);
             label1.TabIndex = 3;
             label1.Text = " Manage Restaurant's Ingredients List";
             label1.TextAlign = ContentAlignment.MiddleLeft;
@@ -118,16 +120,17 @@
             // lblUnit
             // 
             lblUnit.AutoSize = true;
-            lblUnit.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblUnit.Font = new Font("Microsoft Sans Serif", 10.2F);
             lblUnit.Location = new Point(442, 147);
             lblUnit.Name = "lblUnit";
-            lblUnit.Size = new Size(52, 28);
+            lblUnit.Size = new Size(39, 20);
             lblUnit.TabIndex = 4;
             lblUnit.Text = "Unit";
             // 
             // txtIngName
             // 
-            txtIngName.Location = new Point(22, 188);
+            txtIngName.Font = new Font("Microsoft Sans Serif", 10.2F);
+            txtIngName.Location = new Point(22, 170);
             txtIngName.Name = "txtIngName";
             txtIngName.Size = new Size(397, 27);
             txtIngName.TabIndex = 5;
@@ -138,7 +141,7 @@
             btnAddIng.FlatStyle = FlatStyle.Flat;
             btnAddIng.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAddIng.ForeColor = Color.FromArgb(30, 70, 55);
-            btnAddIng.Location = new Point(22, 221);
+            btnAddIng.Location = new Point(23, 203);
             btnAddIng.Name = "btnAddIng";
             btnAddIng.Size = new Size(119, 29);
             btnAddIng.TabIndex = 7;
@@ -148,7 +151,7 @@
             // 
             // btnUpdateIng
             // 
-            btnUpdateIng.Location = new Point(147, 221);
+            btnUpdateIng.Location = new Point(148, 203);
             btnUpdateIng.Name = "btnUpdateIng";
             btnUpdateIng.Size = new Size(138, 29);
             btnUpdateIng.TabIndex = 8;
@@ -158,7 +161,7 @@
             // 
             // btnRemoveIng
             // 
-            btnRemoveIng.Location = new Point(291, 221);
+            btnRemoveIng.Location = new Point(292, 203);
             btnRemoveIng.Name = "btnRemoveIng";
             btnRemoveIng.Size = new Size(94, 29);
             btnRemoveIng.TabIndex = 9;
@@ -168,7 +171,7 @@
             // 
             // btnClear
             // 
-            btnClear.Location = new Point(391, 221);
+            btnClear.Location = new Point(392, 203);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(94, 29);
             btnClear.TabIndex = 10;
@@ -178,7 +181,7 @@
             // 
             // btnRefresh
             // 
-            btnRefresh.Location = new Point(491, 221);
+            btnRefresh.Location = new Point(492, 203);
             btnRefresh.Name = "btnRefresh";
             btnRefresh.Size = new Size(94, 29);
             btnRefresh.TabIndex = 11;
@@ -212,22 +215,22 @@
             // 
             // txtUnit
             // 
-            txtUnit.Location = new Point(442, 188);
+            txtUnit.Font = new Font("Microsoft Sans Serif", 10.2F);
+            txtUnit.Location = new Point(442, 170);
             txtUnit.Name = "txtUnit";
             txtUnit.Size = new Size(336, 27);
             txtUnit.TabIndex = 16;
             // 
             // button1
             // 
-            button1.BackColor = Color.Firebrick;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(591, 221);
+            button1.BackColor = SystemColors.ButtonHighlight;
+            button1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.ForeColor = SystemColors.ActiveCaptionText;
+            button1.Location = new Point(870, 203);
             button1.Name = "button1";
-            button1.Size = new Size(94, 29);
+            button1.Size = new Size(160, 29);
             button1.TabIndex = 17;
-            button1.Text = "cancel";
+            button1.Text = "Back to Dashboard";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
@@ -253,6 +256,7 @@
             Controls.Add(panel1);
             Name = "IngredientManagementForm";
             Text = "Form1";
+            Load += IngredientManagementForm_Load_1;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvIngredients).EndInit();

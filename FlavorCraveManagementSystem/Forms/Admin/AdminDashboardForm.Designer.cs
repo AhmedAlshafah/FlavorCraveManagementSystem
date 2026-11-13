@@ -35,6 +35,7 @@
             btnProfile = new Button();
             btnMapping = new Button();
             panel1 = new Panel();
+            lblWelcome = new Label();
             label4 = new Label();
             label3 = new Label();
             panel2 = new Panel();
@@ -95,7 +96,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(445, 86);
+            label2.Location = new Point(462, 77);
             label2.Name = "label2";
             label2.Size = new Size(357, 38);
             label2.TabIndex = 7;
@@ -146,6 +147,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(30, 70, 55);
+            panel1.Controls.Add(lblWelcome);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label3);
             panel1.Dock = DockStyle.Top;
@@ -153,15 +155,27 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1082, 74);
             panel1.TabIndex = 11;
+            panel1.Paint += panel1_Paint;
+            // 
+            // lblWelcome
+            // 
+            lblWelcome.AutoSize = true;
+            lblWelcome.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblWelcome.ForeColor = Color.White;
+            lblWelcome.Location = new Point(833, 37);
+            lblWelcome.Name = "lblWelcome";
+            lblWelcome.Size = new Size(0, 23);
+            lblWelcome.TabIndex = 14;
+            lblWelcome.Click += lblWelcome_Click;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = SystemColors.Control;
-            label4.Location = new Point(957, 36);
+            label4.Location = new Point(833, 9);
             label4.Name = "label4";
-            label4.Size = new Size(66, 20);
+            label4.Size = new Size(88, 28);
             label4.TabIndex = 13;
             label4.Text = "ADMIN ";
             label4.Click += label4_Click;
@@ -510,5 +524,6 @@
         private Panel panel5;
         private Panel panel6;
         private Panel panel7;
+        private Label lblWelcome;
     }
 }

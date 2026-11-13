@@ -14,6 +14,7 @@ namespace FlavorCraveManagementSystem.Forms.Admin
         {
             InitializeComponent();
             loggedInUser = user;
+            lblWelcome.Text = $"Welcome, {loggedInUser.FullName}";
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -161,6 +162,17 @@ namespace FlavorCraveManagementSystem.Forms.Admin
         }
 
         private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblWelcome_Click(object sender, EventArgs e)
+        {
+            lblWelcome.Text =
+    $"Welcome, {loggedInUser.FullName}";
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
