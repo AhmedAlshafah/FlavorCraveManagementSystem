@@ -90,6 +90,8 @@ namespace FlavorCraveManagementSystem.Services
                 };
             }
 
+
+
             if (storedPassword.StartsWith("PBKDF2$"))
             {
                 if (!VerifyPassword(password, storedPassword))
@@ -118,6 +120,80 @@ namespace FlavorCraveManagementSystem.Services
             }
 
             return user;
+        }
+
+        public bool VerifyPassword(
+    int userId,
+    string password)
+        {
+            using SqlConnection connection =
+                DatabaseHelper.GetConnection();
+
+            connection.Open();
+
+            string sql = @"
+        SELECT PasswordHash
+        FROM Users
+        WHERE UserId = @UserId";
+
+            using SqlCommand command =
+                new SqlCommand(sql, connection);
+
+            command.Parameters.AddWithValue(
+                "@UserId",
+                userId
+            );
+
+            object? result =
+                command.ExecuteScalar();
+
+            if (result == null)
+            {
+                return false;
+            }
+
+            string storedPassword =
+                result.ToString() ?? "";
+
+            string enteredPasswordHash =
+                HashPassword(password);
+
+            return storedPassword ==
+                   enteredPasswordHash;
+        }
+
+
+        public void UpdatePassword(
+    int userId,
+    string newPassword)
+        {
+            string newPasswordHash =
+                HashPassword(newPassword);
+
+            using SqlConnection connection =
+                DatabaseHelper.GetConnection();
+
+            connection.Open();
+
+            string sql = @"
+        UPDATE Users
+        SET PasswordHash = @PasswordHash
+        WHERE UserId = @UserId";
+
+            using SqlCommand command =
+                new SqlCommand(sql, connection);
+
+            command.Parameters.AddWithValue(
+                "@PasswordHash",
+                newPasswordHash
+            );
+
+            command.Parameters.AddWithValue(
+                "@UserId",
+                userId
+            );
+
+            command.ExecuteNonQuery();
         }
     }
 }
