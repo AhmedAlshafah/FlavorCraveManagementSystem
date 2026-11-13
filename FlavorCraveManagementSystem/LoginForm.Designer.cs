@@ -37,24 +37,28 @@
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(297, 49);
+            txtEmail.Location = new Point(339, 65);
+            txtEmail.Margin = new Padding(3, 4, 3, 4);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(236, 23);
+            txtEmail.Size = new Size(269, 27);
             txtEmail.TabIndex = 1;
+            txtEmail.TextChanged += txtEmail_TextChanged;
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(297, 114);
+            txtPassword.Location = new Point(339, 152);
+            txtPassword.Margin = new Padding(3, 4, 3, 4);
             txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(236, 23);
+            txtPassword.Size = new Size(269, 27);
             txtPassword.TabIndex = 2;
             txtPassword.UseSystemPasswordChar = true;
             // 
             // btnLogin
             // 
-            btnLogin.Location = new Point(364, 164);
+            btnLogin.Location = new Point(416, 219);
+            btnLogin.Margin = new Padding(3, 4, 3, 4);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(75, 23);
+            btnLogin.Size = new Size(86, 31);
             btnLogin.TabIndex = 3;
             btnLogin.Text = "Log in";
             btnLogin.UseVisualStyleBackColor = true;
@@ -63,32 +67,32 @@
             // lblEmail
             // 
             lblEmail.AutoSize = true;
-            lblEmail.Location = new Point(297, 31);
+            lblEmail.Location = new Point(339, 41);
             lblEmail.Name = "lblEmail";
-            lblEmail.Size = new Size(39, 15);
+            lblEmail.Size = new Size(49, 20);
             lblEmail.TabIndex = 4;
             lblEmail.Text = "Email:";
             // 
             // lblPassword
             // 
             lblPassword.AutoSize = true;
-            lblPassword.Location = new Point(297, 96);
+            lblPassword.Location = new Point(339, 128);
             lblPassword.Name = "lblPassword";
-            lblPassword.Size = new Size(60, 15);
+            lblPassword.Size = new Size(73, 20);
             lblPassword.TabIndex = 5;
             lblPassword.Text = "Password:";
-            
             // 
             // LoginForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(914, 600);
             Controls.Add(lblPassword);
             Controls.Add(lblEmail);
             Controls.Add(btnLogin);
             Controls.Add(txtPassword);
             Controls.Add(txtEmail);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "LoginForm";
             Text = "Login ";
             ResumeLayout(false);

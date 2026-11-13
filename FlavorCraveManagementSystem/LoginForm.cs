@@ -77,5 +77,10 @@ namespace FlavorCraveManagementSystem
                 );
             }
         }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
