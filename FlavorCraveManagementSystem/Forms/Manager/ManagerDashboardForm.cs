@@ -11,6 +11,8 @@ namespace FlavorCraveManagementSystem.Forms.Manager
             InitializeComponent();
 
             loggedInUser = user;
+
+            lblWelcome.Text = $"Welcome, {loggedInUser.FullName}";
         }
 
         private void btnManageInventory_Click(object sender, EventArgs e)
