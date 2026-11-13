@@ -77,5 +77,10 @@ namespace FlavorCraveManagementSystem
                 );
             }
         }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
