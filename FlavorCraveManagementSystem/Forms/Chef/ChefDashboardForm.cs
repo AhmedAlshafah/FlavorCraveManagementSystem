@@ -109,11 +109,6 @@ namespace FlavorCraveManagementSystem.Forms.Chef
         {
 
         }
-
-        private void lblChefName_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
 
