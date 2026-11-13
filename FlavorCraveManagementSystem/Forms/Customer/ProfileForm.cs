@@ -2,7 +2,7 @@
 using Microsoft.Data.SqlClient;
 using FlavorCraveManagementSystem.Data;
 using FlavorCraveManagementSystem.Models;
-
+using FlavorCraveManagementSystem.Services;
 namespace FlavorCraveManagementSystem.Forms.Customer
 {
     public partial class ProfileForm : Form
@@ -12,7 +12,14 @@ namespace FlavorCraveManagementSystem.Forms.Customer
         public ProfileForm(User user)
         {
             InitializeComponent();
-            this.loggedInUser = user;
+
+            loggedInUser = user;
+
+            lblStatus.Text = "";
+
+            txtCurrentPassword.UseSystemPasswordChar = true;
+            txtNewPassword.UseSystemPasswordChar = true;
+            txtConformNewPassword.UseSystemPasswordChar = true;
         }
 
         private void ProfileForm_Load(object sender, EventArgs e)
@@ -44,109 +51,213 @@ namespace FlavorCraveManagementSystem.Forms.Customer
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtFullName.Text) ||
-                string.IsNullOrWhiteSpace(txtEmail.Text) ||
-                string.IsNullOrWhiteSpace(txtPhone.Text))
+            lblStatus.ForeColor = Color.Red;
+            lblStatus.Text = "";
+
+            string fullName = txtFullName.Text.Trim();
+            string email = txtEmail.Text.Trim();
+            string phone = txtPhone.Text.Trim();
+
+            string currentPassword = txtCurrentPassword.Text;
+            string newPassword = txtNewPassword.Text;
+            string confirmPassword = txtConformNewPassword.Text;
+
+            // Validate personal information
+            if (fullName == "" || email == "" || phone == "")
             {
-                MessageBox.Show("All fields are required.");
+                lblStatus.Text = "Please fill in all personal details.";
                 return;
             }
 
-            if (!txtEmail.Text.Contains("@") || !txtEmail.Text.Contains("."))
+            if (!System.Net.Mail.MailAddress.TryCreate(
+                email, out var address) || address.Address != email)
             {
-                MessageBox.Show("Please enter a valid email address.");
+                lblStatus.Text = "Please enter a valid email address.";
                 return;
+            }
+
+            // Password change is optional
+            bool changePassword =
+                currentPassword != "" ||
+                newPassword != "" ||
+                confirmPassword != "";
+
+            if (changePassword)
+            {
+                if (currentPassword == "")
+                {
+                    lblStatus.Text = "Please enter your current password.";
+                    return;
+                }
+
+                if (newPassword == "")
+                {
+                    lblStatus.Text = "Please enter a new password.";
+                    return;
+                }
+
+                if (confirmPassword == "")
+                {
+                    lblStatus.Text = "Please confirm your new password.";
+                    return;
+                }
+
+                if (newPassword != confirmPassword)
+                {
+                    lblStatus.Text = "New passwords do not match.";
+                    return;
+                }
+
+                if (newPassword.Length < 8)
+                {
+                    lblStatus.Text =
+                        "New password must be at least 8 characters.";
+                    return;
+                }
             }
 
             try
             {
                 using (SqlConnection conn = DatabaseHelper.GetConnection())
                 {
-                    // 保持你原来的写法：Phone
-                    string sql = @"
-                        UPDATE Users
-                        SET FullName = @FullName,
-                        Email = @Email,
-                        Phone = @Phone
-                        WHERE UserId = @UserId";
-
-                    SqlCommand cmd = new SqlCommand(sql, conn);
-                    cmd.Parameters.AddWithValue("@FullName", txtFullName.Text.Trim());
-                    cmd.Parameters.AddWithValue("@Email", txtEmail.Text.Trim());
-                    cmd.Parameters.AddWithValue("@Phone", txtPhone.Text.Trim());
-                    cmd.Parameters.AddWithValue("@UserId", loggedInUser.UserId);
                     conn.Open();
 
-                    int rows = cmd.ExecuteNonQuery();
+                    string storedHash = "";
 
-                    if (rows > 0)
+                    // Verify password only when changing password
+                    if (changePassword)
                     {
-                        // ========================================================
-                        // 这里开始插入密码修改逻辑！如果没填密码框就跳过。
-                        // ========================================================
-                        if (!string.IsNullOrWhiteSpace(txtCurrentPassword.Text) ||
-                            !string.IsNullOrWhiteSpace(txtNewPassword.Text) ||
-                            !string.IsNullOrWhiteSpace(txtConformNewPassword.Text))
+                        string checkSql =
+                            "SELECT PasswordHash FROM Users WHERE UserId = @Id";
+
+                        using (SqlCommand check =
+                            new SqlCommand(checkSql, conn))
                         {
-                            if (string.IsNullOrWhiteSpace(txtCurrentPassword.Text) ||
-                                string.IsNullOrWhiteSpace(txtNewPassword.Text) ||
-                                string.IsNullOrWhiteSpace(txtConformNewPassword.Text))
+                            check.Parameters.AddWithValue(
+                                "@Id", loggedInUser.UserId);
+
+                            object? result = check.ExecuteScalar();
+
+                            if (result == null || result == DBNull.Value)
                             {
-                                MessageBox.Show("Please fill in all password fields to change password.");
+                                lblStatus.Text = "User not found.";
                                 return;
                             }
 
-                            if (txtNewPassword.Text != txtConformNewPassword.Text)
-                            {
-                                MessageBox.Show("New passwords do not match.");
-                                return;
-                            }
-
-                            // 验证原密码（注意：如果你的数据库密码列叫 Password 而不是 PasswordHash，请把下面的 PasswordHash 改成 Password）
-                            string verifySql = "SELECT COUNT(*) FROM Users WHERE UserId = @UserId AND PasswordHash = @CurrentPassword";
-                            SqlCommand verifyCmd = new SqlCommand(verifySql, conn);
-                            verifyCmd.Parameters.AddWithValue("@UserId", loggedInUser.UserId);
-                            verifyCmd.Parameters.AddWithValue("@CurrentPassword", txtCurrentPassword.Text);
-
-                            int isValid = Convert.ToInt32(verifyCmd.ExecuteScalar());
-
-                            if (isValid == 0)
-                            {
-                                MessageBox.Show("Current password is incorrect.");
-                                return;
-                            }
-
-                            // 更新密码
-                            string updatePwdSql = "UPDATE Users SET PasswordHash = @NewPassword WHERE UserId = @UserId";
-                            SqlCommand updatePwdCmd = new SqlCommand(updatePwdSql, conn);
-                            updatePwdCmd.Parameters.AddWithValue("@NewPassword", txtNewPassword.Text);
-                            updatePwdCmd.Parameters.AddWithValue("@UserId", loggedInUser.UserId);
-                            updatePwdCmd.ExecuteNonQuery();
+                            storedHash = result.ToString() ?? "";
                         }
-                        // ========================================================
-                        // 密码修改逻辑结束
-                        // ========================================================
 
-                        // 更新内存里的姓名和邮箱
-                        loggedInUser.FullName = txtFullName.Text.Trim();
-                        loggedInUser.Email = txtEmail.Text.Trim();
-
-                        // 清理密码框
-                        txtCurrentPassword.Clear();
-                        txtNewPassword.Clear();
-                        txtConformNewPassword.Clear();
-
-                        MessageBox.Show("Profile updated successfully!");
+                        if (!AuthService.VerifyPassword(
+                            currentPassword, storedHash))
+                        {
+                            lblStatus.Text = "Current password is incorrect.";
+                            return;
+                        }
                     }
-                    else
+
+                    // Check whether another user has the same email
+                    string emailSql = @"
+                SELECT COUNT(*) FROM Users
+                WHERE Email = @Email AND UserId <> @Id";
+
+                    using (SqlCommand checkEmail =
+                        new SqlCommand(emailSql, conn))
                     {
-                        MessageBox.Show("Update failed. User not found.");
+                        checkEmail.Parameters.AddWithValue("@Email", email);
+                        checkEmail.Parameters.AddWithValue(
+                            "@Id", loggedInUser.UserId);
+
+                        if (Convert.ToInt32(checkEmail.ExecuteScalar()) > 0)
+                        {
+                            lblStatus.Text = "This email is already used.";
+                            return;
+                        }
+                    }
+
+                    // Update personal details
+                    string sql = @"
+                UPDATE Users
+                SET FullName = @Name,
+                    Email = @Email,
+                    Phone = @Phone";
+
+                    // Update password only if requested
+                    if (changePassword)
+                    {
+                        sql += ", PasswordHash = @NewHash";
+                    }
+
+                    sql += " WHERE UserId = @Id";
+
+                    if (changePassword)
+                    {
+                        sql += " AND PasswordHash = @OldHash";
+                    }
+
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@Name", fullName);
+                        cmd.Parameters.AddWithValue("@Email", email);
+                        cmd.Parameters.AddWithValue("@Phone", phone);
+                        cmd.Parameters.AddWithValue(
+                            "@Id", loggedInUser.UserId);
+
+                        if (changePassword)
+                        {
+                            cmd.Parameters.AddWithValue(
+                                "@NewHash",
+                                AuthService.HashPassword(newPassword));
+
+                            cmd.Parameters.AddWithValue(
+                                "@OldHash", storedHash);
+                        }
+
+                        int rows = cmd.ExecuteNonQuery();
+
+                        if (rows == 0)
+                        {
+                            lblStatus.Text =
+                                "Profile could not be updated. Please try again.";
+                            return;
+                        }
                     }
                 }
+
+                // Update the user object
+                loggedInUser.FullName = fullName;
+                loggedInUser.Email = email;
+
+                // Clear password fields
+                txtCurrentPassword.Clear();
+                txtNewPassword.Clear();
+                txtConformNewPassword.Clear();
+
+                // Show success inside the form
+                lblStatus.ForeColor = Color.Green;
+
+                if (changePassword)
+                {
+                    lblStatus.Text =
+                        "Profile and password updated successfully!";
+                }
+                else
+                {
+                    lblStatus.Text =
+                        "Profile updated successfully!";
+                }
+            }
+            catch (SqlException ex) when (
+                ex.Number == 2601 || ex.Number == 2627)
+            {
+                lblStatus.ForeColor = Color.Red;
+                lblStatus.Text = "This email is already used.";
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Update failed: " + ex.Message);
+                System.Diagnostics.Debug.WriteLine(ex);
+
+                lblStatus.ForeColor = Color.Red;
+                lblStatus.Text = "Failed to update profile.";
             }
         }
 

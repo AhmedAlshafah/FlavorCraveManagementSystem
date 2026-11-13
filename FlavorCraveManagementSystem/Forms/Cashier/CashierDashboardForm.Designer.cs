@@ -60,7 +60,7 @@
             btnProcessPayment.FlatAppearance.BorderSize = 0;
             btnProcessPayment.FlatAppearance.MouseOverBackColor = Color.FromArgb(30, 70, 55);
             btnProcessPayment.FlatStyle = FlatStyle.Flat;
-            btnProcessPayment.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnProcessPayment.Font = new Font("Microsoft Sans Serif", 10.2F);
             btnProcessPayment.ForeColor = Color.White;
             btnProcessPayment.Location = new Point(0, 70);
             btnProcessPayment.Margin = new Padding(3, 4, 3, 4);
@@ -78,7 +78,7 @@
             btnWalletReport.FlatAppearance.BorderSize = 0;
             btnWalletReport.FlatAppearance.MouseOverBackColor = Color.FromArgb(30, 70, 55);
             btnWalletReport.FlatStyle = FlatStyle.Flat;
-            btnWalletReport.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
+            btnWalletReport.Font = new Font("Microsoft Sans Serif", 10.2F);
             btnWalletReport.ForeColor = Color.White;
             btnWalletReport.Location = new Point(0, 114);
             btnWalletReport.Margin = new Padding(3, 4, 3, 4);
@@ -96,7 +96,7 @@
             btnProfile.FlatAppearance.BorderSize = 0;
             btnProfile.FlatAppearance.MouseOverBackColor = Color.FromArgb(30, 70, 55);
             btnProfile.FlatStyle = FlatStyle.Flat;
-            btnProfile.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
+            btnProfile.Font = new Font("Microsoft Sans Serif", 10.2F);
             btnProfile.ForeColor = Color.White;
             btnProfile.Location = new Point(0, 202);
             btnProfile.Margin = new Padding(3, 4, 3, 4);
@@ -114,7 +114,7 @@
             btnReceipts.FlatAppearance.BorderSize = 0;
             btnReceipts.FlatAppearance.MouseOverBackColor = Color.FromArgb(30, 70, 55);
             btnReceipts.FlatStyle = FlatStyle.Flat;
-            btnReceipts.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
+            btnReceipts.Font = new Font("Microsoft Sans Serif", 10.2F);
             btnReceipts.ForeColor = Color.White;
             btnReceipts.Location = new Point(0, 158);
             btnReceipts.Name = "btnReceipts";
@@ -180,7 +180,7 @@
             btnLogout.FlatAppearance.BorderSize = 0;
             btnLogout.FlatAppearance.MouseOverBackColor = Color.FromArgb(30, 70, 55);
             btnLogout.FlatStyle = FlatStyle.Flat;
-            btnLogout.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLogout.Font = new Font("Microsoft Sans Serif", 10.2F);
             btnLogout.ForeColor = Color.White;
             btnLogout.Location = new Point(0, 535);
             btnLogout.Name = "btnLogout";

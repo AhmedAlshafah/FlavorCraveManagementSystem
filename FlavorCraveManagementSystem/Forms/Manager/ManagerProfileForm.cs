@@ -17,6 +17,12 @@ namespace FlavorCraveManagementSystem.Forms.Manager
 
             loggedInUser = user;
 
+            lblStatus.Text = "";
+
+            txtCurrentPassword.UseSystemPasswordChar = true;
+            txtNewPassword.UseSystemPasswordChar = true;
+            txtConfirmNewPassword.UseSystemPasswordChar = true;
+
             LoadProfile();
         }
 
@@ -47,47 +53,29 @@ namespace FlavorCraveManagementSystem.Forms.Manager
 
         private void btnUpdateProfile_Click(object sender, EventArgs e)
         {
-            string fullName =
-                txtFullName.Text.Trim();
+            lblStatus.ForeColor = Color.Red;
+            lblStatus.Text = "";
 
-            string email =
-                txtEmail.Text.Trim();
+            string fullName = txtFullName.Text.Trim();
+            string email = txtEmail.Text.Trim();
+            string phone = txtPhone.Text.Trim();
 
-            string phone =
-                txtPhone.Text.Trim();
+            string currentPassword = txtCurrentPassword.Text;
+            string newPassword = txtNewPassword.Text;
+            string confirmPassword = txtConfirmNewPassword.Text;
 
-            string currentPassword =
-                txtCurrentPassword.Text;
-
-            string newPassword =
-                txtNewPassword.Text;
-
-            string confirmPassword =
-                txtConfirmNewPassword.Text;
-
-
-            // -------------------------
-            // Profile validation
-            // -------------------------
-
+            // Validate profile information
             if (fullName == "")
             {
-                MessageBox.Show(
-                    "Please enter your full name."
-                );
-
+                lblStatus.Text = "Please enter your full name.";
                 return;
             }
 
             if (email == "")
             {
-                MessageBox.Show(
-                    "Please enter your email."
-                );
-
+                lblStatus.Text = "Please enter your email.";
                 return;
             }
-
 
             try
             {
@@ -99,95 +87,59 @@ namespace FlavorCraveManagementSystem.Forms.Manager
 
                 if (emailUsed)
                 {
-                    MessageBox.Show(
-                        "This email is already being used by another user."
-                    );
-
+                    lblStatus.Text = "This email is already being used.";
                     return;
                 }
 
-
-                // -------------------------
-                // Password validation
-                // Only runs if the user
-                // entered something in the
-                // password section.
-                // -------------------------
-
+                // Password change is optional
                 bool wantsToChangePassword =
-                    currentPassword != "" ||
-                    newPassword != "" ||
-                    confirmPassword != "";
+                    newPassword != "" || confirmPassword != "";
 
                 if (wantsToChangePassword)
                 {
                     if (currentPassword == "")
                     {
-                        MessageBox.Show(
-                            "Please enter your current password."
-                        );
-
+                        lblStatus.Text = "Please enter your current password.";
                         return;
                     }
 
                     if (newPassword == "")
                     {
-                        MessageBox.Show(
-                            "Please enter a new password."
-                        );
-
+                        lblStatus.Text = "Please enter a new password.";
                         return;
                     }
 
                     if (confirmPassword == "")
                     {
-                        MessageBox.Show(
-                            "Please confirm your new password."
-                        );
-
+                        lblStatus.Text = "Please confirm your new password.";
                         return;
                     }
 
                     if (newPassword != confirmPassword)
                     {
-                        MessageBox.Show(
-                            "The new passwords do not match."
-                        );
-
+                        lblStatus.Text = "The new passwords do not match.";
                         return;
                     }
 
                     if (newPassword.Length < 6)
                     {
-                        MessageBox.Show(
-                            "The new password must be at least 6 characters."
-                        );
-
+                        lblStatus.Text =
+                            "New password must be at least 6 characters.";
                         return;
                     }
 
+                    AuthService authService = new AuthService();
+                    User? verifiedUser =
+                        authService.Login(loggedInUser.Email,currentPassword);
 
-                    bool currentPasswordCorrect =
-                        profileService.IsCurrentPasswordCorrect(
-                            loggedInUser.UserId,
-                            currentPassword
-                        );
-
-                    if (!currentPasswordCorrect)
+                    if (verifiedUser == null)
                     {
-                        MessageBox.Show(
-                            "The current password is incorrect."
-                        );
-
+                        lblStatus.Text = "Current password is incorrect.";
                         return;
                     }
                 }
 
-
-                // -------------------------
-                // Update profile
-                // -------------------------
-
+                // Update name, email and phone
                 profileService.UpdateProfile(
                     loggedInUser.UserId,
                     fullName,
@@ -195,41 +147,45 @@ namespace FlavorCraveManagementSystem.Forms.Manager
                     phone
                 );
 
-
-                // -------------------------
-                // Update password only
-                // when requested
-                // -------------------------
-
+                // Only update password if requested
                 if (wantsToChangePassword)
                 {
                     profileService.UpdatePassword(
                         loggedInUser.UserId,
                         newPassword
                     );
-
-                    txtCurrentPassword.Clear();
-                    txtNewPassword.Clear();
-                    txtConfirmNewPassword.Clear();
                 }
 
+                // Clear password fields
+                txtCurrentPassword.Clear();
+                txtNewPassword.Clear();
+                txtConfirmNewPassword.Clear();
 
-                MessageBox.Show(
-                    wantsToChangePassword
-                        ? "Profile and password updated successfully."
-                        : "Profile updated successfully."
-                );
-
+                // Refresh profile
                 LoadProfile();
+
+                // Display success inside the form
+                lblStatus.ForeColor = Color.Green;
+
+                if (wantsToChangePassword)
+                {
+                    lblStatus.Text =
+                        "Profile and password updated successfully!";
+                }
+                else
+                {
+                    lblStatus.Text =
+                        "Profile updated successfully!";
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(
-                    "Failed to update profile:\n\n" +
-                    ex.Message
-                );
+                lblStatus.ForeColor = Color.Red;
+                lblStatus.Text = "Failed to update profile: " + ex.Message;
             }
         }
+
+        
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -241,5 +197,9 @@ namespace FlavorCraveManagementSystem.Forms.Manager
         {
             this.Close();
         }
+
+        
+
+        
     }
 }

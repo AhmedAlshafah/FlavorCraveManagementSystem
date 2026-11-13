@@ -49,6 +49,7 @@
             lblPageSubtitle = new Label();
             lblAccountInfo = new Label();
             lblPasswordSection = new Label();
+            lblStatus = new Label();
             pnlHeader.SuspendLayout();
             SuspendLayout();
             // 
@@ -105,7 +106,7 @@
             btnSave.BackColor = Color.FromArgb(214, 165, 70);
             btnSave.FlatAppearance.BorderSize = 0;
             btnSave.FlatStyle = FlatStyle.Flat;
-            btnSave.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSave.Font = new Font("Segoe UI", 10.2F);
             btnSave.ForeColor = Color.Black;
             btnSave.Location = new Point(40, 450);
             btnSave.Margin = new Padding(3, 4, 3, 4);
@@ -114,21 +115,22 @@
             btnSave.TabIndex = 7;
             btnSave.Text = "Save Changes";
             btnSave.UseVisualStyleBackColor = false;
+            btnSave.Click += btnSave_Click;
             // 
             // btnClose
             // 
-            btnClose.BackColor = Color.FromArgb(38, 48, 45);
+            btnClose.BackColor = Color.White;
             btnClose.FlatAppearance.BorderSize = 0;
-            btnClose.FlatStyle = FlatStyle.Flat;
-            btnClose.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnClose.ForeColor = Color.White;
-            btnClose.Location = new Point(220, 450);
+            btnClose.Font = new Font("Segoe UI", 10.2F);
+            btnClose.ForeColor = Color.Black;
+            btnClose.Location = new Point(677, 450);
             btnClose.Margin = new Padding(3, 4, 3, 4);
             btnClose.Name = "btnClose";
-            btnClose.Size = new Size(305, 29);
+            btnClose.Size = new Size(163, 38);
             btnClose.TabIndex = 8;
             btnClose.Text = "Back to Dashboard";
             btnClose.UseVisualStyleBackColor = false;
+            btnClose.Click += btnClose_Click;
             // 
             // label1
             // 
@@ -258,12 +260,21 @@
             lblPasswordSection.TabIndex = 19;
             lblPasswordSection.Text = "Change Password (optional)";
             // 
+            // lblStatus
+            // 
+            lblStatus.AutoSize = true;
+            lblStatus.Location = new Point(460, 411);
+            lblStatus.Name = "lblStatus";
+            lblStatus.Size = new Size(0, 20);
+            lblStatus.TabIndex = 20;
+            // 
             // CashierProfileForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(245, 245, 242);
             ClientSize = new Size(882, 628);
+            Controls.Add(lblStatus);
             Controls.Add(lblPasswordSection);
             Controls.Add(lblAccountInfo);
             Controls.Add(lblPageSubtitle);
@@ -315,5 +326,6 @@
         private Label lblPageSubtitle;
         private Label lblAccountInfo;
         private Label lblPasswordSection;
+        private Label lblStatus;
     }
 }

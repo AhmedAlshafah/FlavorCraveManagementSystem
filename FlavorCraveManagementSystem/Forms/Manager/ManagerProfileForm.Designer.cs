@@ -49,6 +49,7 @@
             label9 = new Label();
             label10 = new Label();
             label11 = new Label();
+            lblStatus = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -57,7 +58,7 @@
             lblFullName.AutoSize = true;
             lblFullName.Location = new Point(32, 219);
             lblFullName.Name = "lblFullName";
-            lblFullName.Size = new Size(66, 17);
+            lblFullName.Size = new Size(87, 23);
             lblFullName.TabIndex = 0;
             lblFullName.Text = "Full Name";
             // 
@@ -66,7 +67,7 @@
             label2.AutoSize = true;
             label2.Location = new Point(32, 292);
             label2.Name = "label2";
-            label2.Size = new Size(39, 17);
+            label2.Size = new Size(51, 23);
             label2.TabIndex = 1;
             label2.Text = "Email";
             // 
@@ -75,7 +76,7 @@
             label3.AutoSize = true;
             label3.Location = new Point(32, 355);
             label3.Name = "label3";
-            label3.Size = new Size(44, 17);
+            label3.Size = new Size(59, 23);
             label3.TabIndex = 2;
             label3.Text = "Phone";
             // 
@@ -83,21 +84,21 @@
             // 
             txtFullName.Location = new Point(32, 240);
             txtFullName.Name = "txtFullName";
-            txtFullName.Size = new Size(238, 25);
+            txtFullName.Size = new Size(238, 29);
             txtFullName.TabIndex = 3;
             // 
             // txtEmail
             // 
             txtEmail.Location = new Point(32, 312);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(238, 25);
+            txtEmail.Size = new Size(238, 29);
             txtEmail.TabIndex = 4;
             // 
             // txtPhone
             // 
             txtPhone.Location = new Point(32, 375);
             txtPhone.Name = "txtPhone";
-            txtPhone.Size = new Size(238, 25);
+            txtPhone.Size = new Size(238, 29);
             txtPhone.TabIndex = 5;
             // 
             // btnUpdateProfile
@@ -132,7 +133,7 @@
             label7.ForeColor = Color.White;
             label7.Location = new Point(667, 22);
             label7.Name = "label7";
-            label7.Size = new Size(101, 21);
+            label7.Size = new Size(126, 28);
             label7.TabIndex = 1;
             label7.Text = "MY PROFILE";
             // 
@@ -143,7 +144,7 @@
             label6.ForeColor = Color.White;
             label6.Location = new Point(32, 22);
             label6.Name = "label6";
-            label6.Size = new Size(188, 32);
+            label6.Size = new Size(234, 41);
             label6.TabIndex = 0;
             label6.Text = "FLAVOR CRAVE";
             // 
@@ -163,7 +164,7 @@
             label1.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(0, 77);
             label1.Name = "label1";
-            label1.Size = new Size(151, 37);
+            label1.Size = new Size(186, 46);
             label1.TabIndex = 8;
             label1.Text = "My Profile";
             // 
@@ -174,7 +175,7 @@
             label4.ForeColor = Color.Gray;
             label4.Location = new Point(6, 119);
             label4.Name = "label4";
-            label4.Size = new Size(227, 17);
+            label4.Size = new Size(298, 23);
             label4.TabIndex = 9;
             label4.Text = "View and update your account details";
             // 
@@ -184,7 +185,7 @@
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.Location = new Point(32, 179);
             label5.Name = "label5";
-            label5.Size = new Size(169, 21);
+            label5.Size = new Size(209, 28);
             label5.TabIndex = 10;
             label5.Text = "Account Information";
             // 
@@ -194,7 +195,7 @@
             label8.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label8.Location = new Point(387, 182);
             label8.Name = "label8";
-            label8.Size = new Size(208, 20);
+            label8.Size = new Size(265, 25);
             label8.TabIndex = 11;
             label8.Text = "Change Password (Optional)";
             // 
@@ -202,7 +203,7 @@
             // 
             txtCurrentPassword.Location = new Point(398, 242);
             txtCurrentPassword.Name = "txtCurrentPassword";
-            txtCurrentPassword.Size = new Size(238, 25);
+            txtCurrentPassword.Size = new Size(238, 29);
             txtCurrentPassword.TabIndex = 12;
             txtCurrentPassword.UseSystemPasswordChar = true;
             // 
@@ -210,7 +211,7 @@
             // 
             txtNewPassword.Location = new Point(397, 316);
             txtNewPassword.Name = "txtNewPassword";
-            txtNewPassword.Size = new Size(239, 25);
+            txtNewPassword.Size = new Size(239, 29);
             txtNewPassword.TabIndex = 13;
             txtNewPassword.UseSystemPasswordChar = true;
             // 
@@ -218,7 +219,7 @@
             // 
             txtConfirmNewPassword.Location = new Point(397, 375);
             txtConfirmNewPassword.Name = "txtConfirmNewPassword";
-            txtConfirmNewPassword.Size = new Size(237, 25);
+            txtConfirmNewPassword.Size = new Size(237, 29);
             txtConfirmNewPassword.TabIndex = 14;
             txtConfirmNewPassword.UseSystemPasswordChar = true;
             // 
@@ -227,7 +228,7 @@
             label9.AutoSize = true;
             label9.Location = new Point(399, 219);
             label9.Name = "label9";
-            label9.Size = new Size(111, 17);
+            label9.Size = new Size(143, 23);
             label9.TabIndex = 15;
             label9.Text = "Current Password";
             // 
@@ -236,7 +237,7 @@
             label10.AutoSize = true;
             label10.Location = new Point(397, 292);
             label10.Name = "label10";
-            label10.Size = new Size(94, 17);
+            label10.Size = new Size(119, 23);
             label10.TabIndex = 16;
             label10.Text = "New Password";
             // 
@@ -245,15 +246,24 @@
             label11.AutoSize = true;
             label11.Location = new Point(399, 353);
             label11.Name = "label11";
-            label11.Size = new Size(144, 17);
+            label11.Size = new Size(185, 23);
             label11.TabIndex = 17;
             label11.Text = "Confirm New Password";
             // 
+            // lblStatus
+            // 
+            lblStatus.AutoSize = true;
+            lblStatus.Location = new Point(398, 407);
+            lblStatus.Name = "lblStatus";
+            lblStatus.Size = new Size(0, 23);
+            lblStatus.TabIndex = 18;
+            // 
             // ManagerProfileForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 17F);
+            AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(884, 636);
+            Controls.Add(lblStatus);
             Controls.Add(button1);
             Controls.Add(label11);
             Controls.Add(label10);
@@ -306,5 +316,6 @@
         private Label label9;
         private Label label10;
         private Label label11;
+        private Label lblStatus;
     }
 }

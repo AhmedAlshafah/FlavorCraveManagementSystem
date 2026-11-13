@@ -66,17 +66,20 @@ namespace FlavorCraveManagementSystem.Forms.Admin
                 return;
             }
 
-            if (currentPassword == "")
-            {
-                lblStatus.Text = "Enter your current password.";
-                return;
-            }
+
 
             bool changePassword =
-                newPassword != "" || confirmPassword != "";
+     newPassword != "" || confirmPassword != "";
 
             if (changePassword)
             {
+                // Only require current password when changing password
+                if (currentPassword == "")
+                {
+                    lblStatus.Text = "Enter your current password.";
+                    return;
+                }
+
                 if (newPassword.Length < 8)
                 {
                     lblStatus.Text = "New password must be at least 8 characters.";
@@ -116,11 +119,14 @@ namespace FlavorCraveManagementSystem.Forms.Admin
                         storedHash = result.ToString() ?? "";
                     }
 
-                    if (!AuthService.VerifyPassword(
-                        currentPassword, storedHash))
+                    if (changePassword)
                     {
-                        lblStatus.Text = "Current password is incorrect.";
-                        return;
+                        if (!AuthService.VerifyPassword(
+                            currentPassword, storedHash))
+                        {
+                            lblStatus.Text = "Current password is incorrect.";
+                            return;
+                        }
                     }
 
                     string sql = @"UPDATE Users

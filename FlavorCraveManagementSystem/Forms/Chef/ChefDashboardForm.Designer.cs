@@ -53,15 +53,15 @@
             dgvOrders.BackgroundColor = Color.White;
             dgvOrders.BorderStyle = BorderStyle.None;
             dgvOrders.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvOrders.Location = new Point(190, 183);
-            dgvOrders.Margin = new Padding(2);
+            dgvOrders.Location = new Point(217, 244);
+            dgvOrders.Margin = new Padding(2, 3, 2, 3);
             dgvOrders.MultiSelect = false;
             dgvOrders.Name = "dgvOrders";
             dgvOrders.ReadOnly = true;
             dgvOrders.RowHeadersVisible = false;
             dgvOrders.RowHeadersWidth = 62;
             dgvOrders.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvOrders.Size = new Size(578, 254);
+            dgvOrders.Size = new Size(661, 339);
             dgvOrders.TabIndex = 1;
             dgvOrders.CellContentClick += dgvOrders_CellContentClick;
             dgvOrders.CellFormatting += dgvOrders_CellFormatting;
@@ -73,10 +73,10 @@
             btnInProgress.FlatStyle = FlatStyle.Flat;
             btnInProgress.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnInProgress.ForeColor = Color.Black;
-            btnInProgress.Location = new Point(441, 463);
-            btnInProgress.Margin = new Padding(2);
+            btnInProgress.Location = new Point(504, 617);
+            btnInProgress.Margin = new Padding(2, 3, 2, 3);
             btnInProgress.Name = "btnInProgress";
-            btnInProgress.Size = new Size(172, 43);
+            btnInProgress.Size = new Size(197, 57);
             btnInProgress.TabIndex = 2;
             btnInProgress.Text = "Mark as In Progress";
             btnInProgress.UseVisualStyleBackColor = false;
@@ -89,10 +89,10 @@
             btnComplete.FlatStyle = FlatStyle.Flat;
             btnComplete.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnComplete.ForeColor = Color.White;
-            btnComplete.Location = new Point(190, 463);
-            btnComplete.Margin = new Padding(2);
+            btnComplete.Location = new Point(217, 617);
+            btnComplete.Margin = new Padding(2, 3, 2, 3);
             btnComplete.Name = "btnComplete";
-            btnComplete.Size = new Size(180, 43);
+            btnComplete.Size = new Size(206, 57);
             btnComplete.TabIndex = 3;
             btnComplete.Text = "Complete Order";
             btnComplete.UseVisualStyleBackColor = false;
@@ -105,10 +105,10 @@
             btnUpdateProfile.FlatStyle = FlatStyle.Flat;
             btnUpdateProfile.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnUpdateProfile.ForeColor = Color.WhiteSmoke;
-            btnUpdateProfile.Location = new Point(2, 168);
-            btnUpdateProfile.Margin = new Padding(2);
+            btnUpdateProfile.Location = new Point(10, 67);
+            btnUpdateProfile.Margin = new Padding(2, 3, 2, 3);
             btnUpdateProfile.Name = "btnUpdateProfile";
-            btnUpdateProfile.Size = new Size(142, 24);
+            btnUpdateProfile.Size = new Size(162, 32);
             btnUpdateProfile.TabIndex = 4;
             btnUpdateProfile.Text = "Update Profile";
             btnUpdateProfile.TextAlign = ContentAlignment.MiddleLeft;
@@ -122,9 +122,9 @@
             panel1.Controls.Add(label2);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(2);
+            panel1.Margin = new Padding(2, 3, 2, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(858, 70);
+            panel1.Size = new Size(981, 93);
             panel1.TabIndex = 6;
             // 
             // label1
@@ -132,9 +132,9 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(719, 24);
+            label1.Location = new Point(822, 32);
             label1.Name = "label1";
-            label1.Size = new Size(49, 21);
+            label1.Size = new Size(60, 28);
             label1.TabIndex = 8;
             label1.Text = "CHEF";
             // 
@@ -143,10 +143,10 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.WhiteSmoke;
-            label2.Location = new Point(30, 24);
+            label2.Location = new Point(34, 32);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(188, 32);
+            label2.Size = new Size(234, 41);
             label2.TabIndex = 1;
             label2.Text = "FLAVOR CRAVE";
             // 
@@ -157,10 +157,10 @@
             panel2.Controls.Add(label3);
             panel2.Controls.Add(btnUpdateProfile);
             panel2.Dock = DockStyle.Left;
-            panel2.Location = new Point(0, 70);
-            panel2.Margin = new Padding(2);
+            panel2.Location = new Point(0, 93);
+            panel2.Margin = new Padding(2, 3, 2, 3);
             panel2.Name = "panel2";
-            panel2.Size = new Size(152, 570);
+            panel2.Size = new Size(174, 760);
             panel2.TabIndex = 7;
             // 
             // btnLogout
@@ -168,10 +168,10 @@
             btnLogout.AutoSize = true;
             btnLogout.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnLogout.ForeColor = Color.White;
-            btnLogout.Location = new Point(11, 332);
+            btnLogout.Location = new Point(25, 467);
             btnLogout.Margin = new Padding(2, 0, 2, 0);
             btnLogout.Name = "btnLogout";
-            btnLogout.Size = new Size(53, 19);
+            btnLogout.Size = new Size(64, 23);
             btnLogout.TabIndex = 4;
             btnLogout.Text = "Logout";
             btnLogout.TextAlign = ContentAlignment.MiddleLeft;
@@ -182,10 +182,10 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(43, 34);
+            label3.Location = new Point(25, 26);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(40, 17);
+            label3.Size = new Size(52, 23);
             label3.TabIndex = 0;
             label3.Text = "CHEF";
             label3.TextAlign = ContentAlignment.TopCenter;
@@ -194,9 +194,9 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(169, 89);
+            label4.Location = new Point(193, 119);
             label4.Name = "label4";
-            label4.Size = new Size(184, 32);
+            label4.Size = new Size(227, 41);
             label4.TabIndex = 8;
             label4.Text = "Kitchen Orders";
             // 
@@ -205,17 +205,18 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.Gray;
-            label5.Location = new Point(172, 127);
+            label5.Location = new Point(197, 169);
             label5.Name = "label5";
-            label5.Size = new Size(338, 17);
+            label5.Size = new Size(438, 23);
             label5.TabIndex = 9;
             label5.Text = "Manage incoming orders and update preparation status";
             // 
             // btnRefresh
             // 
-            btnRefresh.Location = new Point(668, 463);
+            btnRefresh.Location = new Point(763, 617);
+            btnRefresh.Margin = new Padding(3, 4, 3, 4);
             btnRefresh.Name = "btnRefresh";
-            btnRefresh.Size = new Size(100, 43);
+            btnRefresh.Size = new Size(114, 57);
             btnRefresh.TabIndex = 10;
             btnRefresh.Text = "Refresh";
             btnRefresh.UseVisualStyleBackColor = true;
@@ -223,10 +224,10 @@
             // 
             // ChefDashboardForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLightLight;
-            ClientSize = new Size(858, 640);
+            ClientSize = new Size(981, 853);
             Controls.Add(btnRefresh);
             Controls.Add(label5);
             Controls.Add(label4);
@@ -236,6 +237,7 @@
             Controls.Add(panel1);
             Controls.Add(dgvOrders);
             Cursor = Cursors.Hand;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "ChefDashboardForm";
             Text = "Flavor Crave - Chef";
             ((System.ComponentModel.ISupportInitialize)dgvOrders).EndInit();

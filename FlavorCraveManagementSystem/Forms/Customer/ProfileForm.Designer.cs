@@ -38,6 +38,7 @@
             txtCurrentPassword = new TextBox();
             txtNewPassword = new TextBox();
             txtConformNewPassword = new TextBox();
+            lblStatus = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -46,10 +47,10 @@
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Segoe UI", 10.125F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTitle.ForeColor = Color.White;
-            lblTitle.Location = new Point(992, 50);
+            lblTitle.Location = new Point(918, 31);
             lblTitle.Margin = new Padding(6, 0, 6, 0);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(172, 37);
+            lblTitle.Size = new Size(107, 23);
             lblTitle.TabIndex = 0;
             lblTitle.Text = "MY PROFILE";
             // 
@@ -57,20 +58,20 @@
             // 
             lblFullName.AutoSize = true;
             lblFullName.Font = new Font("Segoe UI", 10.125F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblFullName.Location = new Point(61, 522);
+            lblFullName.Location = new Point(27, 211);
             lblFullName.Margin = new Padding(6, 0, 6, 0);
             lblFullName.Name = "lblFullName";
-            lblFullName.Size = new Size(143, 37);
+            lblFullName.Size = new Size(91, 23);
             lblFullName.TabIndex = 1;
             lblFullName.Text = "Full Name:";
             // 
             // txtFullName
             // 
             txtFullName.Font = new Font("Segoe UI", 11F);
-            txtFullName.Location = new Point(61, 586);
+            txtFullName.Location = new Point(27, 241);
             txtFullName.Margin = new Padding(6, 7, 6, 7);
             txtFullName.Name = "txtFullName";
-            txtFullName.Size = new Size(410, 47);
+            txtFullName.Size = new Size(410, 32);
             txtFullName.TabIndex = 2;
             txtFullName.TextChanged += txtFullName_TextChanged;
             // 
@@ -78,40 +79,40 @@
             // 
             lblEmail.AutoSize = true;
             lblEmail.Font = new Font("Segoe UI", 10.125F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblEmail.Location = new Point(61, 655);
+            lblEmail.Location = new Point(27, 281);
             lblEmail.Margin = new Padding(6, 0, 6, 0);
             lblEmail.Name = "lblEmail";
-            lblEmail.Size = new Size(88, 37);
+            lblEmail.Size = new Size(55, 23);
             lblEmail.TabIndex = 3;
             lblEmail.Text = "Email:";
             // 
             // txtEmail
             // 
             txtEmail.Font = new Font("Segoe UI", 11F);
-            txtEmail.Location = new Point(61, 699);
+            txtEmail.Location = new Point(27, 311);
             txtEmail.Margin = new Padding(6, 7, 6, 7);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(410, 47);
+            txtEmail.Size = new Size(410, 32);
             txtEmail.TabIndex = 4;
             // 
             // lblPhone
             // 
             lblPhone.AutoSize = true;
             lblPhone.Font = new Font("Segoe UI", 10.125F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblPhone.Location = new Point(61, 769);
+            lblPhone.Location = new Point(28, 360);
             lblPhone.Margin = new Padding(6, 0, 6, 0);
             lblPhone.Name = "lblPhone";
-            lblPhone.Size = new Size(202, 37);
+            lblPhone.Size = new Size(131, 23);
             lblPhone.TabIndex = 5;
             lblPhone.Text = "Phone Number:";
             // 
             // txtPhone
             // 
             txtPhone.Font = new Font("Segoe UI", 11F);
-            txtPhone.Location = new Point(61, 826);
+            txtPhone.Location = new Point(28, 390);
             txtPhone.Margin = new Padding(6, 7, 6, 7);
             txtPhone.Name = "txtPhone";
-            txtPhone.Size = new Size(394, 47);
+            txtPhone.Size = new Size(409, 32);
             txtPhone.TabIndex = 6;
             // 
             // btnSave
@@ -120,10 +121,10 @@
             btnSave.FlatAppearance.BorderSize = 0;
             btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.Font = new Font("Segoe UI", 10.125F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnSave.Location = new Point(126, 997);
+            btnSave.Location = new Point(27, 497);
             btnSave.Margin = new Padding(6, 7, 6, 7);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(281, 58);
+            btnSave.Size = new Size(128, 35);
             btnSave.TabIndex = 7;
             btnSave.Text = "Save Changes";
             btnSave.UseVisualStyleBackColor = false;
@@ -134,12 +135,13 @@
             btnClose.BackColor = Color.White;
             btnClose.Font = new Font("Segoe UI", 10.125F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnClose.ForeColor = Color.Black;
-            btnClose.Location = new Point(800, 1024);
+            btnClose.Location = new Point(771, 497);
             btnClose.Margin = new Padding(6, 7, 6, 7);
             btnClose.Name = "btnClose";
-            btnClose.Size = new Size(291, 61);
+            btnClose.Size = new Size(128, 35);
             btnClose.TabIndex = 8;
             btnClose.Text = "Back to Dashboard";
+            btnClose.TextAlign = ContentAlignment.TopCenter;
             btnClose.UseVisualStyleBackColor = false;
             btnClose.Click += btnClose_Click;
             // 
@@ -152,7 +154,7 @@
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1267, 149);
+            panel1.Size = new Size(1082, 74);
             panel1.TabIndex = 9;
             // 
             // label1
@@ -160,9 +162,9 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(38, 50);
+            label1.Location = new Point(27, 21);
             label1.Name = "label1";
-            label1.Size = new Size(310, 54);
+            label1.Size = new Size(197, 35);
             label1.TabIndex = 1;
             label1.Text = "FLAVOR CRAVE";
             label1.Click += label1_Click;
@@ -172,37 +174,39 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 10.125F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.Gray;
-            label3.Location = new Point(38, 291);
+            label3.Location = new Point(28, 150);
             label3.Name = "label3";
-            label3.Size = new Size(463, 37);
+            label3.Size = new Size(298, 23);
             label3.TabIndex = 11;
             label3.Text = "View and update your account details";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(77, 165);
+            label4.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Location = new Point(27, 96);
             label4.Name = "label4";
-            label4.Size = new Size(348, 86);
+            label4.Size = new Size(186, 46);
             label4.TabIndex = 12;
             label4.Text = "My Profile";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(38, 462);
+            label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.Location = new Point(27, 173);
             label5.Name = "label5";
-            label5.Size = new Size(291, 37);
+            label5.Size = new Size(215, 28);
             label5.TabIndex = 13;
             label5.Text = "Account  Information";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(684, 475);
+            label6.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.Location = new Point(489, 173);
             label6.Name = "label6";
-            label6.Size = new Size(381, 37);
+            label6.Size = new Size(279, 28);
             label6.TabIndex = 14;
             label6.Text = "Change Password (Optional)";
             // 
@@ -210,9 +214,9 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 10.125F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(684, 536);
+            label7.Location = new Point(489, 211);
             label7.Name = "label7";
-            label7.Size = new Size(230, 37);
+            label7.Size = new Size(148, 23);
             label7.TabIndex = 15;
             label7.Text = "Current  Password";
             // 
@@ -220,9 +224,9 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 10.125F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.Location = new Point(684, 665);
+            label8.Location = new Point(489, 281);
             label8.Name = "label8";
-            label8.Size = new Size(189, 37);
+            label8.Size = new Size(119, 23);
             label8.TabIndex = 16;
             label8.Text = "New Password";
             // 
@@ -230,41 +234,51 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 10.125F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label9.Location = new Point(674, 769);
+            label9.Location = new Point(489, 362);
             label9.Name = "label9";
-            label9.Size = new Size(300, 37);
+            label9.Size = new Size(191, 23);
             label9.TabIndex = 17;
             label9.Text = "Conform New Password";
             label9.Click += label9_Click;
             // 
             // txtCurrentPassword
             // 
-            txtCurrentPassword.Location = new Point(684, 586);
+            txtCurrentPassword.Location = new Point(489, 243);
             txtCurrentPassword.Name = "txtCurrentPassword";
-            txtCurrentPassword.Size = new Size(410, 43);
+            txtCurrentPassword.Size = new Size(410, 30);
             txtCurrentPassword.TabIndex = 18;
             txtCurrentPassword.TextChanged += txtCurrentPassword_TextChanged;
             // 
             // txtNewPassword
             // 
-            txtNewPassword.Location = new Point(684, 705);
+            txtNewPassword.Location = new Point(489, 313);
             txtNewPassword.Name = "txtNewPassword";
-            txtNewPassword.Size = new Size(410, 43);
+            txtNewPassword.Size = new Size(410, 30);
             txtNewPassword.TabIndex = 19;
             txtNewPassword.TextChanged += textBox2_TextChanged;
             // 
             // txtConformNewPassword
             // 
-            txtConformNewPassword.Location = new Point(674, 809);
+            txtConformNewPassword.Location = new Point(489, 392);
             txtConformNewPassword.Name = "txtConformNewPassword";
-            txtConformNewPassword.Size = new Size(400, 43);
+            txtConformNewPassword.Size = new Size(410, 30);
             txtConformNewPassword.TabIndex = 20;
+            // 
+            // lblStatus
+            // 
+            lblStatus.AutoSize = true;
+            lblStatus.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblStatus.Location = new Point(489, 425);
+            lblStatus.Name = "lblStatus";
+            lblStatus.Size = new Size(0, 23);
+            lblStatus.TabIndex = 21;
             // 
             // ProfileForm
             // 
-            AutoScaleDimensions = new SizeF(16F, 37F);
+            AutoScaleDimensions = new SizeF(10F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1267, 1192);
+            ClientSize = new Size(1082, 653);
+            Controls.Add(lblStatus);
             Controls.Add(txtConformNewPassword);
             Controls.Add(txtNewPassword);
             Controls.Add(txtCurrentPassword);
@@ -318,5 +332,6 @@
         private TextBox txtCurrentPassword;
         private TextBox txtNewPassword;
         private TextBox txtConformNewPassword;
+        private Label lblStatus;
     }
 }

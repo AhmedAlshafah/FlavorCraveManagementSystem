@@ -166,7 +166,7 @@
             btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSave.ForeColor = Color.FromArgb(30, 70, 55);
-            btnSave.Location = new Point(29, 377);
+            btnSave.Location = new Point(27, 445);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(127, 29);
             btnSave.TabIndex = 6;
@@ -245,7 +245,7 @@
             button1.BackgroundImageLayout = ImageLayout.None;
             button1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button1.ForeColor = SystemColors.ActiveCaptionText;
-            button1.Location = new Point(585, 377);
+            button1.Location = new Point(585, 435);
             button1.Name = "button1";
             button1.Size = new Size(180, 29);
             button1.TabIndex = 14;

@@ -68,9 +68,9 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(35, 35, 35);
-            label1.Location = new Point(263, 25);
+            label1.Location = new Point(263, 18);
             label1.Name = "label1";
-            label1.Size = new Size(165, 21);
+            label1.Size = new Size(204, 28);
             label1.TabIndex = 0;
             label1.Text = "Manager Dashboard";
             // 
@@ -155,7 +155,7 @@
             lblWelcome.ForeColor = Color.White;
             lblWelcome.Location = new Point(761, 50);
             lblWelcome.Name = "lblWelcome";
-            lblWelcome.Size = new Size(0, 17);
+            lblWelcome.Size = new Size(0, 23);
             lblWelcome.TabIndex = 2;
             lblWelcome.Click += lblWelcome_Click;
             // 
@@ -166,7 +166,7 @@
             lblRole.ForeColor = Color.White;
             lblRole.Location = new Point(761, 19);
             lblRole.Name = "lblRole";
-            lblRole.Size = new Size(86, 20);
+            lblRole.Size = new Size(107, 25);
             lblRole.TabIndex = 1;
             lblRole.Text = "MANAGER";
             // 
@@ -177,7 +177,7 @@
             lblAppName.ForeColor = Color.White;
             lblAppName.Location = new Point(32, 19);
             lblAppName.Name = "lblAppName";
-            lblAppName.Size = new Size(188, 32);
+            lblAppName.Size = new Size(234, 41);
             lblAppName.TabIndex = 0;
             lblAppName.Text = "FLAVOR CRAVE";
             // 
@@ -202,7 +202,7 @@
             btnLogout.FlatStyle = FlatStyle.Flat;
             btnLogout.Font = new Font("Segoe UI", 10F);
             btnLogout.ForeColor = Color.White;
-            btnLogout.Location = new Point(3, 349);
+            btnLogout.Location = new Point(0, 490);
             btnLogout.Name = "btnLogout";
             btnLogout.Size = new Size(190, 48);
             btnLogout.TabIndex = 8;
@@ -218,7 +218,7 @@
             label2.ForeColor = Color.LightGray;
             label2.Location = new Point(32, 31);
             label2.Name = "label2";
-            label2.Size = new Size(91, 15);
+            label2.Size = new Size(119, 20);
             label2.TabIndex = 7;
             label2.Text = "MANAGEMENT";
             // 
@@ -252,9 +252,9 @@
             // 
             label11.AutoSize = true;
             label11.ForeColor = Color.DimGray;
-            label11.Location = new Point(48, 64);
+            label11.Location = new Point(-1, 64);
             label11.Name = "label11";
-            label11.Size = new Size(227, 17);
+            label11.Size = new Size(298, 23);
             label11.TabIndex = 1;
             label11.Text = "View and update your account details";
             label11.Click += label11_Click;
@@ -264,9 +264,9 @@
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label10.ForeColor = Color.FromArgb(35, 35, 35);
-            label10.Location = new Point(84, 10);
+            label10.Location = new Point(71, 10);
             label10.Name = "label10";
-            label10.Size = new Size(121, 25);
+            label10.Size = new Size(153, 32);
             label10.TabIndex = 0;
             label10.Text = "MY PROFILE";
             // 
@@ -285,9 +285,9 @@
             // 
             label9.AutoSize = true;
             label9.ForeColor = Color.DimGray;
-            label9.Location = new Point(34, 64);
+            label9.Location = new Point(0, 64);
             label9.Name = "label9";
-            label9.Size = new Size(228, 17);
+            label9.Size = new Size(295, 23);
             label9.TabIndex = 1;
             label9.Text = "View sales by date, category and chef";
             // 
@@ -296,9 +296,9 @@
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label8.ForeColor = Color.FromArgb(35, 35, 35);
-            label8.Location = new Point(74, 10);
+            label8.Location = new Point(57, 10);
             label8.Name = "label8";
-            label8.Size = new Size(143, 25);
+            label8.Size = new Size(181, 32);
             label8.TabIndex = 0;
             label8.Text = "SALES REPORT";
             // 
@@ -317,9 +317,9 @@
             // 
             label7.AutoSize = true;
             label7.ForeColor = Color.DimGray;
-            label7.Location = new Point(39, 71);
+            label7.Location = new Point(-1, 70);
             label7.Name = "label7";
-            label7.Size = new Size(226, 17);
+            label7.Size = new Size(296, 23);
             label7.TabIndex = 1;
             label7.Text = "Manage pricing and menu availability";
             label7.Click += label7_Click;
@@ -329,9 +329,9 @@
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.FromArgb(35, 35, 35);
-            label6.Location = new Point(39, 21);
+            label6.Location = new Point(14, 21);
             label6.Name = "label6";
-            label6.Size = new Size(211, 25);
+            label6.Size = new Size(268, 32);
             label6.TabIndex = 0;
             label6.Text = "MENU MANAGEMENT";
             // 
@@ -351,11 +351,12 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 10F);
             label5.ForeColor = Color.DimGray;
-            label5.Location = new Point(12, 69);
+            label5.Location = new Point(22, 69);
             label5.Name = "label5";
-            label5.Size = new Size(272, 19);
+            label5.Size = new Size(252, 46);
             label5.TabIndex = 1;
-            label5.Text = "Monitor and update ingredient stock levels";
+            label5.Text = "Monitor and update ingredient \r\nstock levels";
+            label5.TextAlign = ContentAlignment.TopCenter;
             // 
             // label4
             // 
@@ -364,7 +365,7 @@
             label4.ForeColor = Color.FromArgb(35, 35, 35);
             label4.Location = new Point(74, 21);
             label4.Name = "label4";
-            label4.Size = new Size(119, 25);
+            label4.Size = new Size(151, 32);
             label4.TabIndex = 0;
             label4.Text = "INVENTORY";
             // 
@@ -375,13 +376,13 @@
             label3.ForeColor = Color.DimGray;
             label3.Location = new Point(211, 46);
             label3.Name = "label3";
-            label3.Size = new Size(270, 19);
+            label3.Size = new Size(334, 23);
             label3.TabIndex = 1;
             label3.Text = "Manage restaurant operations and reports";
             // 
             // ManagerDashboardForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 17F);
+            AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(245, 245, 242);
             ClientSize = new Size(1084, 749);
