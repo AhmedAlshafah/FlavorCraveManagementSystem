@@ -1,5 +1,6 @@
 ﻿using Microsoft.Data.SqlClient;
 
+
 namespace FlavorCraveManagementSystem.Data
 {
     public static class DatabaseHelper
