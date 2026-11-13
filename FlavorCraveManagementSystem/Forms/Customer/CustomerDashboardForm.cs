@@ -3,6 +3,8 @@ using System.Data;
 using Microsoft.Data.SqlClient;
 using FlavorCraveManagementSystem.Data;
 using FlavorCraveManagementSystem.Models;
+using System.IO;
+
 
 namespace FlavorCraveManagementSystem.Forms.Customer
 {
@@ -152,7 +154,7 @@ namespace FlavorCraveManagementSystem.Forms.Customer
         private void btnPlaceOrder_Click(object sender, EventArgs e)
         {
 
-        
+
             if (dgvMenuItems.CurrentRow == null ||
                 dgvMenuItems.CurrentRow.IsNewRow)
             {
@@ -397,5 +399,102 @@ namespace FlavorCraveManagementSystem.Forms.Customer
             }
         }
 
+        private void lblWelcomeMessage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labe_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblWalletBalance_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvMenuItems_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvMenuItems_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+            {
+                return;
+            }
+
+            DataGridViewRow row =
+                dgvMenuItems.Rows[e.RowIndex];
+
+
+            string menuName =
+                row.Cells["Name"].Value?.ToString() ?? "";
+
+            decimal price =
+                Convert.ToDecimal(
+                    row.Cells["Price"].Value
+                );
+
+            lblSelectedFoodName.Text = menuName;
+
+            lblSelectedFoodPrice.Text =
+                $"RM {price:N2}";
+
+
+
+            string imageFile;
+
+            switch (menuName)
+            {
+                case "Chicken Burger":
+                    imageFile = "chicken_burger.jpg";
+                    break;
+
+                case "Chicken Rice":
+                    imageFile = "chicken_rice.jpg";
+                    break;
+
+                case "Coffee":
+                    imageFile = "coffee.jpg";
+                    break;
+
+                default:
+                    imageFile = "";
+                    break;
+            }
+
+            if (imageFile != "")
+            {
+                picFood.ImageLocation =
+                    Path.Combine(
+                        AppContext.BaseDirectory,
+                        "Images",
+                        imageFile
+                    );
+            }
+            else
+            {
+                picFood.Image = null;
+            }
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            DialogResult = MessageBox.Show(
+                "Are you sure you want to logot?",
+                "Confirm Logout",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+                );
+            if (DialogResult==DialogResult.Yes)
+            {
+                this.Close();
+            }
+
+
+        }
     }
 }
