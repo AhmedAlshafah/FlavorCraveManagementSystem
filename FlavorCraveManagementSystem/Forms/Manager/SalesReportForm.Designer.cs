@@ -257,7 +257,7 @@
             // 
             button1.Location = new Point(577, 327);
             button1.Name = "button1";
-            button1.Size = new Size(137, 23);
+            button1.Size = new Size(137, 29);
             button1.TabIndex = 17;
             button1.Text = "Back to Dashbord";
             button1.UseVisualStyleBackColor = true;

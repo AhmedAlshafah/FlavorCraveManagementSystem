@@ -45,17 +45,7 @@ namespace FlavorCraveManagementSystem.Forms.Manager
             }
         }
 
-        private void btnProfile_Click(object sender, EventArgs e)
-        {
-            ManagerProfileForm form =
-                new ManagerProfileForm(loggedInUser);
-
-            form.ShowDialog();
-        }
-
-        private void btnUpdateProfile_Click(
-            object sender,
-            EventArgs e)
+        private void btnUpdateProfile_Click(object sender, EventArgs e)
         {
             string fullName =
                 txtFullName.Text.Trim();
@@ -66,6 +56,19 @@ namespace FlavorCraveManagementSystem.Forms.Manager
             string phone =
                 txtPhone.Text.Trim();
 
+            string currentPassword =
+                txtCurrentPassword.Text;
+
+            string newPassword =
+                txtNewPassword.Text;
+
+            string confirmPassword =
+                txtConfirmNewPassword.Text;
+
+
+            // -------------------------
+            // Profile validation
+            // -------------------------
 
             if (fullName == "")
             {
@@ -75,7 +78,6 @@ namespace FlavorCraveManagementSystem.Forms.Manager
 
                 return;
             }
-
 
             if (email == "")
             {
@@ -105,6 +107,87 @@ namespace FlavorCraveManagementSystem.Forms.Manager
                 }
 
 
+                // -------------------------
+                // Password validation
+                // Only runs if the user
+                // entered something in the
+                // password section.
+                // -------------------------
+
+                bool wantsToChangePassword =
+                    currentPassword != "" ||
+                    newPassword != "" ||
+                    confirmPassword != "";
+
+                if (wantsToChangePassword)
+                {
+                    if (currentPassword == "")
+                    {
+                        MessageBox.Show(
+                            "Please enter your current password."
+                        );
+
+                        return;
+                    }
+
+                    if (newPassword == "")
+                    {
+                        MessageBox.Show(
+                            "Please enter a new password."
+                        );
+
+                        return;
+                    }
+
+                    if (confirmPassword == "")
+                    {
+                        MessageBox.Show(
+                            "Please confirm your new password."
+                        );
+
+                        return;
+                    }
+
+                    if (newPassword != confirmPassword)
+                    {
+                        MessageBox.Show(
+                            "The new passwords do not match."
+                        );
+
+                        return;
+                    }
+
+                    if (newPassword.Length < 6)
+                    {
+                        MessageBox.Show(
+                            "The new password must be at least 6 characters."
+                        );
+
+                        return;
+                    }
+
+
+                    bool currentPasswordCorrect =
+                        profileService.IsCurrentPasswordCorrect(
+                            loggedInUser.UserId,
+                            currentPassword
+                        );
+
+                    if (!currentPasswordCorrect)
+                    {
+                        MessageBox.Show(
+                            "The current password is incorrect."
+                        );
+
+                        return;
+                    }
+                }
+
+
+                // -------------------------
+                // Update profile
+                // -------------------------
+
                 profileService.UpdateProfile(
                     loggedInUser.UserId,
                     fullName,
@@ -113,8 +196,28 @@ namespace FlavorCraveManagementSystem.Forms.Manager
                 );
 
 
+                // -------------------------
+                // Update password only
+                // when requested
+                // -------------------------
+
+                if (wantsToChangePassword)
+                {
+                    profileService.UpdatePassword(
+                        loggedInUser.UserId,
+                        newPassword
+                    );
+
+                    txtCurrentPassword.Clear();
+                    txtNewPassword.Clear();
+                    txtConfirmNewPassword.Clear();
+                }
+
+
                 MessageBox.Show(
-                    "Profile updated successfully."
+                    wantsToChangePassword
+                        ? "Profile and password updated successfully."
+                        : "Profile updated successfully."
                 );
 
                 LoadProfile();
@@ -132,6 +235,11 @@ namespace FlavorCraveManagementSystem.Forms.Manager
         {
             this.Close();
 
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

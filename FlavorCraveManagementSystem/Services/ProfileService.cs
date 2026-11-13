@@ -92,6 +92,70 @@ namespace FlavorCraveManagementSystem.Services
             return count > 0;
         }
 
+        public bool IsCurrentPasswordCorrect(
+    int userId,
+    string currentPassword)
+        {
+            using SqlConnection connection =
+                DatabaseHelper.GetConnection();
+
+            connection.Open();
+
+            string sql = @"
+        SELECT COUNT(*)
+        FROM Users
+        WHERE UserId = @UserId
+          AND PasswordHash = @Password";
+
+            using SqlCommand command =
+                new SqlCommand(sql, connection);
+
+            command.Parameters.AddWithValue(
+                "@UserId",
+                userId
+            );
+
+            command.Parameters.AddWithValue(
+                "@Password",
+                currentPassword
+            );
+
+            int count =
+                Convert.ToInt32(command.ExecuteScalar());
+
+            return count > 0;
+        }
+
+
+        public void UpdatePassword(
+            int userId,
+            string newPassword)
+        {
+            using SqlConnection connection =
+                DatabaseHelper.GetConnection();
+
+            connection.Open();
+
+            string sql = @"
+        UPDATE Users
+        SET PasswordHash = @Password
+        WHERE UserId = @UserId";
+
+            using SqlCommand command =
+                new SqlCommand(sql, connection);
+
+            command.Parameters.AddWithValue(
+                "@Password",
+                newPassword
+            );
+
+            command.Parameters.AddWithValue(
+                "@UserId",
+                userId
+            );
+
+            command.ExecuteNonQuery();
+        }
 
         public void UpdateProfile(
             int userId,
