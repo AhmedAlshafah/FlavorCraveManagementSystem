@@ -41,9 +41,20 @@ namespace FlavorCraveManagementSystem.Forms.Cashier
 
         private void UpdateTotal()
         {
-            lblTotal.Text = dgvOrders.CurrentRow?.DataBoundItem is PayableOrder o
-                ? $"Total: RM {o.TotalAmount:F2}"
-                : "Total: -";
+            if (dgvOrders.CurrentRow?.DataBoundItem is PayableOrder o)
+            {
+                lblSelectedOrder.Text = $"Order: #{o.OrderId}";
+                lblSelectedCustomer.Text = $"Customer: {o.CustomerName}";
+                lblPaymentStatus.Text = "Payment: Unpaid";
+                lblTotal.Text = $"Total: RM {o.TotalAmount:F2}";
+            }
+            else
+            {
+                lblSelectedOrder.Text = "Order: -";
+                lblSelectedCustomer.Text = "Customer: -";
+                lblPaymentStatus.Text = "Payment: -";
+                lblTotal.Text = "Total: -";
+            }
         }
 
         private void btnPay_Click(object? sender, EventArgs e)

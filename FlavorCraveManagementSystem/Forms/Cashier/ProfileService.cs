@@ -2,6 +2,7 @@
 using System.Text.RegularExpressions;
 using Microsoft.Data.SqlClient;
 using FlavorCraveManagementSystem.Data;
+using FlavorCraveManagementSystem.Services;
 
 namespace FlavorCraveManagementSystem.Forms.Cashier
 {
@@ -78,14 +79,25 @@ namespace FlavorCraveManagementSystem.Forms.Cashier
                     throw new InvalidOperationException("That email is already used by another account.");
             }
 
-            // Current password must match before it can be changed
+            // Check the current password with the shared login logic,
+            // so hashed and old plain-text passwords both work
+            string? passwordHash = null;
             if (changingPassword)
             {
-                using var cmd = new SqlCommand("SELECT PasswordHash FROM Users WHERE UserId = @id", conn);
-                cmd.Parameters.AddWithValue("@id", userId);
-                string? stored = cmd.ExecuteScalar() as string;
-                if (stored != currentPassword)
+                string? currentEmail;
+                using (var cmd = new SqlCommand("SELECT Email FROM Users WHERE UserId = @id", conn))
+                {
+                    cmd.Parameters.AddWithValue("@id", userId);
+                    currentEmail = cmd.ExecuteScalar() as string;
+                }
+
+                if (currentEmail == null)
+                    throw new InvalidOperationException("User not found.");
+
+                if (new AuthService().Login(currentEmail, currentPassword) == null)
                     throw new InvalidOperationException("Current password is incorrect.");
+
+                passwordHash = AuthService.HashPassword(newPassword);
             }
 
             string sql = changingPassword
@@ -98,8 +110,8 @@ namespace FlavorCraveManagementSystem.Forms.Cashier
                 cmd.Parameters.AddWithValue("@email", email);
                 cmd.Parameters.AddWithValue("@phone", phone);
                 cmd.Parameters.AddWithValue("@id", userId);
-                if (changingPassword)
-                    cmd.Parameters.AddWithValue("@pw", newPassword);
+                if (passwordHash != null)
+                    cmd.Parameters.AddWithValue("@pw", passwordHash);
                 cmd.ExecuteNonQuery();
             }
         }
