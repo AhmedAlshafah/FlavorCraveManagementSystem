@@ -314,7 +314,16 @@ WHERE OrderId = @OrderId
             }
         }
 
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
+
+        private void lblWelcome_Click(object sender, EventArgs e)
+        {
+            lblWelcome.Text =
+$"Welcome, {loggedInUser.FullName}";
+        }
     }
 }
 
