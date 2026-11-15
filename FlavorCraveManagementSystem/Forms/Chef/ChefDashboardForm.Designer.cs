@@ -54,7 +54,7 @@
             dgvOrders.BackgroundColor = Color.White;
             dgvOrders.BorderStyle = BorderStyle.None;
             dgvOrders.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvOrders.Location = new Point(217, 244);
+            dgvOrders.Location = new Point(197, 195);
             dgvOrders.Margin = new Padding(2, 3, 2, 3);
             dgvOrders.MultiSelect = false;
             dgvOrders.Name = "dgvOrders";
@@ -74,7 +74,7 @@
             btnInProgress.FlatStyle = FlatStyle.Flat;
             btnInProgress.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnInProgress.ForeColor = Color.Black;
-            btnInProgress.Location = new Point(504, 617);
+            btnInProgress.Location = new Point(480, 562);
             btnInProgress.Margin = new Padding(2, 3, 2, 3);
             btnInProgress.Name = "btnInProgress";
             btnInProgress.Size = new Size(197, 57);
@@ -90,7 +90,7 @@
             btnComplete.FlatStyle = FlatStyle.Flat;
             btnComplete.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnComplete.ForeColor = Color.White;
-            btnComplete.Location = new Point(217, 617);
+            btnComplete.Location = new Point(193, 562);
             btnComplete.Margin = new Padding(2, 3, 2, 3);
             btnComplete.Name = "btnComplete";
             btnComplete.Size = new Size(206, 57);
@@ -106,7 +106,7 @@
             btnUpdateProfile.FlatStyle = FlatStyle.Flat;
             btnUpdateProfile.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnUpdateProfile.ForeColor = Color.WhiteSmoke;
-            btnUpdateProfile.Location = new Point(2, 303);
+            btnUpdateProfile.Location = new Point(2, 53);
             btnUpdateProfile.Margin = new Padding(2, 3, 2, 3);
             btnUpdateProfile.Name = "btnUpdateProfile";
             btnUpdateProfile.Size = new Size(174, 100);
@@ -126,7 +126,7 @@
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(2, 3, 2, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(981, 93);
+            panel1.Size = new Size(1082, 93);
             panel1.TabIndex = 6;
             panel1.Paint += panel1_Paint;
             // 
@@ -174,16 +174,15 @@
             panel2.Location = new Point(0, 93);
             panel2.Margin = new Padding(2, 3, 2, 3);
             panel2.Name = "panel2";
-            panel2.Size = new Size(174, 760);
+            panel2.Size = new Size(174, 560);
             panel2.TabIndex = 7;
             // 
             // btnLogout
             // 
             btnLogout.AutoSize = true;
-            btnLogout.Dock = DockStyle.Bottom;
             btnLogout.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnLogout.ForeColor = Color.White;
-            btnLogout.Location = new Point(0, 737);
+            btnLogout.Location = new Point(13, 518);
             btnLogout.Margin = new Padding(2, 0, 2, 0);
             btnLogout.Name = "btnLogout";
             btnLogout.Size = new Size(64, 23);
@@ -228,7 +227,7 @@
             // 
             // btnRefresh
             // 
-            btnRefresh.Location = new Point(763, 617);
+            btnRefresh.Location = new Point(739, 562);
             btnRefresh.Margin = new Padding(3, 4, 3, 4);
             btnRefresh.Name = "btnRefresh";
             btnRefresh.Size = new Size(114, 57);
@@ -242,7 +241,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLightLight;
-            ClientSize = new Size(981, 853);
+            ClientSize = new Size(1082, 653);
             Controls.Add(btnRefresh);
             Controls.Add(label5);
             Controls.Add(label4);
