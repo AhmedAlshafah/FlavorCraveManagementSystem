@@ -68,6 +68,7 @@
             dgvMenuItems.Name = "dgvMenuItems";
             dgvMenuItems.ReadOnly = true;
             dgvMenuItems.RowHeadersVisible = false;
+            dgvMenuItems.RowHeadersWidth = 51;
             dgvMenuItems.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvMenuItems.Size = new Size(934, 188);
             dgvMenuItems.TabIndex = 0;
@@ -78,7 +79,7 @@
             txtMenuName.Location = new Point(85, 38);
             txtMenuName.Name = "txtMenuName";
             txtMenuName.ReadOnly = true;
-            txtMenuName.Size = new Size(204, 25);
+            txtMenuName.Size = new Size(204, 30);
             txtMenuName.TabIndex = 1;
             // 
             // cmbCategory
@@ -86,7 +87,7 @@
             cmbCategory.FormattingEnabled = true;
             cmbCategory.Location = new Point(85, 79);
             cmbCategory.Name = "cmbCategory";
-            cmbCategory.Size = new Size(204, 25);
+            cmbCategory.Size = new Size(204, 31);
             cmbCategory.TabIndex = 2;
             // 
             // nudPrice
@@ -95,7 +96,7 @@
             nudPrice.Location = new Point(410, 52);
             nudPrice.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
             nudPrice.Name = "nudPrice";
-            nudPrice.Size = new Size(120, 25);
+            nudPrice.Size = new Size(120, 30);
             nudPrice.TabIndex = 3;
             // 
             // chkIsAvailable
@@ -103,7 +104,7 @@
             chkIsAvailable.AutoSize = true;
             chkIsAvailable.Location = new Point(410, 90);
             chkIsAvailable.Name = "chkIsAvailable";
-            chkIsAvailable.Size = new Size(15, 14);
+            chkIsAvailable.Size = new Size(18, 17);
             chkIsAvailable.TabIndex = 4;
             chkIsAvailable.UseVisualStyleBackColor = true;
             // 
@@ -150,7 +151,7 @@
             label1.AutoSize = true;
             label1.Location = new Point(6, 38);
             label1.Name = "label1";
-            label1.Size = new Size(52, 19);
+            label1.Size = new Size(65, 23);
             label1.TabIndex = 8;
             label1.Text = "Name: ";
             // 
@@ -159,7 +160,7 @@
             label2.AutoSize = true;
             label2.Location = new Point(6, 79);
             label2.Name = "label2";
-            label2.Size = new Size(68, 19);
+            label2.Size = new Size(83, 23);
             label2.TabIndex = 9;
             label2.Text = "Category:";
             // 
@@ -168,7 +169,7 @@
             label3.AutoSize = true;
             label3.Location = new Point(326, 52);
             label3.Name = "label3";
-            label3.Size = new Size(41, 19);
+            label3.Size = new Size(51, 23);
             label3.TabIndex = 10;
             label3.Text = "Price:";
             // 
@@ -177,7 +178,7 @@
             label4.AutoSize = true;
             label4.Location = new Point(326, 85);
             label4.Name = "label4";
-            label4.Size = new Size(66, 19);
+            label4.Size = new Size(82, 23);
             label4.TabIndex = 11;
             label4.Text = "Available:";
             // 
@@ -213,7 +214,7 @@
             label6.ForeColor = Color.White;
             label6.Location = new Point(667, 19);
             label6.Name = "label6";
-            label6.Size = new Size(183, 21);
+            label6.Size = new Size(230, 28);
             label6.TabIndex = 15;
             label6.Text = "MENU MANAGEMENT ";
             // 
@@ -224,7 +225,7 @@
             label5.ForeColor = Color.White;
             label5.Location = new Point(32, 19);
             label5.Name = "label5";
-            label5.Size = new Size(188, 32);
+            label5.Size = new Size(234, 41);
             label5.TabIndex = 14;
             label5.Text = "FLAVOR CRAVE";
             // 
@@ -234,7 +235,7 @@
             label7.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label7.Location = new Point(6, 68);
             label7.Name = "label7";
-            label7.Size = new Size(289, 37);
+            label7.Size = new Size(361, 46);
             label7.TabIndex = 14;
             label7.Text = "Menu Management   ";
             // 
@@ -244,7 +245,7 @@
             label8.ForeColor = Color.Gray;
             label8.Location = new Point(6, 105);
             label8.Name = "label8";
-            label8.Size = new Size(305, 19);
+            label8.Size = new Size(381, 23);
             label8.TabIndex = 15;
             label8.Text = "Manage menu pricing, category and availability  ";
             label8.Click += label8_Click;
@@ -276,7 +277,7 @@
             lblMenuStatus.AutoSize = true;
             lblMenuStatus.Location = new Point(410, 128);
             lblMenuStatus.Name = "lblMenuStatus";
-            lblMenuStatus.Size = new Size(0, 19);
+            lblMenuStatus.Size = new Size(0, 23);
             lblMenuStatus.TabIndex = 14;
             // 
             // lblMenuStatusTitle
@@ -284,7 +285,7 @@
             lblMenuStatusTitle.AutoSize = true;
             lblMenuStatusTitle.Location = new Point(326, 126);
             lblMenuStatusTitle.Name = "lblMenuStatusTitle";
-            lblMenuStatusTitle.Size = new Size(50, 19);
+            lblMenuStatusTitle.Size = new Size(60, 23);
             lblMenuStatusTitle.TabIndex = 13;
             lblMenuStatusTitle.Text = "Status:";
             // 
@@ -300,7 +301,7 @@
             // 
             // MenuManagementForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 17F);
+            AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(245, 245, 242);
             ClientSize = new Size(934, 534);

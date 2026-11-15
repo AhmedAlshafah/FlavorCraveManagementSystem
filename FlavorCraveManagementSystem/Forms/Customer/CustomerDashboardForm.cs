@@ -489,11 +489,16 @@ namespace FlavorCraveManagementSystem.Forms.Customer
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question
                 );
-            if (DialogResult==DialogResult.Yes)
+            if (DialogResult == DialogResult.Yes)
             {
                 this.Close();
             }
 
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
 
         }
     }

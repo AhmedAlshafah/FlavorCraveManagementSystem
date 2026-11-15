@@ -35,7 +35,7 @@
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Segoe UI", 10.125F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTitle.ForeColor = Color.White;
-            lblTitle.Location = new Point(780, 54);
+            lblTitle.Location = new Point(876, 34);
             lblTitle.Margin = new Padding(5, 0, 5, 0);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(155, 23);
@@ -47,7 +47,7 @@
             // 
             lblCurrentBalance.AutoSize = true;
             lblCurrentBalance.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblCurrentBalance.Location = new Point(74, 422);
+            lblCurrentBalance.Location = new Point(28, 146);
             lblCurrentBalance.Margin = new Padding(5, 0, 5, 0);
             lblCurrentBalance.Name = "lblCurrentBalance";
             lblCurrentBalance.Size = new Size(259, 28);
@@ -58,7 +58,7 @@
             // 
             lblAmount.AutoSize = true;
             lblAmount.Font = new Font("Segoe UI", 11F);
-            lblAmount.Location = new Point(93, 563);
+            lblAmount.Location = new Point(28, 189);
             lblAmount.Margin = new Padding(5, 0, 5, 0);
             lblAmount.Name = "lblAmount";
             lblAmount.Size = new Size(147, 25);
@@ -68,7 +68,7 @@
             // txtAmount
             // 
             txtAmount.Font = new Font("Segoe UI", 11F);
-            txtAmount.Location = new Point(93, 638);
+            txtAmount.Location = new Point(28, 232);
             txtAmount.Margin = new Padding(5, 7, 5, 7);
             txtAmount.Name = "txtAmount";
             txtAmount.Size = new Size(406, 32);
@@ -81,7 +81,7 @@
             btnTopUp.FlatStyle = FlatStyle.Flat;
             btnTopUp.Font = new Font("Segoe UI", 10.125F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnTopUp.ForeColor = Color.Black;
-            btnTopUp.Location = new Point(122, 751);
+            btnTopUp.Location = new Point(28, 278);
             btnTopUp.Margin = new Padding(5, 7, 5, 7);
             btnTopUp.Name = "btnTopUp";
             btnTopUp.Size = new Size(300, 48);
@@ -96,7 +96,7 @@
             btnClose.FlatStyle = FlatStyle.Flat;
             btnClose.Font = new Font("Segoe UI", 10.125F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnClose.ForeColor = Color.Black;
-            btnClose.Location = new Point(638, 729);
+            btnClose.Location = new Point(731, 278);
             btnClose.Margin = new Padding(5, 7, 5, 7);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(300, 51);
@@ -114,7 +114,7 @@
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1103, 158);
+            panel1.Size = new Size(1082, 75);
             panel1.TabIndex = 6;
             // 
             // label1
@@ -122,7 +122,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 16.125F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(46, 41);
+            label1.Location = new Point(28, 22);
             label1.Name = "label1";
             label1.Size = new Size(212, 37);
             label1.TabIndex = 1;
@@ -132,7 +132,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(74, 204);
+            label2.Location = new Point(34, 84);
             label2.Name = "label2";
             label2.Size = new Size(92, 28);
             label2.TabIndex = 7;
@@ -142,7 +142,7 @@
             // 
             label3.AutoSize = true;
             label3.ForeColor = Color.Gray;
-            label3.Location = new Point(62, 277);
+            label3.Location = new Point(34, 112);
             label3.Name = "label3";
             label3.Size = new Size(280, 23);
             label3.TabIndex = 8;
@@ -152,7 +152,7 @@
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1103, 864);
+            ClientSize = new Size(1082, 653);
             Controls.Add(lblCurrentBalance);
             Controls.Add(label3);
             Controls.Add(label2);

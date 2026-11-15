@@ -45,8 +45,11 @@
             dgvMenuItems = new DataGridView();
             label5 = new Label();
             button1 = new Button();
+            label6 = new Label();
+            nudPrice = new NumericUpDown();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvMenuItems).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nudPrice).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -147,7 +150,7 @@
             btnAddMenu.FlatStyle = FlatStyle.Flat;
             btnAddMenu.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAddMenu.ForeColor = Color.FromArgb(30, 70, 55);
-            btnAddMenu.Location = new Point(22, 198);
+            btnAddMenu.Location = new Point(22, 255);
             btnAddMenu.Name = "btnAddMenu";
             btnAddMenu.Size = new Size(94, 29);
             btnAddMenu.TabIndex = 9;
@@ -157,7 +160,7 @@
             // 
             // btnUpdateMenu
             // 
-            btnUpdateMenu.Location = new Point(122, 198);
+            btnUpdateMenu.Location = new Point(122, 255);
             btnUpdateMenu.Name = "btnUpdateMenu";
             btnUpdateMenu.Size = new Size(110, 29);
             btnUpdateMenu.TabIndex = 10;
@@ -167,7 +170,7 @@
             // 
             // btnRemoveMenu
             // 
-            btnRemoveMenu.Location = new Point(238, 198);
+            btnRemoveMenu.Location = new Point(238, 255);
             btnRemoveMenu.Name = "btnRemoveMenu";
             btnRemoveMenu.Size = new Size(94, 29);
             btnRemoveMenu.TabIndex = 11;
@@ -177,7 +180,7 @@
             // 
             // btnClear
             // 
-            btnClear.Location = new Point(338, 198);
+            btnClear.Location = new Point(338, 255);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(94, 29);
             btnClear.TabIndex = 12;
@@ -187,7 +190,7 @@
             // 
             // btnRefresh
             // 
-            btnRefresh.Location = new Point(438, 198);
+            btnRefresh.Location = new Point(438, 255);
             btnRefresh.Name = "btnRefresh";
             btnRefresh.Size = new Size(94, 29);
             btnRefresh.TabIndex = 13;
@@ -201,12 +204,12 @@
             dgvMenuItems.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvMenuItems.BackgroundColor = Color.White;
             dgvMenuItems.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvMenuItems.Location = new Point(22, 280);
+            dgvMenuItems.Location = new Point(22, 335);
             dgvMenuItems.Name = "dgvMenuItems";
             dgvMenuItems.ReadOnly = true;
             dgvMenuItems.RowHeadersWidth = 51;
             dgvMenuItems.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvMenuItems.Size = new Size(1008, 409);
+            dgvMenuItems.Size = new Size(1008, 354);
             dgvMenuItems.TabIndex = 14;
             dgvMenuItems.CellClick += dgvMenuItems_CellClick;
             // 
@@ -214,7 +217,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(22, 242);
+            label5.Location = new Point(22, 291);
             label5.Name = "label5";
             label5.Size = new Size(208, 28);
             label5.TabIndex = 15;
@@ -225,7 +228,7 @@
             button1.BackColor = SystemColors.ButtonHighlight;
             button1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button1.ForeColor = SystemColors.ActiveCaptionText;
-            button1.Location = new Point(883, 198);
+            button1.Location = new Point(883, 255);
             button1.Name = "button1";
             button1.Size = new Size(147, 29);
             button1.TabIndex = 16;
@@ -233,11 +236,31 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(26, 201);
+            label6.Name = "label6";
+            label6.Size = new Size(44, 20);
+            label6.TabIndex = 18;
+            label6.Text = "Price:";
+            // 
+            // nudPrice
+            // 
+            nudPrice.DecimalPlaces = 2;
+            nudPrice.Location = new Point(76, 199);
+            nudPrice.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
+            nudPrice.Name = "nudPrice";
+            nudPrice.Size = new Size(120, 27);
+            nudPrice.TabIndex = 17;
+            // 
             // MenuItemManagementForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1082, 653);
+            Controls.Add(label6);
+            Controls.Add(nudPrice);
             Controls.Add(button1);
             Controls.Add(label5);
             Controls.Add(dgvMenuItems);
@@ -259,6 +282,7 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvMenuItems).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nudPrice).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -282,5 +306,7 @@
         private DataGridView dgvMenuItems;
         private Label label5;
         private Button button1;
+        private Label label6;
+        private NumericUpDown nudPrice;
     }
 }

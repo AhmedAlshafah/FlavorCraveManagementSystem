@@ -103,32 +103,22 @@ namespace FlavorCraveManagementSystem.Forms.Admin
                     conn.Open();
 
                     string sql = @"
-                INSERT INTO MenuItems
-                (Name, CategoryId, Price, IsAvailable, IsActive)
-                SELECT @Name, @Category, 0, 0, 1
-                WHERE NOT EXISTS
-                (
-                    SELECT 1 FROM MenuItems
-                    WHERE Name = @Name
-                    AND CategoryId = @Category
-                    AND IsActive = 1
-                )";
+    INSERT INTO MenuItems
+    (Name, CategoryId, Price, IsAvailable, IsActive)
+    VALUES (@Name, @Category, @Price, 0, 1)";
 
                     using (SqlCommand cmd = new SqlCommand(sql, conn))
                     {
                         cmd.Parameters.AddWithValue(
-                            "@Name", txtMenuName.Text.Trim());
+        "@Name", txtMenuName.Text.Trim());
 
                         cmd.Parameters.AddWithValue(
                             "@Category", cmbCategory.SelectedValue);
 
-                        int rows = cmd.ExecuteNonQuery();
+                        cmd.Parameters.AddWithValue(
+                            "@Price", nudPrice.Value);
 
-                        if (rows == 0)
-                        {
-                            MessageBox.Show("Menu item already exists!");
-                            return;
-                        }
+                        cmd.ExecuteNonQuery();
                     }
                 }
 
@@ -165,11 +155,13 @@ namespace FlavorCraveManagementSystem.Forms.Admin
                     conn.Open();
 
                     string sql = @"
-                UPDATE MenuItems
-                SET Name = @Name,
-                    CategoryId = @Category
-                WHERE MenuItemId = @Id
-                AND IsActive = 1";
+                    UPDATE MenuItems
+                    SET Name = @Name,
+                        CategoryId = @Category,
+                        Price = @Price
+                    WHERE MenuItemId = @Id
+                      AND IsActive = 1";
+                    
 
                     using (SqlCommand cmd = new SqlCommand(sql, conn))
                     {
@@ -181,6 +173,7 @@ namespace FlavorCraveManagementSystem.Forms.Admin
 
                         cmd.Parameters.AddWithValue(
                             "@Id", selectedMenuId.Value);
+                        cmd.Parameters.AddWithValue("@Price", nudPrice.Value);
 
                         int rows = cmd.ExecuteNonQuery();
 
@@ -266,6 +259,7 @@ namespace FlavorCraveManagementSystem.Forms.Admin
 
             dgvMenuItems.ClearSelection();
             txtMenuName.Focus();
+            nudPrice.Value = nudPrice.Minimum;
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
@@ -297,6 +291,8 @@ namespace FlavorCraveManagementSystem.Forms.Admin
 
             cmbCategory.SelectedValue =
                 Convert.ToInt32(row.Cells["CategoryId"].Value);
+            nudPrice.Value = Convert.ToDecimal(
+            row.Cells["Price"].Value);
         }
 
         private void button1_Click(object sender, EventArgs e)

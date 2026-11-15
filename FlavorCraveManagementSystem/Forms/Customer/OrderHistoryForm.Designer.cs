@@ -35,10 +35,10 @@
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Segoe UI", 10.125F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTitle.ForeColor = Color.White;
-            lblTitle.Location = new Point(987, 66);
+            lblTitle.Location = new Point(907, 35);
             lblTitle.Margin = new Padding(5, 0, 5, 0);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(156, 37);
+            lblTitle.Size = new Size(98, 23);
             lblTitle.TabIndex = 0;
             lblTitle.Text = "MY ORDER";
             // 
@@ -50,7 +50,7 @@
             dgvOrders.BackgroundColor = Color.White;
             dgvOrders.BorderStyle = BorderStyle.None;
             dgvOrders.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvOrders.Location = new Point(14, 335);
+            dgvOrders.Location = new Point(25, 147);
             dgvOrders.Margin = new Padding(5, 7, 5, 7);
             dgvOrders.MultiSelect = false;
             dgvOrders.Name = "dgvOrders";
@@ -58,7 +58,7 @@
             dgvOrders.RowHeadersVisible = false;
             dgvOrders.RowHeadersWidth = 51;
             dgvOrders.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvOrders.Size = new Size(1192, 422);
+            dgvOrders.Size = new Size(980, 281);
             dgvOrders.TabIndex = 1;
             // 
             // btnCancelOrder
@@ -68,7 +68,7 @@
             btnCancelOrder.FlatStyle = FlatStyle.Flat;
             btnCancelOrder.Font = new Font("Segoe UI Black", 10.125F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCancelOrder.ForeColor = Color.White;
-            btnCancelOrder.Location = new Point(74, 805);
+            btnCancelOrder.Location = new Point(25, 455);
             btnCancelOrder.Margin = new Padding(5, 7, 5, 7);
             btnCancelOrder.Name = "btnCancelOrder";
             btnCancelOrder.Size = new Size(256, 52);
@@ -82,7 +82,7 @@
             btnRefresh.BackColor = Color.White;
             btnRefresh.Font = new Font("Segoe UI", 10.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnRefresh.ForeColor = SystemColors.ControlText;
-            btnRefresh.Location = new Point(669, 810);
+            btnRefresh.Location = new Point(343, 457);
             btnRefresh.Margin = new Padding(5, 7, 5, 7);
             btnRefresh.Name = "btnRefresh";
             btnRefresh.Size = new Size(178, 47);
@@ -95,7 +95,7 @@
             // 
             btnClose.BackColor = Color.White;
             btnClose.Font = new Font("Segoe UI", 10.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnClose.Location = new Point(874, 808);
+            btnClose.Location = new Point(548, 455);
             btnClose.Margin = new Padding(5, 7, 5, 7);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(275, 47);
@@ -114,7 +114,7 @@
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1220, 161);
+            panel1.Size = new Size(1082, 75);
             panel1.TabIndex = 5;
             // 
             // label1
@@ -122,9 +122,9 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(30, 59);
+            label1.Location = new Point(25, 23);
             label1.Name = "label1";
-            label1.Size = new Size(310, 54);
+            label1.Size = new Size(197, 35);
             label1.TabIndex = 1;
             label1.Text = "FLAVOR CRAVE";
             label1.Click += label1_Click;
@@ -133,9 +133,9 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(51, 205);
+            label2.Location = new Point(25, 80);
             label2.Name = "label2";
-            label2.Size = new Size(178, 45);
+            label2.Size = new Size(111, 28);
             label2.TabIndex = 6;
             label2.Text = "My Orders";
             // 
@@ -143,17 +143,17 @@
             // 
             label3.AutoSize = true;
             label3.ForeColor = Color.Gray;
-            label3.Location = new Point(51, 268);
+            label3.Location = new Point(25, 108);
             label3.Name = "label3";
-            label3.Size = new Size(597, 37);
+            label3.Size = new Size(387, 23);
             label3.TabIndex = 7;
             label3.Text = "Track your order status and manage active orders";
             // 
             // OrderHistoryForm
             // 
-            AutoScaleDimensions = new SizeF(15F, 37F);
+            AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1220, 929);
+            ClientSize = new Size(1082, 653);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(panel1);
