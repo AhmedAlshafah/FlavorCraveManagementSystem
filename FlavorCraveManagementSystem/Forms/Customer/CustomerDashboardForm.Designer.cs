@@ -26,17 +26,18 @@
             pnlMainContent = new Panel();
             groupBox1 = new GroupBox();
             lblSelectedFoodPrice = new Label();
-            lblSelectedFoodName = new Label();
             picFood = new PictureBox();
+            lblSelectedFoodName = new Label();
             label3 = new Label();
-            btnPlaceOrder = new Button();
             nudQuantity = new NumericUpDown();
-            btnRefreshMenu = new Button();
-            btnViewDetails = new Button();
             dgvMenuItems = new DataGridView();
             lblCategory = new Label();
             cboCategory = new ComboBox();
+            btnPlaceOrder = new Button();
+            btnRefreshMenu = new Button();
+            btnViewDetails = new Button();
             panel1 = new Panel();
+            label4 = new Label();
             label2 = new Label();
             labe = new Label();
             panel2 = new Panel();
@@ -147,7 +148,7 @@
             pnlMainContent.Location = new Point(230, 167);
             pnlMainContent.Margin = new Padding(3, 4, 3, 4);
             pnlMainContent.Name = "pnlMainContent";
-            pnlMainContent.Size = new Size(731, 367);
+            pnlMainContent.Size = new Size(731, 366);
             pnlMainContent.TabIndex = 7;
             // 
             // groupBox1
@@ -170,14 +171,6 @@
             lblSelectedFoodPrice.Size = new Size(0, 23);
             lblSelectedFoodPrice.TabIndex = 13;
             // 
-            // lblSelectedFoodName
-            // 
-            lblSelectedFoodName.AutoSize = true;
-            lblSelectedFoodName.Location = new Point(9, 210);
-            lblSelectedFoodName.Name = "lblSelectedFoodName";
-            lblSelectedFoodName.Size = new Size(0, 23);
-            lblSelectedFoodName.TabIndex = 12;
-            // 
             // picFood
             // 
             picFood.BorderStyle = BorderStyle.FixedSingle;
@@ -187,6 +180,15 @@
             picFood.SizeMode = PictureBoxSizeMode.Zoom;
             picFood.TabIndex = 11;
             picFood.TabStop = false;
+            picFood.Click += picFood_Click;
+            // 
+            // lblSelectedFoodName
+            // 
+            lblSelectedFoodName.AutoSize = true;
+            lblSelectedFoodName.Location = new Point(9, 210);
+            lblSelectedFoodName.Name = "lblSelectedFoodName";
+            lblSelectedFoodName.Size = new Size(0, 23);
+            lblSelectedFoodName.TabIndex = 12;
             // 
             // label3
             // 
@@ -197,21 +199,6 @@
             label3.TabIndex = 7;
             label3.Text = "Quantity:";
             // 
-            // btnPlaceOrder
-            // 
-            btnPlaceOrder.BackColor = Color.FromArgb(214, 165, 70);
-            btnPlaceOrder.FlatAppearance.BorderSize = 0;
-            btnPlaceOrder.FlatStyle = FlatStyle.Flat;
-            btnPlaceOrder.Font = new Font("Segoe UI", 10.125F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnPlaceOrder.Location = new Point(481, 582);
-            btnPlaceOrder.Margin = new Padding(3, 4, 3, 4);
-            btnPlaceOrder.Name = "btnPlaceOrder";
-            btnPlaceOrder.Size = new Size(218, 55);
-            btnPlaceOrder.TabIndex = 6;
-            btnPlaceOrder.Text = "Place Order";
-            btnPlaceOrder.UseVisualStyleBackColor = false;
-            btnPlaceOrder.Click += btnPlaceOrder_Click;
-            // 
             // nudQuantity
             // 
             nudQuantity.Location = new Point(462, 13);
@@ -221,30 +208,6 @@
             nudQuantity.Size = new Size(257, 30);
             nudQuantity.TabIndex = 5;
             nudQuantity.Value = new decimal(new int[] { 1, 0, 0, 0 });
-            // 
-            // btnRefreshMenu
-            // 
-            btnRefreshMenu.BackColor = Color.White;
-            btnRefreshMenu.Location = new Point(762, 582);
-            btnRefreshMenu.Margin = new Padding(3, 4, 3, 4);
-            btnRefreshMenu.Name = "btnRefreshMenu";
-            btnRefreshMenu.Size = new Size(213, 55);
-            btnRefreshMenu.TabIndex = 4;
-            btnRefreshMenu.Text = "Refresh Menu";
-            btnRefreshMenu.UseVisualStyleBackColor = false;
-            btnRefreshMenu.Click += btnRefreshMenu_Click;
-            // 
-            // btnViewDetails
-            // 
-            btnViewDetails.BackColor = Color.White;
-            btnViewDetails.Location = new Point(230, 582);
-            btnViewDetails.Margin = new Padding(3, 4, 3, 4);
-            btnViewDetails.Name = "btnViewDetails";
-            btnViewDetails.Size = new Size(195, 55);
-            btnViewDetails.TabIndex = 3;
-            btnViewDetails.Text = "View Details";
-            btnViewDetails.UseVisualStyleBackColor = false;
-            btnViewDetails.Click += btnViewDetails_Click;
             // 
             // dgvMenuItems
             // 
@@ -286,9 +249,49 @@
             cboCategory.TabIndex = 1;
             cboCategory.SelectedIndexChanged += cboCategory_SelectedIndexChanged;
             // 
+            // btnPlaceOrder
+            // 
+            btnPlaceOrder.BackColor = Color.FromArgb(214, 165, 70);
+            btnPlaceOrder.FlatAppearance.BorderSize = 0;
+            btnPlaceOrder.FlatStyle = FlatStyle.Flat;
+            btnPlaceOrder.Font = new Font("Segoe UI", 10.125F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnPlaceOrder.Location = new Point(481, 582);
+            btnPlaceOrder.Margin = new Padding(3, 4, 3, 4);
+            btnPlaceOrder.Name = "btnPlaceOrder";
+            btnPlaceOrder.Size = new Size(218, 55);
+            btnPlaceOrder.TabIndex = 6;
+            btnPlaceOrder.Text = "Place Order";
+            btnPlaceOrder.UseVisualStyleBackColor = false;
+            btnPlaceOrder.Click += btnPlaceOrder_Click;
+            // 
+            // btnRefreshMenu
+            // 
+            btnRefreshMenu.BackColor = Color.White;
+            btnRefreshMenu.Location = new Point(762, 582);
+            btnRefreshMenu.Margin = new Padding(3, 4, 3, 4);
+            btnRefreshMenu.Name = "btnRefreshMenu";
+            btnRefreshMenu.Size = new Size(213, 55);
+            btnRefreshMenu.TabIndex = 4;
+            btnRefreshMenu.Text = "Refresh Menu";
+            btnRefreshMenu.UseVisualStyleBackColor = false;
+            btnRefreshMenu.Click += btnRefreshMenu_Click;
+            // 
+            // btnViewDetails
+            // 
+            btnViewDetails.BackColor = Color.White;
+            btnViewDetails.Location = new Point(230, 582);
+            btnViewDetails.Margin = new Padding(3, 4, 3, 4);
+            btnViewDetails.Name = "btnViewDetails";
+            btnViewDetails.Size = new Size(195, 55);
+            btnViewDetails.TabIndex = 3;
+            btnViewDetails.Text = "View Details";
+            btnViewDetails.UseVisualStyleBackColor = false;
+            btnViewDetails.Click += btnViewDetails_Click;
+            // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(30, 70, 55);
+            panel1.Controls.Add(label4);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(labe);
             panel1.Dock = DockStyle.Top;
@@ -297,17 +300,28 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1082, 75);
             panel1.TabIndex = 8;
+            panel1.Paint += panel1_Paint;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.ForeColor = SystemColors.ButtonHighlight;
+            label4.Location = new Point(889, 42);
+            label4.Name = "label4";
+            label4.Size = new Size(0, 23);
+            label4.TabIndex = 2;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 10.125F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(901, 34);
+            label2.Location = new Point(889, 19);
             label2.Name = "label2";
             label2.Size = new Size(101, 23);
             label2.TabIndex = 1;
             label2.Text = "CUSTOMER";
+            label2.Click += label2_Click;
             // 
             // labe
             // 
@@ -342,7 +356,7 @@
             btnLogout.FlatStyle = FlatStyle.Flat;
             btnLogout.Font = new Font("Segoe UI", 10.125F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnLogout.ForeColor = Color.White;
-            btnLogout.Location = new Point(0, 595);
+            btnLogout.Location = new Point(0, 529);
             btnLogout.Name = "btnLogout";
             btnLogout.Size = new Size(150, 46);
             btnLogout.TabIndex = 7;
@@ -359,7 +373,6 @@
             label1.Size = new Size(447, 23);
             label1.TabIndex = 10;
             label1.Text = "Browse our menu, place your order, and enjoy your meal.";
-            label1.Click += label1_Click;
             // 
             // CustomerDashboardForm
             // 
@@ -422,5 +435,6 @@
         private Label lblSelectedFoodPrice;
         private Label lblSelectedFoodName;
         private Button btnLogout;
+        private Label label4;
     }
 }

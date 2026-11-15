@@ -116,7 +116,7 @@
             btnUpdate.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnUpdate.Location = new Point(623, 119);
             btnUpdate.Name = "btnUpdate";
-            btnUpdate.Size = new Size(137, 26);
+            btnUpdate.Size = new Size(137, 32);
             btnUpdate.TabIndex = 5;
             btnUpdate.Text = "Update Menu";
             btnUpdate.UseVisualStyleBackColor = false;
@@ -138,9 +138,9 @@
             // 
             // btnRefresh
             // 
-            btnRefresh.Location = new Point(647, 500);
+            btnRefresh.Location = new Point(647, 502);
             btnRefresh.Name = "btnRefresh";
-            btnRefresh.Size = new Size(75, 26);
+            btnRefresh.Size = new Size(75, 36);
             btnRefresh.TabIndex = 7;
             btnRefresh.Text = "Refresh";
             btnRefresh.UseVisualStyleBackColor = true;
@@ -204,7 +204,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(934, 65);
+            panel1.Size = new Size(1082, 65);
             panel1.TabIndex = 13;
             // 
             // label6
@@ -243,7 +243,7 @@
             // 
             label8.AutoSize = true;
             label8.ForeColor = Color.Gray;
-            label8.Location = new Point(6, 105);
+            label8.Location = new Point(12, 114);
             label8.Name = "label8";
             label8.Size = new Size(381, 23);
             label8.TabIndex = 15;
@@ -291,9 +291,9 @@
             // 
             // button1
             // 
-            button1.Location = new Point(785, 502);
+            button1.Location = new Point(768, 502);
             button1.Name = "button1";
-            button1.Size = new Size(137, 23);
+            button1.Size = new Size(166, 34);
             button1.TabIndex = 17;
             button1.Text = "Back to Dashbord";
             button1.UseVisualStyleBackColor = true;
@@ -304,7 +304,7 @@
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(245, 245, 242);
-            ClientSize = new Size(934, 534);
+            ClientSize = new Size(1082, 653);
             Controls.Add(button1);
             Controls.Add(groupBox1);
             Controls.Add(label8);

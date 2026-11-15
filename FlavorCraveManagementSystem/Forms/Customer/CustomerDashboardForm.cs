@@ -461,6 +461,18 @@ namespace FlavorCraveManagementSystem.Forms.Customer
                     imageFile = "coffee.jpg";
                     break;
 
+                case "pizza":
+                    imageFile = "pizza.jpg";
+                    break;
+
+                case "Fish and Chips":
+                    imageFile = "fish_and_chips.jpg";
+                    break;
+
+                case "Carbonara":
+                    imageFile = "carbonara.jpeg";
+                    break;
+
                 default:
                     imageFile = "";
                     break;
@@ -497,7 +509,23 @@ namespace FlavorCraveManagementSystem.Forms.Customer
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void label4_Click(object sender, EventArgs e)
+        {
+            label4.Text =
+    $"Welcome, {loggedInUser.FullName}";
+        }
+
+        private void picFood_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }

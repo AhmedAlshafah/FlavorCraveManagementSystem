@@ -81,5 +81,10 @@ namespace FlavorCraveManagementSystem.Forms.Manager
             lblWelcome.Text =
     $"Welcome, {loggedInUser.FullName}";
         }
+
+        private void pnlHeader_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

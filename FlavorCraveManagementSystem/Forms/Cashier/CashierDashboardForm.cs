@@ -110,5 +110,14 @@ namespace FlavorCraveManagementSystem.Forms.Cashier
         {
 
         }
+
+        
+        
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            label2.Text =
+    $"Welcome, {loggedInUser.FullName}";
+        }
     }
 }

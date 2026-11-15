@@ -50,14 +50,14 @@
             label8 = new Label();
             label11 = new Label();
             panel3 = new Panel();
-            panel4 = new Panel();
-            panel5 = new Panel();
-            panel6 = new Panel();
-            panel7 = new Panel();
             label7 = new Label();
+            panel4 = new Panel();
             label9 = new Label();
-            label14 = new Label();
+            panel5 = new Panel();
             label15 = new Label();
+            panel6 = new Panel();
+            label14 = new Label();
+            panel7 = new Panel();
             label16 = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -347,6 +347,17 @@
             panel3.Size = new Size(338, 159);
             panel3.TabIndex = 15;
             // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.Location = new Point(106, 21);
+            label7.Name = "label7";
+            label7.Size = new Size(114, 23);
+            label7.TabIndex = 2;
+            label7.Text = "Manage User";
+            label7.TextAlign = ContentAlignment.TopCenter;
+            // 
             // panel4
             // 
             panel4.BackColor = Color.White;
@@ -359,6 +370,16 @@
             panel4.Size = new Size(329, 161);
             panel4.TabIndex = 16;
             // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.Location = new Point(104, 22);
+            label9.Name = "label9";
+            label9.Size = new Size(124, 23);
+            label9.TabIndex = 4;
+            label9.Text = "Manage Menu";
+            // 
             // panel5
             // 
             panel5.BackColor = Color.White;
@@ -369,6 +390,17 @@
             panel5.Name = "panel5";
             panel5.Size = new Size(329, 143);
             panel5.TabIndex = 17;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label15.Location = new Point(86, 15);
+            label15.Name = "label15";
+            label15.Size = new Size(142, 23);
+            label15.TabIndex = 10;
+            label15.Text = "Map Ingredients";
+            label15.TextAlign = ContentAlignment.TopCenter;
             // 
             // panel6
             // 
@@ -381,38 +413,6 @@
             panel6.Size = new Size(338, 143);
             panel6.TabIndex = 17;
             // 
-            // panel7
-            // 
-            panel7.BackColor = Color.White;
-            panel7.BorderStyle = BorderStyle.FixedSingle;
-            panel7.Controls.Add(label16);
-            panel7.Controls.Add(label13);
-            panel7.Location = new Point(499, 499);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(284, 143);
-            panel7.TabIndex = 17;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(106, 21);
-            label7.Name = "label7";
-            label7.Size = new Size(114, 23);
-            label7.TabIndex = 2;
-            label7.Text = "Manage User";
-            label7.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.Location = new Point(104, 22);
-            label9.Name = "label9";
-            label9.Size = new Size(124, 23);
-            label9.TabIndex = 4;
-            label9.Text = "Manage Menu";
-            // 
             // label14
             // 
             label14.AutoSize = true;
@@ -424,16 +424,16 @@
             label14.Text = "Manage Ingredients";
             label14.TextAlign = ContentAlignment.TopCenter;
             // 
-            // label15
+            // panel7
             // 
-            label15.AutoSize = true;
-            label15.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label15.Location = new Point(86, 15);
-            label15.Name = "label15";
-            label15.Size = new Size(142, 23);
-            label15.TabIndex = 10;
-            label15.Text = "Map Ingredients";
-            label15.TextAlign = ContentAlignment.TopCenter;
+            panel7.BackColor = Color.White;
+            panel7.BorderStyle = BorderStyle.FixedSingle;
+            panel7.Controls.Add(label16);
+            panel7.Controls.Add(label13);
+            panel7.Location = new Point(499, 499);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(284, 143);
+            panel7.TabIndex = 17;
             // 
             // label16
             // 

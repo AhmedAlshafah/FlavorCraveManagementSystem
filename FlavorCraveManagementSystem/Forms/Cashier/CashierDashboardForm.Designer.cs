@@ -34,6 +34,8 @@
             btnProfile = new Button();
             btnReceipts = new Button();
             pnlHeader = new Panel();
+            label2 = new Label();
+            label1 = new Label();
             label4 = new Label();
             lblBrand = new Label();
             pnlSidebar = new Panel();
@@ -128,6 +130,8 @@
             // pnlHeader
             // 
             pnlHeader.BackColor = Color.FromArgb(30, 70, 55);
+            pnlHeader.Controls.Add(label2);
+            pnlHeader.Controls.Add(label1);
             pnlHeader.Controls.Add(label4);
             pnlHeader.Controls.Add(lblBrand);
             pnlHeader.Dock = DockStyle.Top;
@@ -136,12 +140,32 @@
             pnlHeader.Size = new Size(1082, 74);
             pnlHeader.TabIndex = 12;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.ForeColor = SystemColors.ButtonHighlight;
+            label2.Location = new Point(935, 39);
+            label2.Name = "label2";
+            label2.Size = new Size(17, 20);
+            label2.TabIndex = 6;
+            label2.Text = "a";
+            label2.Click += label2_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.ForeColor = SystemColors.ButtonHighlight;
+            label1.Location = new Point(920, 46);
+            label1.Name = "label1";
+            label1.Size = new Size(0, 20);
+            label1.TabIndex = 5;
+            // 
             // label4
             // 
             label4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(817, 21);
+            label4.Location = new Point(823, 0);
             label4.Name = "label4";
             label4.Size = new Size(200, 37);
             label4.TabIndex = 4;
@@ -229,6 +253,7 @@
             Text = "Flavor Crave - Cashier";
             Load += CashierDashboardForm_Load;
             pnlHeader.ResumeLayout(false);
+            pnlHeader.PerformLayout();
             pnlSidebar.ResumeLayout(false);
             pnlSidebar.PerformLayout();
             ResumeLayout(false);
@@ -249,5 +274,7 @@
         private Label lblMenuTitle;
         private Label lblPageSubtitle;
         private Button btnLogout;
+        private Label label1;
+        private Label label2;
     }
 }

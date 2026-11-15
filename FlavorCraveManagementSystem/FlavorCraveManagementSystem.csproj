@@ -9,6 +9,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\carbonara.jpeg" />
+    <None Remove="Images\fish_and_chips.jpg" />
+    <None Remove="Images\pizza.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Images\carbonara.jpeg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <content Include="Images\chicken_burger.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </content>
@@ -16,6 +25,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\coffee.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\fish_and_chips.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\pizza.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
