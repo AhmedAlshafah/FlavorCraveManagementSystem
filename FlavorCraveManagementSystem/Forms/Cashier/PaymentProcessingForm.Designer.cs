@@ -38,6 +38,7 @@
             lblSelectedOrder = new Label();
             lblSelectedCustomer = new Label();
             lblPaymentStatus = new Label();
+            btnClose = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvOrders).BeginInit();
             pnlHeader.SuspendLayout();
             SuspendLayout();
@@ -161,12 +162,28 @@
             lblPaymentStatus.TabIndex = 14;
             lblPaymentStatus.Text = "Payment: -";
             // 
+            // btnClose
+            // 
+            btnClose.BackColor = Color.White;
+            btnClose.FlatAppearance.BorderSize = 0;
+            btnClose.Font = new Font("Segoe UI", 10.2F);
+            btnClose.ForeColor = Color.Black;
+            btnClose.Location = new Point(860, 584);
+            btnClose.Margin = new Padding(3, 4, 3, 4);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(163, 38);
+            btnClose.TabIndex = 15;
+            btnClose.Text = "Back to Dashboard";
+            btnClose.UseVisualStyleBackColor = false;
+            btnClose.Click += btnClose_Click;
+            // 
             // PaymentProcessingForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(245, 245, 242);
             ClientSize = new Size(1082, 653);
+            Controls.Add(btnClose);
             Controls.Add(lblPaymentStatus);
             Controls.Add(lblSelectedCustomer);
             Controls.Add(lblSelectedOrder);
@@ -197,5 +214,6 @@
         private Label lblSelectedOrder;
         private Label lblSelectedCustomer;
         private Label lblPaymentStatus;
+        private Button btnClose;
     }
 }

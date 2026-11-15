@@ -35,6 +35,7 @@
             pnlHeader = new Panel();
             lblFormName = new Label();
             lblBrand = new Label();
+            btnClose = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvReceiptOrders).BeginInit();
             pnlHeader.SuspendLayout();
             SuspendLayout();
@@ -127,12 +128,28 @@
             lblBrand.Text = "FLAVOR CRAVE";
             lblBrand.TextAlign = ContentAlignment.MiddleLeft;
             // 
+            // btnClose
+            // 
+            btnClose.BackColor = Color.White;
+            btnClose.FlatAppearance.BorderSize = 0;
+            btnClose.Font = new Font("Segoe UI", 10.2F);
+            btnClose.ForeColor = Color.Black;
+            btnClose.Location = new Point(864, 584);
+            btnClose.Margin = new Padding(3, 4, 3, 4);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(163, 38);
+            btnClose.TabIndex = 16;
+            btnClose.Text = "Back to Dashboard";
+            btnClose.UseVisualStyleBackColor = false;
+            btnClose.Click += btnClose_Click;
+            // 
             // ReceiptForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(245, 245, 242);
             ClientSize = new Size(1082, 653);
+            Controls.Add(btnClose);
             Controls.Add(pnlHeader);
             Controls.Add(btnPrintReceipt);
             Controls.Add(btnPreviewReceipt);
@@ -155,5 +172,6 @@
         private Panel pnlHeader;
         private Label lblBrand;
         private Label lblFormName;
+        private Button btnClose;
     }
 }

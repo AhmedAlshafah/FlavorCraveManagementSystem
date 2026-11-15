@@ -86,5 +86,11 @@ namespace FlavorCraveManagementSystem.Forms.Cashier
                 MessageBox.Show("Payment failed:\n" + ex.Message);
             }
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+        }
     }
 }

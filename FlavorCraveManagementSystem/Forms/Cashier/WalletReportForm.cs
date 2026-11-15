@@ -108,5 +108,10 @@ namespace FlavorCraveManagementSystem.Forms.Cashier
             if (dgvTransactions.Columns.Contains("TransactionDate"))
                 dgvTransactions.Columns["TransactionDate"].HeaderText = "Date";
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -123,5 +123,10 @@ namespace FlavorCraveManagementSystem.Forms.Cashier
 
             e.HasMorePages = false;
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
