@@ -15,6 +15,7 @@ namespace FlavorCraveManagementSystem
         public LoginForm()
         {
             InitializeComponent();
+            txtPassword.UseSystemPasswordChar = true;   // start with the password hidden
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -69,6 +70,10 @@ namespace FlavorCraveManagementSystem
                 }
 
                 this.Show();
+
+                // Reset the form for the next login
+                chkShowPassword.Checked = false;
+                txtPassword.Clear();
             }
             catch (Exception ex)
             {
@@ -76,6 +81,15 @@ namespace FlavorCraveManagementSystem
                     "Login failed:\n\n" + ex.Message
                 );
             }
+        }
+
+        private void chkShowPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            bool show = chkShowPassword.Checked;
+
+            // UseSystemPasswordChar overrides PasswordChar, so set both
+            txtPassword.UseSystemPasswordChar = !show;
+            txtPassword.PasswordChar = show ? '\0' : '*';
         }
 
         private void txtEmail_TextChanged(object sender, EventArgs e)

@@ -40,6 +40,7 @@
             pnlHeader = new Panel();
             label9 = new Label();
             lblBrand = new Label();
+            chkShowPassword = new CheckBox();
             pnlHeader.SuspendLayout();
             SuspendLayout();
             // 
@@ -156,6 +157,25 @@
             lblBrand.Text = "FLAVOR CRAVE";
             lblBrand.TextAlign = ContentAlignment.MiddleLeft;
             // 
+            // chkShowPassword
+            // 
+            chkShowPassword.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            chkShowPassword.AutoSize = true;
+            chkShowPassword.BackColor = Color.Transparent;
+            chkShowPassword.FlatAppearance.BorderColor = Color.Black;
+            chkShowPassword.FlatAppearance.BorderSize = 0;
+            chkShowPassword.FlatAppearance.CheckedBackColor = Color.Black;
+            chkShowPassword.FlatStyle = FlatStyle.Flat;
+            chkShowPassword.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            chkShowPassword.ForeColor = Color.White;
+            chkShowPassword.Location = new Point(671, 318);
+            chkShowPassword.Name = "chkShowPassword";
+            chkShowPassword.Size = new Size(117, 21);
+            chkShowPassword.TabIndex = 17;
+            chkShowPassword.Text = "Show Password";
+            chkShowPassword.UseVisualStyleBackColor = false;
+            chkShowPassword.CheckedChanged += chkShowPassword_CheckedChanged;
+            // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -163,6 +183,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1082, 653);
+            Controls.Add(chkShowPassword);
             Controls.Add(pnlHeader);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -192,5 +213,6 @@
         private Panel pnlHeader;
         private Label label9;
         private Label lblBrand;
+        private CheckBox chkShowPassword;
     }
 }

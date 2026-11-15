@@ -38,7 +38,7 @@
             lblTitle.Location = new Point(780, 54);
             lblTitle.Margin = new Padding(5, 0, 5, 0);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(248, 37);
+            lblTitle.Size = new Size(155, 23);
             lblTitle.TabIndex = 0;
             lblTitle.Text = "E-WALLET TOP UP";
             lblTitle.Click += lblTitle_Click;
@@ -50,7 +50,7 @@
             lblCurrentBalance.Location = new Point(74, 422);
             lblCurrentBalance.Margin = new Padding(5, 0, 5, 0);
             lblCurrentBalance.Name = "lblCurrentBalance";
-            lblCurrentBalance.Size = new Size(408, 45);
+            lblCurrentBalance.Size = new Size(259, 28);
             lblCurrentBalance.TabIndex = 1;
             lblCurrentBalance.Text = " Current Balance: RM 0.00";
             // 
@@ -61,7 +61,7 @@
             lblAmount.Location = new Point(93, 563);
             lblAmount.Margin = new Padding(5, 0, 5, 0);
             lblAmount.Name = "lblAmount";
-            lblAmount.Size = new Size(236, 41);
+            lblAmount.Size = new Size(147, 25);
             lblAmount.TabIndex = 2;
             lblAmount.Text = "Top Up Amount:";
             // 
@@ -71,7 +71,7 @@
             txtAmount.Location = new Point(93, 638);
             txtAmount.Margin = new Padding(5, 7, 5, 7);
             txtAmount.Name = "txtAmount";
-            txtAmount.Size = new Size(406, 47);
+            txtAmount.Size = new Size(406, 32);
             txtAmount.TabIndex = 3;
             // 
             // btnTopUp
@@ -124,7 +124,7 @@
             label1.ForeColor = Color.White;
             label1.Location = new Point(46, 41);
             label1.Name = "label1";
-            label1.Size = new Size(335, 59);
+            label1.Size = new Size(212, 37);
             label1.TabIndex = 1;
             label1.Text = "FLAVOR CRAVE";
             // 
@@ -134,7 +134,7 @@
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.Location = new Point(74, 204);
             label2.Name = "label2";
-            label2.Size = new Size(145, 45);
+            label2.Size = new Size(92, 28);
             label2.TabIndex = 7;
             label2.Text = "E-Wallet";
             // 
@@ -144,13 +144,13 @@
             label3.ForeColor = Color.Gray;
             label3.Location = new Point(62, 277);
             label3.Name = "label3";
-            label3.Size = new Size(437, 37);
+            label3.Size = new Size(280, 23);
             label3.TabIndex = 8;
             label3.Text = "Top up your wallet balance securely";
             // 
             // EWalletForm
             // 
-            AutoScaleDimensions = new SizeF(15F, 37F);
+            AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1103, 864);
             Controls.Add(lblCurrentBalance);
